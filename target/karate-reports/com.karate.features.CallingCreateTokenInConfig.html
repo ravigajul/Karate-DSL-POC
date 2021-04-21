@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <title>com.karate.features.CallingCreateTokenInConfig</title>  
+  </head>
+  <body>   
+    <div id="root-container">
+      <div id="leftnav">
+                
+        <div>
+  <div class="nav-logo">
+    <a href="karate-summary.html">
+      <img src="karate-logo.svg" alt="Karate"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">1</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>         
+  <div id="nav-date">
+    <div>2021-04-21 11:20:41 AM</div>
+  </div>        
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:7]"><span>[1:7]</span> <span>Calling other feature to get authtoken and use it in this scenario</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">com/karate/features/CallingCreateTokenInConfig.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Feature to demonstrate feature calling from config file</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:7]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">callingfeatureinconfig</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:7]</span>
+                <span class="scenario-name">Calling other feature to get authtoken and use it in this scenario</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>728</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:7]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:7]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseurl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">11:20:40.781 &lt;&lt; lock released, cached callSingle: classpath:com/karate/helpers/CreateToken.feature
+</div>   
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.4.0.call">
+        <div class="step-ref bg-step">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">com.karate.helpers.CreateToken</div>
+      </div>
+      <div class="time-cell passed">3514</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.4.0.call">
+    <div class="step-container" id="0.4.0.call.0.4">
+      <div class="step-ref bg-step">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url &#39;https://conduit.productionready.io/api&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4.0.call.0.4">11:20:37.161 karate.env system property was: qa 
+11:20:37.175 &gt;&gt; lock acquired, begin callSingle: classpath:com/karate/helpers/CreateToken.feature
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.4.0.call">
+    <div class="step-container" id="0.4.0.call.0.5">
+      <div class="step-ref bg-step">5</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>path &#39;/users/login&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">16</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.4.0.call">
+    <div class="step-container" id="0.4.0.call.0.6">
+      <div class="step-ref bg-step">6</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request {&quot;user&quot;:{&quot;email&quot;:&quot;ravi.gajul@test.com&quot;,&quot;password&quot;:&quot;Ant3m3an!&quot;}}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">91</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.4.0.call">
+    <div class="step-container" id="0.4.0.call.0.7">
+      <div class="step-ref bg-step">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3383</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4.0.call.0.7">11:20:39.421 request:
+1 &gt; POST https://conduit.productionready.io/api/users/login
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 63
+1 &gt; Host: conduit.productionready.io
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;user&quot;:{&quot;password&quot;:&quot;Ant3m3an!&quot;,&quot;email&quot;:&quot;ravi.gajul@test.com&quot;}}
+
+11:20:40.743 response time in milliseconds: 1296
+1 &lt; 200
+1 &lt; Date: Wed, 21 Apr 2021 05:50:40 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Cache-Control: max-age=0, private, must-revalidate
+1 &lt; ETag: W/&quot;bb2b53d4339ed71a977457d794f307d1&quot;
+1 &lt; Status: 200 OK
+1 &lt; Vary: Origin
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Powered-By: Phusion Passenger 4.0.60
+1 &lt; X-Request-Id: 779bd141-26c1-4aad-9cb8-f279090bf281
+1 &lt; X-Runtime: 0.087387
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; cf-request-id: 0994941b3a0000c93419314000000001
+1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=uQ1i6KXS6DI%2FdpmzyCTxWgGB2hbHjlwGMP3D7eAsC%2BvWyNr48q74qpKKMcwwDUrM9%2BtFvaJcnS3QZ7WSaSRVx%2BVpypASYTEhw379o2Wt%2Bd3hMAvI8ZQq6hmpLw%3D%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; NEL: {&quot;max_age&quot;:604800,&quot;report_to&quot;:&quot;cf-nel&quot;}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 6434560b9ba6c934-HYD
+1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
+1 &lt; Set-Cookie: __cfduid=d926469a3bda7c3b7f4259d85f099e0a71618984239; Max-Age=1621576239000; Expires=Sun, 04 Jan 53407 18:00:40 GMT; Domain=productionready.io
+{&quot;user&quot;:{&quot;createdAt&quot;:&quot;2021-04-20T09:54:12.199Z&quot;,&quot;image&quot;:null,&quot;bio&quot;:null,&quot;id&quot;:163903,&quot;email&quot;:&quot;ravi.gajul@test.com&quot;,&quot;updatedAt&quot;:&quot;2021-04-20T09:54:12.212Z&quot;,&quot;username&quot;:&quot;ravigajul&quot;,&quot;token&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDE2ODI0MH0.yjn1REwxENRz2RO9SAL_GxK573KXh32_INN7-pMKqk4&quot;}}
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.4.0.call">
+    <div class="step-container" id="0.4.0.call.0.8">
+      <div class="step-ref bg-step">8</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.4.0.call">
+    <div class="step-container" id="0.4.0.call.0.9">
+      <div class="step-ref bg-step">9</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def authToken = response.user.token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">19</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.4.0.call">
+    <div class="step-container" id="0.4.0.call.0.10">
+      <div class="step-ref bg-step">10</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print authToken</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4.0.call.0.10">11:20:40.776 [print] eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDE2ODI0MH0.yjn1REwxENRz2RO9SAL_GxK573KXh32_INN7-pMKqk4 
+</div>   
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref passed">8</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/articles/&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request {&quot;article&quot;:{&quot;tagList&quot;:[],&quot;title&quot;:&quot;test article&quot;,&quot;description&quot;:&quot;this is test article&quot;,&quot;body&quot;:&quot;he there test article&quot;}}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref passed">10</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">681</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.10">11:20:40.808 request:
+1 &gt; POST https://conduit.productionready.io/api/articles/
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDE2ODI0MH0.yjn1REwxENRz2RO9SAL_GxK573KXh32_INN7-pMKqk4
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 117
+1 &gt; Host: conduit.productionready.io
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;article&quot;:{&quot;tagList&quot;:[],&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;}}
+
+11:20:41.480 response time in milliseconds: 670
+1 &lt; 200
+1 &lt; Date: Wed, 21 Apr 2021 05:50:41 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Cache-Control: max-age=0, private, must-revalidate
+1 &lt; ETag: W/&quot;6a9932250a46d808a4d1baf4d8a77485&quot;
+1 &lt; Status: 200 OK
+1 &lt; Vary: Origin
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Powered-By: Phusion Passenger 4.0.60
+1 &lt; X-Request-Id: 3bbe40fd-d61a-4c61-9826-ba77f822634f
+1 &lt; X-Runtime: 0.075277
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; cf-request-id: 0994941ee50000c934eea08000000001
+1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=QTjYfyi3SIo6xeF10DCcgzMwx6ZwAr96%2F38rEQPT4xw9hpph6PF8cehFR47gv5fLcI9giLoN8TejjLFXWA9RmjZKv3drwtjM0NgazKoYTKAQTO9HuuZevHXJxA%3D%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; NEL: {&quot;max_age&quot;:604800,&quot;report_to&quot;:&quot;cf-nel&quot;}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 643456116e23c934-HYD
+1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
+1 &lt; Set-Cookie: __cfduid=d5c61208b2ed71065c0e3cee43bbb43e41618984240; Max-Age=1621576240000; Expires=Sun, 04 Jan 53407 18:17:21 GMT; Domain=productionready.io
+{&quot;article&quot;:{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-21T05:50:41.301Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-v3cqsg&quot;,&quot;updatedAt&quot;:&quot;2021-04-21T05:50:41.301Z&quot;,&quot;favorited&quot;:false}}
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">8</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">11:20:41.492 [print] {
+  &quot;article&quot;: {
+    &quot;tagList&quot;: [
+    ],
+    &quot;createdAt&quot;: &quot;2021-04-21T05:50:41.301Z&quot;,
+    &quot;author&quot;: {
+      &quot;image&quot;: &quot;https://static.productionready.io/images/smiley-cyrus.jpg&quot;,
+      &quot;following&quot;: false,
+      &quot;bio&quot;: null,
+      &quot;username&quot;: &quot;ravigajul&quot;
+    },
+    &quot;description&quot;: &quot;this is test article&quot;,
+    &quot;title&quot;: &quot;test article&quot;,
+    &quot;body&quot;: &quot;he there test article&quot;,
+    &quot;favoritesCount&quot;: 0,
+    &quot;slug&quot;: &quot;test-article-v3cqsg&quot;,
+    &quot;updatedAt&quot;: &quot;2021-04-21T05:50:41.301Z&quot;,
+    &quot;favorited&quot;: false
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref passed">13</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.article.title == &#39;test article&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">36</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
