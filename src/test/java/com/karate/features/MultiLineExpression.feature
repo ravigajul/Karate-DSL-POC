@@ -3,8 +3,8 @@ Feature: Feature to create a token as a helper
 @multilineexpression @embeddedexpression
 #mvn test "-Dkarate.options=--tags @multilineexpression" -Dkarate.env=qa
   Scenario: Create Token
-    Given url 'https://conduit.productionready.io/api'
-    And path '/users/login'
+    Given url baseurl
+    And path '/api/users/login'
     And request 
     """
 		    {

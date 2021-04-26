@@ -8,7 +8,7 @@ Feature: Feature to demonstrate calling other feature
 
   @debug
   Scenario: Calling other feature to get authtoken and use it in this scenario
-    Given path '/articles/'
+    Given path '/api/articles/'
     And header Authorization = 'Token ' + authtoken
     And request {"article":{"tagList":[],"title":"test article","description":"this is test article","body":"he there test article"}}
     When method post

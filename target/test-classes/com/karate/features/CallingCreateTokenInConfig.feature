@@ -5,7 +5,7 @@ Feature: Feature to demonstrate feature calling from config file
 
   @callingfeatureinconfig
   Scenario: Calling other feature to get authtoken and use it in this scenario
-    Given path '/articles/'
+    Given path '/api/articles/'
     And request {"article":{"tagList":[],"title":"test article","description":"this is test article","body":"he there test article"}}
     When method post
     Then status 200

@@ -1,11 +1,12 @@
 Feature: Feature to create a token by accepting parameters
 
+@parameterizedtoken
   Scenario: Create Token by accepting parameters
-    Given url 'https://conduit.productionready.io/api'
-    And path '/users/login'
-    And request {"user":{"email":"#(useremail)","password":"#(userpassword)"}}
+    Given url baseurl
+    And path '/api/users/login'
+    And request {"user":{"email":#(paramemail),"password":#(parampassword)}}
     When method post
     Then status 200
     * def authToken = response.user.token
     * print authToken
-    * print 'Email: '+useremail+'--'+'Password: '+userpassword
+    * print 'Email: '+paramemail+'--'+'Password: '+parampassword

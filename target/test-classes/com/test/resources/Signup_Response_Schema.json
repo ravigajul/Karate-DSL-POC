@@ -1,0 +1,10 @@
+ {
+	"createdAt": "#? isValidTime(_)",
+	"image": "##string",
+	"bio": "##string",
+	"id": "#number",
+	"email": "#string",
+	"updatedAt": "#? isValidTime(_)",
+	"username": "#string",
+	"token": "#string"
+}

@@ -1,0 +1,17 @@
+{
+	"tagList": "#array",
+	"createdAt": "#? isValidTime(_)",
+	"author": {
+		"image": "#string",
+		"following": "#boolean",
+		"bio": "##string",
+		"username": "#string"
+	},
+	"description": "#string",
+	"title": "#string",
+	"body": "#string",
+	"favoritesCount": "#number",
+	"slug": "#string",
+	"updatedAt": "#? isValidTime(_)",
+	"favorited": "#boolean"
+}

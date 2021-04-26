@@ -6,7 +6,7 @@ function fn() {
   }
   var config = {
     env: env,
-    baseurl: 'https://conduit.productionready.io/api'
+    baseurl: 'https://conduit.productionready.io'
   }
   if (env == 'qa') {
     config.useremail= 'rgajul@test.com'
@@ -17,6 +17,12 @@ function fn() {
     
   //passing global headers that can be used by all urls
     karate.configure('headers',{Authorization: 'Token ' + accessToken})  
+    
+    //reading yaml file for configuration data
+    config.yamlobj = read('classpath:com/test/resources/Test.yaml')
+    
+    //reusing 
+    config.isValidTime = read('classpath:com/karate/helpers/time-validator.js')
      
   } else if (env == 'dev') {
 	  config.useremail= 'ravi.gajul@test.com'

@@ -1,0 +1,7 @@
+{
+	"user": {
+		"email": "#(useremail)",
+		"password": "random123",
+		"username": "#(username)"
+	}
+}
