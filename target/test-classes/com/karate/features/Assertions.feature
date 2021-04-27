@@ -11,9 +11,9 @@ Feature: sample karate test script
     Then status 200
     * print response
 
-  @ignore
+  
   Scenario: Passing params to get call
-    Given path 'articles'
+    Given path '/api/articles'
     And param limit = 10
     And param offset = 0
     When method get

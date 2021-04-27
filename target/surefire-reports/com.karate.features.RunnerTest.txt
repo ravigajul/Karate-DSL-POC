@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.karate.features.RunnerTest
 -------------------------------------------------------------------------------
-Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 31.092 s - in com.karate.features.RunnerTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.586 s - in com.karate.features.RunnerTest
