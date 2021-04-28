@@ -15,23 +15,30 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.intuit.karate</groupId>
-			<artifactId>karate-junit5</artifactId>
+			<artifactId>karate-junit4</artifactId>
 			<version>${karate.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
 		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.7.0</version>
-			<scope>test</scope>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<version>5.7.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
 		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
-			<version>5.5.3</version>
+			<version>5.3.1</version>
+			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/faker/faker -->
 		<dependency>
 			<groupId>com.github.javafaker</groupId>
@@ -67,7 +74,7 @@
 				<configuration>
 					<argLine>-Dfile.encoding=UTF-8</argLine>
 					<includes>
-						<include>com/karate/features/RunnerTest.java</include>
+						<include>com/karate/features/*.java</include>
 					</includes>
 					<systemProperties>
 						<karate.options>--tags ~@ignore</karate.options>

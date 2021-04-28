@@ -1,2 +1,3 @@
+com\karate\features\ParallelTest.class
 com\karate\helpers\DataGenerator.class
-com\karate\features\RunnerTest.class
+com\karate\helpers\RunnerTest.class

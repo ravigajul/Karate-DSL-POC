@@ -1,14 +1,14 @@
-package com.karate.features;
+package com.karate.helpers;
 
-import com.intuit.karate.junit5.Karate;
+//import com.intuit.karate.junit5.Karate;
 
 class RunnerTest {
 
-	@Karate.Test
+	/*@Karate.Test
 	Karate testAll() {
 		return Karate.run().relativeTo(getClass());
 	}
-
+*/
 	/*@Karate.Test
 	Karate testFeature() {
 		return Karate.run("classpath:com/karate/features/UsingConfigVariables.feature").relativeTo(getClass());

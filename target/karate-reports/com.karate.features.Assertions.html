@@ -30,7 +30,7 @@
     <div>Scenarios</div>
   </div>         
   <div id="nav-date">
-    <div>2021-04-27 06:51:34 PM</div>
+    <div>2021-04-28 03:13:26 PM</div>
   </div>        
 </div>
 
@@ -86,7 +86,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1112</span>
+              <span>ms:</span>&nbsp;<span>4351</span>
             </div>
           </div>
           <div class="step-row">
@@ -118,257 +118,11 @@
 
   
 
-  <div class="preformatted" data-parent="0.5">18:51:23.291 &lt;&lt; lock released, cached callSingle: classpath:com/karate/helpers/CreateToken.feature
-</div>   
-
-  <div>
-        
-    <div class="step-row">
-      <div class="step-container" id="0.5.0.call">
-        <div class="step-ref bg-step">&gt;&gt;</div>
-        <div class="step-indent"></div>
-        <div class="step-cell passed">com.karate.helpers.CreateToken</div>
-      </div>
-      <div class="time-cell passed">1771</div>
-    </div>
-    <div>
-      <div><div>
-  
-
-  
-
-  <div class="step-row" data-parent="0.5.0.call">
-    <div class="step-container" id="0.5.0.call.0.5">
-      <div class="step-ref bg-step">5</div>
-      <div class="step-indent"></div>
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>url &#39;https://conduit.productionready.io&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.5.0.call.0.5">18:51:21.440 karate.env system property was: null 
-18:51:21.447 &gt;&gt; lock acquired, begin callSingle: classpath:com/karate/helpers/CreateToken.feature
+  <div class="preformatted" data-parent="0.5">15:13:13.514 karate.env system property was: qa 
+15:13:17.436 this thread waited 2265 milliseconds for callSingle lock: classpath:com/karate/helpers/CreateToken.feature
 </div>   
 
   
-
-</div>
-</div>
-      <div><div>
-  
-
-  
-
-  <div class="step-row" data-parent="0.5.0.call">
-    <div class="step-container" id="0.5.0.call.0.6">
-      <div class="step-ref bg-step">6</div>
-      <div class="step-indent"></div>
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>path &#39;/api/users/login&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">7</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-      <div><div>
-  
-
-  
-
-  <div class="step-row" data-parent="0.5.0.call">
-    <div class="step-container" id="0.5.0.call.0.7">
-      <div class="step-ref bg-step">7</div>
-      <div class="step-indent"></div>
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request read(&#39;classpath:com/test/resources/Login_Request.json&#39;)</span>
-      </div>
-    </div>
-    <div class="time-cell passed">64</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-      <div><div>
-  
-
-  
-
-  <div class="step-row" data-parent="0.5.0.call">
-    <div class="step-container" id="0.5.0.call.0.8">
-      <div class="step-ref bg-step">8</div>
-      <div class="step-indent"></div>
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method post</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1696</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.5.0.call.0.8">18:51:22.508 request:
-1 &gt; POST https://conduit.productionready.io/api/users/login
-1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 63
-1 &gt; Host: conduit.productionready.io
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
-1 &gt; Accept-Encoding: gzip,deflate
-{&quot;user&quot;:{&quot;password&quot;:&quot;Ant3m3an!&quot;,&quot;email&quot;:&quot;ravi.gajul@test.com&quot;}}
-
-18:51:23.280 response time in milliseconds: 764
-1 &lt; 200
-1 &lt; Date: Tue, 27 Apr 2021 13:21:23 GMT
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
-1 &lt; Cache-Control: max-age=0, private, must-revalidate
-1 &lt; ETag: W/&quot;d42426e9e4a55596f3dabd1ac846c712&quot;
-1 &lt; Status: 200 OK
-1 &lt; Vary: Origin
-1 &lt; X-Content-Type-Options: nosniff
-1 &lt; X-Frame-Options: SAMEORIGIN
-1 &lt; X-Powered-By: Phusion Passenger 4.0.60
-1 &lt; X-Request-Id: 60714ec2-0572-4c27-b971-8fe1629194f5
-1 &lt; X-Runtime: 0.081030
-1 &lt; X-XSS-Protection: 1; mode=block
-1 &lt; CF-Cache-Status: DYNAMIC
-1 &lt; cf-request-id: 09b516e70a00004afe4b9b4000000001
-1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=GwmtcYxBGqwfGfAJ%2F1JA44n1n4%2Bst8nUq8brr2ouBzPOYibaTsye7NB8WINYYe8YEH6S%2Bxeh%2BOIxZsfFqVf366wC3RdrrTCqAt0qbAWNiyOWXuBRz8jZiqQA6w%3D%3D&quot;}]}
-1 &lt; NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
-1 &lt; Server: cloudflare
-1 &lt; CF-RAY: 64685a84d87b4afe-HYD
-1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-1 &lt; Set-Cookie: __cfduid=d70502dfd12a67c7e9ff4fb9b7742be071619529682; Max-Age=1622121682000; Expires=Sat, 24 Apr 53424 01:28:03 GMT; Domain=productionready.io
-{&quot;user&quot;:{&quot;createdAt&quot;:&quot;2021-04-20T09:54:12.199Z&quot;,&quot;image&quot;:null,&quot;bio&quot;:null,&quot;id&quot;:163903,&quot;email&quot;:&quot;ravi.gajul@test.com&quot;,&quot;updatedAt&quot;:&quot;2021-04-20T09:54:12.212Z&quot;,&quot;username&quot;:&quot;ravigajul&quot;,&quot;token&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDcxMzY4M30.XsVnHTd4rIbHLfV9BbkW34HFL0GlkLcVXToSS4QT7-I&quot;}}
-</div>   
-
-  
-
-</div>
-</div>
-      <div><div>
-  
-
-  
-
-  <div class="step-row" data-parent="0.5.0.call">
-    <div class="step-container" id="0.5.0.call.0.9">
-      <div class="step-ref bg-step">9</div>
-      <div class="step-indent"></div>
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-      <div><div>
-  
-
-  
-
-  <div class="step-row" data-parent="0.5.0.call">
-    <div class="step-container" id="0.5.0.call.0.10">
-      <div class="step-ref bg-step">10</div>
-      <div class="step-indent"></div>
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def authToken = response.user.token</span>
-      </div>
-    </div>
-    <div class="time-cell passed">2</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-      <div><div>
-  
-
-  
-
-  <div class="step-row" data-parent="0.5.0.call">
-    <div class="step-container" id="0.5.0.call.0.11">
-      <div class="step-ref bg-step">11</div>
-      <div class="step-indent"></div>
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>print authToken</span>
-      </div>
-    </div>
-    <div class="time-cell passed">2</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.5.0.call.0.11">18:51:23.288 [print] eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDcxMzY4M30.XsVnHTd4rIbHLfV9BbkW34HFL0GlkLcVXToSS4QT7-I 
-</div>   
-
-  
-
-</div>
-</div>
-    </div>    
-  </div>
 
 </div>
 </div>
@@ -385,7 +139,7 @@
         <span>Given</span>&nbsp;<span>path &#39;/api/tags&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -410,10 +164,10 @@
       <div class="step-ref passed">10</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
+        <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">1109</div>
+    <div class="time-cell passed">4347</div>
   </div>
 
    
@@ -422,41 +176,41 @@
 
   
 
-  <div class="preformatted" data-parent="0.10">18:51:23.409 request:
+  <div class="preformatted" data-parent="0.10">15:13:17.675 request:
 1 &gt; GET https://conduit.productionready.io/api/tags
-1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDcxMzY4M30.XsVnHTd4rIbHLfV9BbkW34HFL0GlkLcVXToSS4QT7-I
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDc4Njk5N30.bp5HuWiI8lalItTCfSHqo7CGzWcJP2WXZgKqkFCRRV8
 1 &gt; Host: conduit.productionready.io
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-18:51:24.514 response time in milliseconds: 1105
+15:13:22.013 response time in milliseconds: 4336
 1 &lt; 200
-1 &lt; Date: Tue, 27 Apr 2021 13:21:24 GMT
+1 &lt; Date: Wed, 28 Apr 2021 09:43:21 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
 1 &lt; Cache-Control: max-age=0, private, must-revalidate
-1 &lt; ETag: W/&quot;b0a215c6e0e75ed7dfdd439ca22f90f8&quot;
+1 &lt; ETag: W/&quot;8b50c31abf934d0787d867c799d919c9&quot;
 1 &lt; Status: 200 OK
 1 &lt; Vary: Origin
 1 &lt; X-Content-Type-Options: nosniff
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Powered-By: Phusion Passenger 4.0.60
-1 &lt; X-Request-Id: 1597a48c-d1bd-4b2b-8bd2-90a52def700e
-1 &lt; X-Runtime: 0.832678
+1 &lt; X-Request-Id: 952be28d-4534-4c10-8c99-aaf5968529a5
+1 &lt; X-Runtime: 3.276095
 1 &lt; X-XSS-Protection: 1; mode=block
 1 &lt; CF-Cache-Status: DYNAMIC
-1 &lt; cf-request-id: 09b516e9f000004b0b990f0000000001
+1 &lt; cf-request-id: 09b9759c5e0000f8dfe3897000000001
 1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-1 &lt; Report-To: {&quot;max_age&quot;:604800,&quot;group&quot;:&quot;cf-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=N7gG7GKiPExHTkqMxV%2B%2Ft1%2FBI3aaGCEw%2BbOtN%2FgO1GV7iMAKbevoiawroyZLgLf%2Fs%2FocSJw5%2FQ7q%2B01ogGV%2FA6kAnqDEPjDcwDYTOFFBzKLTV9AhOQM%2Bb0HP3w%3D%3D&quot;}]}
-1 &lt; NEL: {&quot;max_age&quot;:604800,&quot;report_to&quot;:&quot;cf-nel&quot;}
+1 &lt; Report-To: {&quot;max_age&quot;:604800,&quot;group&quot;:&quot;cf-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=VLy9pjm6JF1l5q4mu5WscQ%2FuuuO93phy0zUYH38LZQ0SBecgkN7MstfYia1NziDq4ArW7KBg0jKQEYFR%2BT2q5XJmFMTkCdH3VgdadgEZ%2B9kCc77fD63Sm2GxBw%3D%3D&quot;}]}
+1 &lt; NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
 1 &lt; Server: cloudflare
-1 &lt; CF-RAY: 64685a897bd84b0b-HYD
+1 &lt; CF-RAY: 646f5873cb3af8df-NRT
 1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-1 &lt; Set-Cookie: __cfduid=d057bf8e245a2112fb675ad084d521d7a1619529683; Max-Age=1622121683000; Expires=Sat, 24 Apr 53424 01:44:44 GMT; Domain=productionready.io
-{&quot;tags&quot;:[&quot;\u200C&quot;,&quot;\u200C\u200C&quot;,&quot;\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;HuManIty&quot;,&quot;Hu\u200CMan\u200CIty&quot;,&quot;Gandhi&quot;,&quot;HITLER&quot;,&quot;SIDA&quot;,&quot;BlackLivesMatter&quot;,&quot;Black\u200CLives\u200CMatter&quot;,&quot;test&quot;,&quot;dragons&quot;,&quot;butt&quot;]}
+1 &lt; Connection: Keep-Alive
+1 &lt; Set-Cookie: __cfduid=d7cd07fe3afb42171bd0e9391b32fe18d1619602998; Max-Age=1622194998000; Expires=Mon, 21 Aug 53426 11:23:22 GMT; Domain=productionready.io
+{&quot;tags&quot;:[&quot;\u200C&quot;,&quot;\u200C\u200C&quot;,&quot;\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;HuManIty&quot;,&quot;Hu\u200CMan\u200CIty&quot;,&quot;Gandhi&quot;,&quot;HITLER&quot;,&quot;SIDA&quot;,&quot;BlackLivesMatter&quot;,&quot;Black\u200CLives\u200CMatter&quot;,&quot;test&quot;,&quot;dragons&quot;,&quot;butt&quot;]}
 </div>   
 
   
@@ -504,7 +258,7 @@
         <span>*</span>&nbsp;<span>print response</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -513,15 +267,15 @@
 
   
 
-  <div class="preformatted" data-parent="0.12">18:51:24.517 [print] {
+  <div class="preformatted" data-parent="0.12">15:13:22.019 [print] {
   &quot;tags&quot;: [
     &quot;\u200C&quot;,
     &quot;\u200C\u200C&quot;,
     &quot;\u200C\u200C\u200C&quot;,
     &quot;\u200C\u200C\u200C\u200C&quot;,
-    &quot;\u200C\u200C\u200C\u200C\u200C&quot;,
     &quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,
     &quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,
+    &quot;\u200C\u200C\u200C\u200C\u200C&quot;,
     &quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,
     &quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,
     &quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,
@@ -558,7 +312,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1166</span>
+              <span>ms:</span>&nbsp;<span>5057</span>
             </div>
           </div>
           <div class="step-row">
@@ -590,7 +344,8 @@
 
   
 
-  <div class="preformatted" data-parent="0.5">18:51:24.546 karate.env system property was: null 
+  <div class="preformatted" data-parent="0.5">15:13:13.514 karate.env system property was: qa 
+15:13:17.435 this thread waited 2263 milliseconds for callSingle lock: classpath:com/karate/helpers/CreateToken.feature
 </div>   
 
   
@@ -610,7 +365,7 @@
         <span>Given</span>&nbsp;<span>path &#39;/api/articles&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">7</div>
   </div>
 
    
@@ -638,7 +393,7 @@
         <span>And</span>&nbsp;<span>param limit = 10</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -691,10 +446,10 @@
       <div class="step-ref passed">19</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
+        <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">1163</div>
+    <div class="time-cell passed">5047</div>
   </div>
 
    
@@ -703,41 +458,41 @@
 
   
 
-  <div class="preformatted" data-parent="0.19">18:51:24.580 request:
+  <div class="preformatted" data-parent="0.19">15:13:17.698 request:
 1 &gt; GET https://conduit.productionready.io/api/articles?offset=0&amp;limit=10
-1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDcxMzY4M30.XsVnHTd4rIbHLfV9BbkW34HFL0GlkLcVXToSS4QT7-I
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDc4Njk5N30.bp5HuWiI8lalItTCfSHqo7CGzWcJP2WXZgKqkFCRRV8
 1 &gt; Host: conduit.productionready.io
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-18:51:25.725 response time in milliseconds: 1143
+15:13:22.718 response time in milliseconds: 5010
 1 &lt; 200
-1 &lt; Date: Tue, 27 Apr 2021 13:21:25 GMT
+1 &lt; Date: Wed, 28 Apr 2021 09:43:22 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
 1 &lt; Cache-Control: max-age=0, private, must-revalidate
-1 &lt; ETag: W/&quot;8352c3c2d241050bbea62e2de35db3ab&quot;
+1 &lt; ETag: W/&quot;0a65b8e0c00fbb5928093de05364f5e7&quot;
 1 &lt; Status: 200 OK
 1 &lt; Vary: Origin
 1 &lt; X-Content-Type-Options: nosniff
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Powered-By: Phusion Passenger 4.0.60
-1 &lt; X-Request-Id: 3190a6bb-a93a-4ad6-b2f8-dd22071b9e03
-1 &lt; X-Runtime: 0.620169
+1 &lt; X-Request-Id: 0c86e7ba-f077-437d-a2b7-c91e636798c8
+1 &lt; X-Runtime: 3.954666
 1 &lt; X-XSS-Protection: 1; mode=block
 1 &lt; CF-Cache-Status: DYNAMIC
-1 &lt; cf-request-id: 09b516ee8600004ae19c3a4000000001
+1 &lt; cf-request-id: 09b9759c5b00000ae4cbb22000000001
 1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=MY7zkP99YCwZsxDfnAu5J8XEXIFEupp7eUD06ejc0q5xhWQqDAxTYUU108JYg7Dpgr6%2F72U1DxNGU1VrEonytobPjcr5w55e5gBUCUdrxEBtlDjkgqW0pBwYMQ%3D%3D&quot;}],&quot;max_age&quot;:604800}
-1 &lt; NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=4k3dr0zuZLyes9VB00oYSM3P9jthcPNymFhNPyIuyTd%2Bt%2Bo6eQLFmFSVeAd7pXnPs2LN6majVOQDXYrUaH9SSi5i73yDT1wVJQSvOjAf0748mHmV8u21mpZV7A%3D%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; NEL: {&quot;max_age&quot;:604800,&quot;report_to&quot;:&quot;cf-nel&quot;}
 1 &lt; Server: cloudflare
-1 &lt; CF-RAY: 64685a90dafd4ae1-HYD
+1 &lt; CF-RAY: 646f5873c93a0ae4-NRT
 1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-1 &lt; Set-Cookie: __cfduid=d879eebdf53d8b118852641d9046674bf1619529684; Max-Age=1622121684000; Expires=Sat, 24 Apr 53424 02:01:25 GMT; Domain=productionready.io
-{&quot;articlesCount&quot;:500,&quot;articles&quot;:[{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:38.858Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;nikica&quot;},&quot;description&quot;:&quot;Example for blog article&quot;,&quot;title&quot;:&quot;Primer&quot;,&quot;body&quot;:&quot;This examples is only for testing app created in Angular Js.&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;primer-2uhrb1&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:38.858Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:33.349Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-cafam0&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:33.349Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:31.726Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-j8wchb&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:31.726Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:30.693Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-5spgdt&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:30.693Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:29.276Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-5857li&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:29.276Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:27.834Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-9s5ozv&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:27.834Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:25.824Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-237si9&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:25.824Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:24.665Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-d9dwe1&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:24.665Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:15:42.380Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;&quot;,&quot;following&quot;:false,&quot;bio&quot;:&quot;HIHIHI1&quot;,&quot;username&quot;:&quot;hehe12345&quot;},&quot;description&quot;:&quot;123&quot;,&quot;title&quot;:&quot;123&quot;,&quot;body&quot;:&quot;123&quot;,&quot;favoritesCount&quot;:1,&quot;slug&quot;:&quot;123-xmrdk4&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:15:42.380Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:15:38.018Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;&quot;,&quot;following&quot;:false,&quot;bio&quot;:&quot;HIHIHI1&quot;,&quot;username&quot;:&quot;hehe12345&quot;},&quot;description&quot;:&quot;123&quot;,&quot;title&quot;:&quot;123&quot;,&quot;body&quot;:&quot;123&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;123-vn3o2p&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:15:38.018Z&quot;,&quot;favorited&quot;:false}]}
+1 &lt; Connection: Keep-Alive
+1 &lt; Set-Cookie: __cfduid=d73252a23e9962e8d5e07d55a3ade47031619602998; Max-Age=1622194998000; Expires=Mon, 21 Aug 53426 11:23:22 GMT; Domain=productionready.io
+{&quot;articlesCount&quot;:500,&quot;articles&quot;:[{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:42:05.096Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;jure&quot;},&quot;description&quot;:&quot;Test Description&quot;,&quot;title&quot;:&quot;Test Title&quot;,&quot;body&quot;:&quot;Test Article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-title-mw1e2h&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:42:05.096Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:02.508Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-jjgkka&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:02.508Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:01.211Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-d4bb8b&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:01.211Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:01.107Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-niijof&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:01.107Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:00.600Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-tiqo5p&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:00.600Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:00.446Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-rn58f5&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:00.446Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:40:59.736Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-a4s568&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:40:59.736Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:40:58.271Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-1l4d87&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:40:58.271Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:40:04.773Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-ur8ffd&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:40:04.773Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:40:02.744Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-vy0x10&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:40:02.744Z&quot;,&quot;favorited&quot;:false}]}
 </div>   
 
   
@@ -786,7 +541,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>908</span>
+              <span>ms:</span>&nbsp;<span>5058</span>
             </div>
           </div>
           <div class="step-row">
@@ -818,10 +573,286 @@
 
   
 
-  <div class="preformatted" data-parent="0.5">18:51:25.733 karate.env system property was: null 
+  <div class="preformatted" data-parent="0.5">15:13:17.432 &lt;&lt; lock released, cached callSingle: classpath:com/karate/helpers/CreateToken.feature
+</div>   
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.5.0.call">
+        <div class="step-ref bg-step">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">com.karate.helpers.CreateToken</div>
+      </div>
+      <div class="time-cell passed">2131</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.5.0.call">
+    <div class="step-container" id="0.5.0.call.0.5">
+      <div class="step-ref bg-step">5</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print &#39;Hi there&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5.0.call.0.5">15:13:13.520 karate.env system property was: qa 
+15:13:15.171 &gt;&gt; lock acquired, begin callSingle: classpath:com/karate/helpers/CreateToken.feature
+15:13:15.290 [print] Hi there 
 </div>   
 
   
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.5.0.call">
+    <div class="step-container" id="0.5.0.call.0.6">
+      <div class="step-ref bg-step">6</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url &#39;https://conduit.productionready.io&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.5.0.call">
+    <div class="step-container" id="0.5.0.call.0.7">
+      <div class="step-ref bg-step">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>path &#39;/api/users/login&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">24</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.5.0.call">
+    <div class="step-container" id="0.5.0.call.0.8">
+      <div class="step-ref bg-step">8</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request read(&#39;classpath:com/test/resources/Login_Request.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">129</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.5.0.call">
+    <div class="step-container" id="0.5.0.call.0.9">
+      <div class="step-ref bg-step">9</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1965</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5.0.call.0.9">15:13:15.815 request:
+1 &gt; POST https://conduit.productionready.io/api/users/login
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 63
+1 &gt; Host: conduit.productionready.io
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;user&quot;:{&quot;password&quot;:&quot;Ant3m3an!&quot;,&quot;email&quot;:&quot;ravi.gajul@test.com&quot;}}
+
+15:13:17.394 response time in milliseconds: 1556
+1 &lt; 200
+1 &lt; Date: Wed, 28 Apr 2021 09:43:17 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Cache-Control: max-age=0, private, must-revalidate
+1 &lt; ETag: W/&quot;2444c956e5eb1c7edfc8327a823c439f&quot;
+1 &lt; Status: 200 OK
+1 &lt; Vary: Origin
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Powered-By: Phusion Passenger 4.0.60
+1 &lt; X-Request-Id: 00071276-674a-42c6-bfa9-7b3e0b6eb374
+1 &lt; X-Runtime: 0.081208
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; cf-request-id: 09b97596710000efa2e32a9000000001
+1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=Dlgd8tK5CkGnyOreEWizE4%2BzG3rL5U1CSWOt2Far5b8GddOhzE%2B6VNv6Igd4ZbdpMqJT1qVEYgUgaMww4lXMZJkkPKxZick5IHtRG5e2waS5GJgn45MpTCVMJQ%3D%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; NEL: {&quot;max_age&quot;:604800,&quot;report_to&quot;:&quot;cf-nel&quot;}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 646f586a4ab8efa2-NRT
+1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
+1 &lt; Connection: Keep-Alive
+1 &lt; Set-Cookie: __cfduid=d07844b0b8a649c646f7ee72ea53665481619602996; Max-Age=1622194996000; Expires=Mon, 21 Aug 53426 10:49:57 GMT; Domain=productionready.io
+{&quot;user&quot;:{&quot;createdAt&quot;:&quot;2021-04-20T09:54:12.199Z&quot;,&quot;image&quot;:null,&quot;bio&quot;:null,&quot;id&quot;:163903,&quot;email&quot;:&quot;ravi.gajul@test.com&quot;,&quot;updatedAt&quot;:&quot;2021-04-20T09:54:12.212Z&quot;,&quot;username&quot;:&quot;ravigajul&quot;,&quot;token&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDc4Njk5N30.bp5HuWiI8lalItTCfSHqo7CGzWcJP2WXZgKqkFCRRV8&quot;}}
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.5.0.call">
+    <div class="step-container" id="0.5.0.call.0.10">
+      <div class="step-ref bg-step">10</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.5.0.call">
+    <div class="step-container" id="0.5.0.call.0.11">
+      <div class="step-ref bg-step">11</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def authToken = response.user.token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.5.0.call">
+    <div class="step-container" id="0.5.0.call.0.12">
+      <div class="step-ref bg-step">12</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print authToken</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5.0.call.0.12">15:13:17.428 [print] eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDc4Njk5N30.bp5HuWiI8lalItTCfSHqo7CGzWcJP2WXZgKqkFCRRV8 
+</div>   
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
 
 </div>
 </div>
@@ -838,7 +869,7 @@
         <span>Given</span>&nbsp;<span>path &#39;/api/articles&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -866,7 +897,7 @@
         <span>And</span>&nbsp;<span>params { limit: 10, offset: 0 }</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -891,10 +922,10 @@
       <div class="step-ref passed">25</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
+        <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">907</div>
+    <div class="time-cell passed">5054</div>
   </div>
 
    
@@ -903,41 +934,41 @@
 
   
 
-  <div class="preformatted" data-parent="0.25">18:51:25.744 request:
+  <div class="preformatted" data-parent="0.25">15:13:17.698 request:
 1 &gt; GET https://conduit.productionready.io/api/articles?offset=0&amp;limit=10
-1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDcxMzY4M30.XsVnHTd4rIbHLfV9BbkW34HFL0GlkLcVXToSS4QT7-I
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDc4Njk5N30.bp5HuWiI8lalItTCfSHqo7CGzWcJP2WXZgKqkFCRRV8
 1 &gt; Host: conduit.productionready.io
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-18:51:26.647 response time in milliseconds: 902
+15:13:22.717 response time in milliseconds: 5010
 1 &lt; 200
-1 &lt; Date: Tue, 27 Apr 2021 13:21:26 GMT
+1 &lt; Date: Wed, 28 Apr 2021 09:43:22 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
 1 &lt; Cache-Control: max-age=0, private, must-revalidate
-1 &lt; ETag: W/&quot;3d771bcc0515f7645392a9ef02587ee6&quot;
+1 &lt; ETag: W/&quot;0a65b8e0c00fbb5928093de05364f5e7&quot;
 1 &lt; Status: 200 OK
 1 &lt; Vary: Origin
 1 &lt; X-Content-Type-Options: nosniff
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Powered-By: Phusion Passenger 4.0.60
-1 &lt; X-Request-Id: 97f6128b-f37c-434d-93f4-3567423885fa
-1 &lt; X-Runtime: 0.622541
+1 &lt; X-Request-Id: 45aa65a3-bd22-43c5-bedf-2f0d400ab650
+1 &lt; X-Runtime: 3.925644
 1 &lt; X-XSS-Protection: 1; mode=block
 1 &lt; CF-Cache-Status: DYNAMIC
-1 &lt; cf-request-id: 09b516f30e00004b17389c6000000001
+1 &lt; cf-request-id: 09b9759c5e0000953f81395000000001
 1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=Ki%2F0YcJPB7k7hHdGmVamSxP%2FCr8ecguCHjK5Zs%2BBoD85BBhAdwp07Vku0RHr2tLW1MERqnh7x9jUsjzjWYbRG7%2BDNY67w8PLKjz5Ok%2B%2BZSOVgbcESallJ6ZvZQ%3D%3D&quot;}],&quot;max_age&quot;:604800}
+1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=6cOo3bbbudXlLYt6Q9IRtCNKbpANzyERFeOoaCrIRmwTptNXszer0FucGjM2AZ4Vcgvaam%2FAbku5Dg110%2BnQN7%2FqKm4WDZLk%2BjdPSunRwxvreiaUdbpIcA3b2A%3D%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
 1 &lt; NEL: {&quot;max_age&quot;:604800,&quot;report_to&quot;:&quot;cf-nel&quot;}
 1 &lt; Server: cloudflare
-1 &lt; CF-RAY: 64685a981c274b17-HYD
+1 &lt; CF-RAY: 646f5873c9df953f-NRT
 1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-1 &lt; Set-Cookie: __cfduid=d601725edc1fa3f0fd2fea49744109f391619529685; Max-Age=1622121685000; Expires=Sat, 24 Apr 53424 02:18:06 GMT; Domain=productionready.io
-{&quot;articlesCount&quot;:500,&quot;articles&quot;:[{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:38.858Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;nikica&quot;},&quot;description&quot;:&quot;Example for blog article&quot;,&quot;title&quot;:&quot;Primer&quot;,&quot;body&quot;:&quot;This examples is only for testing app created in Angular Js.&quot;,&quot;favoritesCount&quot;:1,&quot;slug&quot;:&quot;primer-2uhrb1&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:38.858Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:33.349Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-cafam0&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:33.349Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:31.726Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-j8wchb&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:31.726Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:30.693Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-5spgdt&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:30.693Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:29.276Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-5857li&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:29.276Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:27.834Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-9s5ozv&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:27.834Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:25.824Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-237si9&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:25.824Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:24.665Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-d9dwe1&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:24.665Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:15:42.380Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;&quot;,&quot;following&quot;:false,&quot;bio&quot;:&quot;HIHIHI1&quot;,&quot;username&quot;:&quot;hehe12345&quot;},&quot;description&quot;:&quot;123&quot;,&quot;title&quot;:&quot;123&quot;,&quot;body&quot;:&quot;123&quot;,&quot;favoritesCount&quot;:1,&quot;slug&quot;:&quot;123-xmrdk4&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:15:42.380Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:15:38.018Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;&quot;,&quot;following&quot;:false,&quot;bio&quot;:&quot;HIHIHI1&quot;,&quot;username&quot;:&quot;hehe12345&quot;},&quot;description&quot;:&quot;123&quot;,&quot;title&quot;:&quot;123&quot;,&quot;body&quot;:&quot;123&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;123-vn3o2p&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:15:38.018Z&quot;,&quot;favorited&quot;:false}]}
+1 &lt; Connection: Keep-Alive
+1 &lt; Set-Cookie: __cfduid=dd42c964cf7960a7916a9b7a7fcda79bb1619602998; Max-Age=1622194998000; Expires=Mon, 21 Aug 53426 11:23:22 GMT; Domain=productionready.io
+{&quot;articlesCount&quot;:500,&quot;articles&quot;:[{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:42:05.096Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;jure&quot;},&quot;description&quot;:&quot;Test Description&quot;,&quot;title&quot;:&quot;Test Title&quot;,&quot;body&quot;:&quot;Test Article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-title-mw1e2h&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:42:05.096Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:02.508Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-jjgkka&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:02.508Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:01.211Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-d4bb8b&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:01.211Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:01.107Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-niijof&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:01.107Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:00.600Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-tiqo5p&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:00.600Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:00.446Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-rn58f5&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:00.446Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:40:59.736Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-a4s568&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:40:59.736Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:40:58.271Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-1l4d87&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:40:58.271Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:40:04.773Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-ur8ffd&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:40:04.773Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:40:02.744Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-vy0x10&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:40:02.744Z&quot;,&quot;favorited&quot;:false}]}
 </div>   
 
   
@@ -986,7 +1017,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1542</span>
+              <span>ms:</span>&nbsp;<span>4466</span>
             </div>
           </div>
           <div class="step-row">
@@ -1018,7 +1049,8 @@
 
   
 
-  <div class="preformatted" data-parent="0.5">18:51:26.655 karate.env system property was: null 
+  <div class="preformatted" data-parent="0.5">15:13:13.514 karate.env system property was: qa 
+15:13:17.436 this thread waited 2266 milliseconds for callSingle lock: classpath:com/karate/helpers/CreateToken.feature
 </div>   
 
   
@@ -1038,7 +1070,7 @@
         <span>Given</span>&nbsp;<span>path &#39;/api/tags&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1063,10 +1095,10 @@
       <div class="step-ref passed">30</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
+        <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">1533</div>
+    <div class="time-cell passed">4464</div>
   </div>
 
    
@@ -1075,41 +1107,41 @@
 
   
 
-  <div class="preformatted" data-parent="0.30">18:51:26.662 request:
+  <div class="preformatted" data-parent="0.30">15:13:17.671 request:
 1 &gt; GET https://conduit.productionready.io/api/tags
-1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDcxMzY4M30.XsVnHTd4rIbHLfV9BbkW34HFL0GlkLcVXToSS4QT7-I
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDc4Njk5N30.bp5HuWiI8lalItTCfSHqo7CGzWcJP2WXZgKqkFCRRV8
 1 &gt; Host: conduit.productionready.io
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-18:51:28.193 response time in milliseconds: 1530
+15:13:22.129 response time in milliseconds: 4457
 1 &lt; 200
-1 &lt; Date: Tue, 27 Apr 2021 13:21:28 GMT
+1 &lt; Date: Wed, 28 Apr 2021 09:43:21 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
 1 &lt; Cache-Control: max-age=0, private, must-revalidate
-1 &lt; ETag: W/&quot;b0a215c6e0e75ed7dfdd439ca22f90f8&quot;
+1 &lt; ETag: W/&quot;8b50c31abf934d0787d867c799d919c9&quot;
 1 &lt; Status: 200 OK
 1 &lt; Vary: Origin
 1 &lt; X-Content-Type-Options: nosniff
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Powered-By: Phusion Passenger 4.0.60
-1 &lt; X-Request-Id: 094d1105-72e3-4a1f-b399-601bdc009df4
-1 &lt; X-Runtime: 1.250913
+1 &lt; X-Request-Id: d72ac30c-2d5e-4907-b28a-ec4132ab7466
+1 &lt; X-Runtime: 3.284006
 1 &lt; X-XSS-Protection: 1; mode=block
 1 &lt; CF-Cache-Status: DYNAMIC
-1 &lt; cf-request-id: 09b516f6a100004af9ee002000000001
+1 &lt; cf-request-id: 09b9759c5a00005ef0002ad000000001
 1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=7fbZ26FQ50292aqIRgbgrFDKasqmDl9HENRNVG4BXQOaSpXa8gzyTZzX4cWey6YEQK9wqQFhk0O%2BNCcCJMjCREcVmL%2BuzGYc67FX7eIpswDKDzr6kFEokpQ09Q%3D%3D&quot;}],&quot;max_age&quot;:604800}
+1 &lt; Report-To: {&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=Ue%2Bqhwkj97TukHHyq%2BnuNPh6lyCYIEsUsWm86QM2vzamiFYGW8725EI1qcPCmDlVtjp9564QzdXXWiZOdqBfYLJD2%2Fjr%2Bgf9Zw%2FnMNemPLsbVeno3mWRqrI%2Fyw%3D%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;}
 1 &lt; NEL: {&quot;max_age&quot;:604800,&quot;report_to&quot;:&quot;cf-nel&quot;}
 1 &lt; Server: cloudflare
-1 &lt; CF-RAY: 64685a9dcf394af9-HYD
+1 &lt; CF-RAY: 646f5873ccb45ef0-NRT
 1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-1 &lt; Set-Cookie: __cfduid=d58870e8acdd96d265ec80e95ccad41841619529686; Max-Age=1622121686000; Expires=Sat, 24 Apr 53424 02:34:48 GMT; Domain=productionready.io
-{&quot;tags&quot;:[&quot;\u200C&quot;,&quot;\u200C\u200C&quot;,&quot;\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;HuManIty&quot;,&quot;Hu\u200CMan\u200CIty&quot;,&quot;Gandhi&quot;,&quot;HITLER&quot;,&quot;SIDA&quot;,&quot;BlackLivesMatter&quot;,&quot;Black\u200CLives\u200CMatter&quot;,&quot;test&quot;,&quot;dragons&quot;,&quot;butt&quot;]}
+1 &lt; Connection: Keep-Alive
+1 &lt; Set-Cookie: __cfduid=d275b5a403c2e8b135bbbbc857f1c5c111619602998; Max-Age=1622194998000; Expires=Mon, 21 Aug 53426 11:23:22 GMT; Domain=productionready.io
+{&quot;tags&quot;:[&quot;\u200C&quot;,&quot;\u200C\u200C&quot;,&quot;\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;HuManIty&quot;,&quot;Hu\u200CMan\u200CIty&quot;,&quot;Gandhi&quot;,&quot;HITLER&quot;,&quot;SIDA&quot;,&quot;BlackLivesMatter&quot;,&quot;Black\u200CLives\u200CMatter&quot;,&quot;test&quot;,&quot;dragons&quot;,&quot;butt&quot;]}
 </div>   
 
   
@@ -1157,7 +1189,7 @@
         <span>And</span>&nbsp;<span>match response.tags contains &#39;Gandhi&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">9</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1186,7 +1218,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1545</span>
+              <span>ms:</span>&nbsp;<span>4363</span>
             </div>
           </div>
           <div class="step-row">
@@ -1218,7 +1250,8 @@
 
   
 
-  <div class="preformatted" data-parent="0.5">18:51:28.213 karate.env system property was: null 
+  <div class="preformatted" data-parent="0.5">15:13:13.520 karate.env system property was: qa 
+15:13:17.437 this thread waited 2267 milliseconds for callSingle lock: classpath:com/karate/helpers/CreateToken.feature
 </div>   
 
   
@@ -1238,7 +1271,7 @@
         <span>Given</span>&nbsp;<span>path &#39;/api/tags&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1263,10 +1296,10 @@
       <div class="step-ref passed">37</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
+        <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">1543</div>
+    <div class="time-cell passed">4288</div>
   </div>
 
    
@@ -1275,41 +1308,41 @@
 
   
 
-  <div class="preformatted" data-parent="0.37">18:51:28.225 request:
+  <div class="preformatted" data-parent="0.37">15:13:17.677 request:
 1 &gt; GET https://conduit.productionready.io/api/tags
-1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDcxMzY4M30.XsVnHTd4rIbHLfV9BbkW34HFL0GlkLcVXToSS4QT7-I
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDc4Njk5N30.bp5HuWiI8lalItTCfSHqo7CGzWcJP2WXZgKqkFCRRV8
 1 &gt; Host: conduit.productionready.io
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-18:51:29.764 response time in milliseconds: 1539
+15:13:21.955 response time in milliseconds: 4275
 1 &lt; 200
-1 &lt; Date: Tue, 27 Apr 2021 13:21:29 GMT
+1 &lt; Date: Wed, 28 Apr 2021 09:43:21 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
 1 &lt; Cache-Control: max-age=0, private, must-revalidate
-1 &lt; ETag: W/&quot;b0a215c6e0e75ed7dfdd439ca22f90f8&quot;
+1 &lt; ETag: W/&quot;8b50c31abf934d0787d867c799d919c9&quot;
 1 &lt; Status: 200 OK
 1 &lt; Vary: Origin
 1 &lt; X-Content-Type-Options: nosniff
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Powered-By: Phusion Passenger 4.0.60
-1 &lt; X-Request-Id: 1ad72563-686c-4c33-b7a1-f2b589a202ea
-1 &lt; X-Runtime: 1.015289
+1 &lt; X-Request-Id: a01b8bd5-53f1-4951-b8cf-c8469f948598
+1 &lt; X-Runtime: 3.193213
 1 &lt; X-XSS-Protection: 1; mode=block
 1 &lt; CF-Cache-Status: DYNAMIC
-1 &lt; cf-request-id: 09b516fccd00004af252ae7000000001
+1 &lt; cf-request-id: 09b9759c5a00000dfddc2f4000000001
 1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=vKERJ4nQdPEIBWTRvMLdN3pOsyQ7bb91lGBEr6wRS3zUAx8b9wbjqdrpG6QnMR4dQUlN0Xrutm7Dv5324zO9sSQPAZveUqkYqhnEIPpEv3bwOhX0Y8ahY%2Fqn6w%3D%3D&quot;}],&quot;max_age&quot;:604800}
-1 &lt; NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=F2Z9haNGoTyJtyTK5%2F0j6martqUCtFW5EalEx%2FN%2B24j4d5AaSNGQhATqPH0iDJ8%2BgVnFkVvSKES5rEnoRENYxA9PYMzWYgLowosTURjgoBwOJjcAkVJLCfQaXg%3D%3D&quot;}]}
+1 &lt; NEL: {&quot;max_age&quot;:604800,&quot;report_to&quot;:&quot;cf-nel&quot;}
 1 &lt; Server: cloudflare
-1 &lt; CF-RAY: 64685aa7a8894af2-HYD
+1 &lt; CF-RAY: 646f5873cacb0dfd-NRT
 1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-1 &lt; Set-Cookie: __cfduid=ddbb4e2930d5b84d13d7a891da57862901619529688; Max-Age=1622121688000; Expires=Sat, 24 Apr 53424 03:08:09 GMT; Domain=productionready.io
-{&quot;tags&quot;:[&quot;\u200C&quot;,&quot;\u200C\u200C&quot;,&quot;\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;HuManIty&quot;,&quot;Hu\u200CMan\u200CIty&quot;,&quot;Gandhi&quot;,&quot;HITLER&quot;,&quot;SIDA&quot;,&quot;BlackLivesMatter&quot;,&quot;Black\u200CLives\u200CMatter&quot;,&quot;test&quot;,&quot;dragons&quot;,&quot;butt&quot;]}
+1 &lt; Connection: Keep-Alive
+1 &lt; Set-Cookie: __cfduid=d0d3176650602eee3d69352aadeb09c431619602998; Max-Age=1622194998000; Expires=Mon, 21 Aug 53426 11:23:21 GMT; Domain=productionready.io
+{&quot;tags&quot;:[&quot;\u200C&quot;,&quot;\u200C\u200C&quot;,&quot;\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;HuManIty&quot;,&quot;Hu\u200CMan\u200CIty&quot;,&quot;Gandhi&quot;,&quot;HITLER&quot;,&quot;SIDA&quot;,&quot;BlackLivesMatter&quot;,&quot;Black\u200CLives\u200CMatter&quot;,&quot;test&quot;,&quot;dragons&quot;,&quot;butt&quot;]}
 </div>   
 
   
@@ -1357,7 +1390,7 @@
         <span>And</span>&nbsp;<span>match response.tags contains [&#39;Gandhi&#39;, &#39;dragons&#39;]</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">72</div>
   </div>
 
    
@@ -1414,7 +1447,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1342</span>
+              <span>ms:</span>&nbsp;<span>3890</span>
             </div>
           </div>
           <div class="step-row">
@@ -1446,7 +1479,7 @@
 
   
 
-  <div class="preformatted" data-parent="0.5">18:51:29.774 karate.env system property was: null 
+  <div class="preformatted" data-parent="0.5">15:13:22.038 karate.env system property was: qa 
 </div>   
 
   
@@ -1466,7 +1499,7 @@
         <span>Given</span>&nbsp;<span>path &#39;/api/tags&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1491,10 +1524,10 @@
       <div class="step-ref passed">44</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
+        <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">1337</div>
+    <div class="time-cell passed">3888</div>
   </div>
 
    
@@ -1503,41 +1536,41 @@
 
   
 
-  <div class="preformatted" data-parent="0.44">18:51:29.788 request:
+  <div class="preformatted" data-parent="0.44">15:13:22.064 request:
 1 &gt; GET https://conduit.productionready.io/api/tags
-1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDcxMzY4M30.XsVnHTd4rIbHLfV9BbkW34HFL0GlkLcVXToSS4QT7-I
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDc4Njk5N30.bp5HuWiI8lalItTCfSHqo7CGzWcJP2WXZgKqkFCRRV8
 1 &gt; Host: conduit.productionready.io
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-18:51:31.117 response time in milliseconds: 1327
+15:13:25.948 response time in milliseconds: 3882
 1 &lt; 200
-1 &lt; Date: Tue, 27 Apr 2021 13:21:31 GMT
+1 &lt; Date: Wed, 28 Apr 2021 09:43:25 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
 1 &lt; Cache-Control: max-age=0, private, must-revalidate
-1 &lt; ETag: W/&quot;b0a215c6e0e75ed7dfdd439ca22f90f8&quot;
+1 &lt; ETag: W/&quot;8b50c31abf934d0787d867c799d919c9&quot;
 1 &lt; Status: 200 OK
 1 &lt; Vary: Origin
 1 &lt; X-Content-Type-Options: nosniff
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Powered-By: Phusion Passenger 4.0.60
-1 &lt; X-Request-Id: 5bd42eb2-b6c7-43df-a569-d38e9664365b
-1 &lt; X-Runtime: 0.806389
+1 &lt; X-Request-Id: 80bae145-dc5a-48c2-ad48-d0e7473bca1a
+1 &lt; X-Runtime: 2.926702
 1 &lt; X-XSS-Protection: 1; mode=block
 1 &lt; CF-Cache-Status: DYNAMIC
-1 &lt; cf-request-id: 09b51702da00004b047f2bf000000001
+1 &lt; cf-request-id: 09b975ad190000f8df2780d000000001
 1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=vLHKTRAnN2OfUHJw9hk5xRctMYDyuj1UMMB%2Fg9Cr2NJPX3uQHfA1hEyctBnfxepPzTvTjn4iQCaLhi9TgKYId9j6s69b4Z3YhHZciCTbzIKNPri1Zly39gNOJQ%3D%3D&quot;}],&quot;max_age&quot;:604800,&quot;group&quot;:&quot;cf-nel&quot;}
+1 &lt; Report-To: {&quot;max_age&quot;:604800,&quot;group&quot;:&quot;cf-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=LlknSVHrmTUiN8f43LD09F3Oce9JIARaBIw5I7sG7imSFGV5akapwEp6P%2BxHBQr8%2FEYPDDrL3XhtnhjK%2Fmf0jbawivu5FMosO9SuLnxp06Q01RJp171znd%2FOvw%3D%3D&quot;}]}
 1 &lt; NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
 1 &lt; Server: cloudflare
-1 &lt; CF-RAY: 64685ab158c14b04-HYD
+1 &lt; CF-RAY: 646f588e8b6cf8df-NRT
 1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-1 &lt; Set-Cookie: __cfduid=d52f471b17045a5ea560d84dd1d994fb61619529689; Max-Age=1622121689000; Expires=Sat, 24 Apr 53424 03:24:51 GMT; Domain=productionready.io
-{&quot;tags&quot;:[&quot;\u200C&quot;,&quot;\u200C\u200C&quot;,&quot;\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;HuManIty&quot;,&quot;Hu\u200CMan\u200CIty&quot;,&quot;Gandhi&quot;,&quot;HITLER&quot;,&quot;SIDA&quot;,&quot;BlackLivesMatter&quot;,&quot;Black\u200CLives\u200CMatter&quot;,&quot;test&quot;,&quot;dragons&quot;,&quot;butt&quot;]}
+1 &lt; Connection: Keep-Alive
+1 &lt; Set-Cookie: __cfduid=d4b123597edb2e1a90f1e1bc3ec29ed271619603002; Max-Age=1622195002000; Expires=Mon, 21 Aug 53426 12:30:05 GMT; Domain=productionready.io
+{&quot;tags&quot;:[&quot;\u200C&quot;,&quot;\u200C\u200C&quot;,&quot;\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;HuManIty&quot;,&quot;Hu\u200CMan\u200CIty&quot;,&quot;Gandhi&quot;,&quot;HITLER&quot;,&quot;SIDA&quot;,&quot;BlackLivesMatter&quot;,&quot;Black\u200CLives\u200CMatter&quot;,&quot;test&quot;,&quot;dragons&quot;,&quot;butt&quot;]}
 </div>   
 
   
@@ -1585,7 +1618,7 @@
         <span>And</span>&nbsp;<span>match response.tags == &#39;#array&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -1614,7 +1647,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1389</span>
+              <span>ms:</span>&nbsp;<span>3858</span>
             </div>
           </div>
           <div class="step-row">
@@ -1646,7 +1679,7 @@
 
   
 
-  <div class="preformatted" data-parent="0.5">18:51:31.135 karate.env system property was: null 
+  <div class="preformatted" data-parent="0.5">15:13:22.056 karate.env system property was: qa 
 </div>   
 
   
@@ -1666,7 +1699,7 @@
         <span>Given</span>&nbsp;<span>path &#39;/api/tags&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1691,10 +1724,10 @@
       <div class="step-ref passed">50</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
+        <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">1385</div>
+    <div class="time-cell passed">3852</div>
   </div>
 
    
@@ -1703,41 +1736,41 @@
 
   
 
-  <div class="preformatted" data-parent="0.50">18:51:31.142 request:
+  <div class="preformatted" data-parent="0.50">15:13:22.077 request:
 1 &gt; GET https://conduit.productionready.io/api/tags
-1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDcxMzY4M30.XsVnHTd4rIbHLfV9BbkW34HFL0GlkLcVXToSS4QT7-I
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDc4Njk5N30.bp5HuWiI8lalItTCfSHqo7CGzWcJP2WXZgKqkFCRRV8
 1 &gt; Host: conduit.productionready.io
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-18:51:32.523 response time in milliseconds: 1381
+15:13:25.924 response time in milliseconds: 3844
 1 &lt; 200
-1 &lt; Date: Tue, 27 Apr 2021 13:21:32 GMT
+1 &lt; Date: Wed, 28 Apr 2021 09:43:25 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
 1 &lt; Cache-Control: max-age=0, private, must-revalidate
-1 &lt; ETag: W/&quot;b0a215c6e0e75ed7dfdd439ca22f90f8&quot;
+1 &lt; ETag: W/&quot;8b50c31abf934d0787d867c799d919c9&quot;
 1 &lt; Status: 200 OK
 1 &lt; Vary: Origin
 1 &lt; X-Content-Type-Options: nosniff
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Powered-By: Phusion Passenger 4.0.60
-1 &lt; X-Request-Id: e3d32130-9e64-415b-899e-8180e3d577e5
-1 &lt; X-Runtime: 0.859784
+1 &lt; X-Request-Id: 5d65f263-8020-4301-a0fc-09ac4ccca4e8
+1 &lt; X-Runtime: 2.872791
 1 &lt; X-XSS-Protection: 1; mode=block
 1 &lt; CF-Cache-Status: DYNAMIC
-1 &lt; cf-request-id: 09b517083100004b0475b43000000001
+1 &lt; cf-request-id: 09b975ad2f00005f4c1cb1b000000001
 1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=KJH7FNYhAy75uqZphR8toSBVuR3p3HKMykAom1hh6HOker7eaB8roKT8FoeR4Y%2FYH%2BXWLKH2cjI4Uhp7wBOd%2BR5wwI%2ByBnS5g8wwSikL4xtsYEWmI3nq695AQQ%3D%3D&quot;}],&quot;max_age&quot;:604800,&quot;group&quot;:&quot;cf-nel&quot;}
-1 &lt; NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=F%2BViXkX9Jd6dADVhfQoI%2FwbhKXHDoSXpq3VcooyEmLh8fzIHn0SFZlKpofApy2b9%2BgGi8%2FmceduONA255D5vdMiC7y039DgzqJ1MRGwxoAblHCSSxqsrsPp1bQ%3D%3D&quot;}]}
+1 &lt; NEL: {&quot;max_age&quot;:604800,&quot;report_to&quot;:&quot;cf-nel&quot;}
 1 &lt; Server: cloudflare
-1 &lt; CF-RAY: 64685ab9ee084b04-HYD
+1 &lt; CF-RAY: 646f588ebe425f4c-NRT
 1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-1 &lt; Set-Cookie: __cfduid=de7a53256eb638c70871ccb51f6707c3a1619529691; Max-Age=1622121691000; Expires=Sat, 24 Apr 53424 03:58:12 GMT; Domain=productionready.io
-{&quot;tags&quot;:[&quot;\u200C&quot;,&quot;\u200C\u200C&quot;,&quot;\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;HuManIty&quot;,&quot;Hu\u200CMan\u200CIty&quot;,&quot;Gandhi&quot;,&quot;HITLER&quot;,&quot;SIDA&quot;,&quot;BlackLivesMatter&quot;,&quot;Black\u200CLives\u200CMatter&quot;,&quot;test&quot;,&quot;dragons&quot;,&quot;butt&quot;]}
+1 &lt; Connection: Keep-Alive
+1 &lt; Set-Cookie: __cfduid=d33ae5f006292c84951a3ff6d3a3e44f01619603002; Max-Age=1622195002000; Expires=Mon, 21 Aug 53426 12:30:05 GMT; Domain=productionready.io
+{&quot;tags&quot;:[&quot;\u200C&quot;,&quot;\u200C\u200C&quot;,&quot;\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;HuManIty&quot;,&quot;Hu\u200CMan\u200CIty&quot;,&quot;Gandhi&quot;,&quot;HITLER&quot;,&quot;SIDA&quot;,&quot;BlackLivesMatter&quot;,&quot;Black\u200CLives\u200CMatter&quot;,&quot;test&quot;,&quot;dragons&quot;,&quot;butt&quot;]}
 </div>   
 
   
@@ -1785,7 +1818,7 @@
         <span>And</span>&nbsp;<span>match response.tags[0] == &#39;#string&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -1814,7 +1847,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1328</span>
+              <span>ms:</span>&nbsp;<span>3881</span>
             </div>
           </div>
           <div class="step-row">
@@ -1846,7 +1879,7 @@
 
   
 
-  <div class="preformatted" data-parent="0.5">18:51:32.540 karate.env system property was: null 
+  <div class="preformatted" data-parent="0.5">15:13:22.145 karate.env system property was: qa 
 </div>   
 
   
@@ -1891,10 +1924,10 @@
       <div class="step-ref passed">57</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
+        <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">1321</div>
+    <div class="time-cell passed">3859</div>
   </div>
 
    
@@ -1903,41 +1936,41 @@
 
   
 
-  <div class="preformatted" data-parent="0.57">18:51:32.546 request:
+  <div class="preformatted" data-parent="0.57">15:13:22.168 request:
 1 &gt; GET https://conduit.productionready.io/api/tags
-1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDcxMzY4M30.XsVnHTd4rIbHLfV9BbkW34HFL0GlkLcVXToSS4QT7-I
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDc4Njk5N30.bp5HuWiI8lalItTCfSHqo7CGzWcJP2WXZgKqkFCRRV8
 1 &gt; Host: conduit.productionready.io
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-18:51:33.866 response time in milliseconds: 1319
+15:13:26.022 response time in milliseconds: 3852
 1 &lt; 200
-1 &lt; Date: Tue, 27 Apr 2021 13:21:33 GMT
+1 &lt; Date: Wed, 28 Apr 2021 09:43:25 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
 1 &lt; Cache-Control: max-age=0, private, must-revalidate
-1 &lt; ETag: W/&quot;b0a215c6e0e75ed7dfdd439ca22f90f8&quot;
+1 &lt; ETag: W/&quot;8b50c31abf934d0787d867c799d919c9&quot;
 1 &lt; Status: 200 OK
 1 &lt; Vary: Origin
 1 &lt; X-Content-Type-Options: nosniff
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Powered-By: Phusion Passenger 4.0.60
-1 &lt; X-Request-Id: ff0aa50a-b457-4187-a780-1c9dc83b2e8c
-1 &lt; X-Runtime: 0.814825
+1 &lt; X-Request-Id: 216acb5b-b931-49b8-be11-b8ccc4513323
+1 &lt; X-Runtime: 2.879117
 1 &lt; X-XSS-Protection: 1; mode=block
 1 &lt; CF-Cache-Status: DYNAMIC
-1 &lt; cf-request-id: 09b5170d9e00004b0a59298000000001
+1 &lt; cf-request-id: 09b975ad8900000b9fb5281000000001
 1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=%2Fky%2BMYK5eBP8gfQOmBjVq11aVGehH%2FtsU9sznHFIoJOwl%2Fk4UhKQDUaST5gjpIGX5xgjx%2BwaKcaDkoJzU4z8dCgFHP8dwh7bhMNiQrtSRNzqkZ517l%2FG944gxQ%3D%3D&quot;}]}
+1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=9%2Fet%2ByxljkXxLbF9OhEmM0dpF6HE5JtcHrW%2BCuCAl9cKrsKK3mk2dZPe%2FyMjkRMgL4UXGz%2FtM%2BAUUjiHOvngvqByJiXzSAjybWf6z%2B%2FYiSgeHKHhrDaXEKiolQ%3D%3D&quot;}],&quot;max_age&quot;:604800,&quot;group&quot;:&quot;cf-nel&quot;}
 1 &lt; NEL: {&quot;max_age&quot;:604800,&quot;report_to&quot;:&quot;cf-nel&quot;}
 1 &lt; Server: cloudflare
-1 &lt; CF-RAY: 64685ac29a494b0a-HYD
+1 &lt; CF-RAY: 646f588f4eb70b9f-NRT
 1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-1 &lt; Set-Cookie: __cfduid=d0ca0f33acd88e2175f783e1cd7a43de81619529692; Max-Age=1622121692000; Expires=Sat, 24 Apr 53424 04:14:53 GMT; Domain=productionready.io
-{&quot;tags&quot;:[&quot;\u200C&quot;,&quot;\u200C\u200C&quot;,&quot;\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;HuManIty&quot;,&quot;Hu\u200CMan\u200CIty&quot;,&quot;Gandhi&quot;,&quot;HITLER&quot;,&quot;SIDA&quot;,&quot;BlackLivesMatter&quot;,&quot;Black\u200CLives\u200CMatter&quot;,&quot;test&quot;,&quot;dragons&quot;,&quot;butt&quot;]}
+1 &lt; Connection: Keep-Alive
+1 &lt; Set-Cookie: __cfduid=d5a08a28856caf16731f837a410dd16621619603002; Max-Age=1622195002000; Expires=Mon, 21 Aug 53426 12:30:06 GMT; Domain=productionready.io
+{&quot;tags&quot;:[&quot;\u200C&quot;,&quot;\u200C\u200C&quot;,&quot;\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C\u200C&quot;,&quot;HuManIty&quot;,&quot;Hu\u200CMan\u200CIty&quot;,&quot;Gandhi&quot;,&quot;HITLER&quot;,&quot;SIDA&quot;,&quot;BlackLivesMatter&quot;,&quot;Black\u200CLives\u200CMatter&quot;,&quot;test&quot;,&quot;dragons&quot;,&quot;butt&quot;]}
 </div>   
 
   
@@ -1985,7 +2018,7 @@
         <span>And</span>&nbsp;<span>match each response.tags == &#39;#string&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">22</div>
   </div>
 
    
@@ -2014,7 +2047,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1099</span>
+              <span>ms:</span>&nbsp;<span>4011</span>
             </div>
           </div>
           <div class="step-row">
@@ -2046,7 +2079,7 @@
 
   
 
-  <div class="preformatted" data-parent="0.5">18:51:33.879 karate.env system property was: null 
+  <div class="preformatted" data-parent="0.5">15:13:22.753 karate.env system property was: qa 
 </div>   
 
   
@@ -2066,7 +2099,7 @@
         <span>Given</span>&nbsp;<span>path &#39;/api/articles&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2119,10 +2152,10 @@
       <div class="step-ref passed">64</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
+        <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">1094</div>
+    <div class="time-cell passed">4000</div>
   </div>
 
    
@@ -2131,41 +2164,41 @@
 
   
 
-  <div class="preformatted" data-parent="0.64">18:51:33.890 request:
+  <div class="preformatted" data-parent="0.64">15:13:22.773 request:
 1 &gt; GET https://conduit.productionready.io/api/articles?offset=0&amp;limit=10
-1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDcxMzY4M30.XsVnHTd4rIbHLfV9BbkW34HFL0GlkLcVXToSS4QT7-I
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzOTAzLCJ1c2VybmFtZSI6InJhdmlnYWp1bCIsImV4cCI6MTYyNDc4Njk5N30.bp5HuWiI8lalItTCfSHqo7CGzWcJP2WXZgKqkFCRRV8
 1 &gt; Host: conduit.productionready.io
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_261)
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-18:51:34.982 response time in milliseconds: 1091
+15:13:26.762 response time in milliseconds: 3981
 1 &lt; 200
-1 &lt; Date: Tue, 27 Apr 2021 13:21:34 GMT
+1 &lt; Date: Wed, 28 Apr 2021 09:43:26 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
 1 &lt; Cache-Control: max-age=0, private, must-revalidate
-1 &lt; ETag: W/&quot;3d771bcc0515f7645392a9ef02587ee6&quot;
+1 &lt; ETag: W/&quot;a5d8771cd4bdc25884f9d6db5956a74f&quot;
 1 &lt; Status: 200 OK
 1 &lt; Vary: Origin
 1 &lt; X-Content-Type-Options: nosniff
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Powered-By: Phusion Passenger 4.0.60
-1 &lt; X-Request-Id: 0047228b-1bec-4561-a678-161ea114bf8d
-1 &lt; X-Runtime: 0.563178
+1 &lt; X-Request-Id: a0d5cbf4-7def-4cdb-aad4-7780fc535ac4
+1 &lt; X-Runtime: 2.894260
 1 &lt; X-XSS-Protection: 1; mode=block
 1 &lt; CF-Cache-Status: DYNAMIC
-1 &lt; cf-request-id: 09b51712e500004aec7e18e000000001
+1 &lt; cf-request-id: 09b975b02f00001d9f0699d000000001
 1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
-1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=c2et7dN3zbwUKJaPs46JWgUNKaGaGDFuSAAafXYBay7Rru%2BZn9kAzwpfzDkn6Op%2BIMsbhRhK4XJJVfCoVJZrk3tNLlnqswo%2Fmwpc8q0vKbq%2B4n1K%2Fuw1kJiuIg%3D%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report?s=fZhdSRisSjvDx5XeHAbbWuqXTNbT2fmljyuixY6BQJ2pu72p9l3ImxWUSdIsqA82b5m4XCfaX7OY8GtGJQ0bquXcBnmIwl5fnQPX1AA0VHBhdu3Ed9vZA3GFkA%3D%3D&quot;}],&quot;max_age&quot;:604800}
 1 &lt; NEL: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
 1 &lt; Server: cloudflare
-1 &lt; CF-RAY: 64685acb0a7c4aec-HYD
+1 &lt; CF-RAY: 646f589378a41d9f-NRT
 1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
-1 &lt; Set-Cookie: __cfduid=d299b26fba9622c5bc44d955ecc687a0b1619529693; Max-Age=1622121693000; Expires=Sat, 24 Apr 53424 04:31:34 GMT; Domain=productionready.io
-{&quot;articlesCount&quot;:500,&quot;articles&quot;:[{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:38.858Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;nikica&quot;},&quot;description&quot;:&quot;Example for blog article&quot;,&quot;title&quot;:&quot;Primer&quot;,&quot;body&quot;:&quot;This examples is only for testing app created in Angular Js.&quot;,&quot;favoritesCount&quot;:1,&quot;slug&quot;:&quot;primer-2uhrb1&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:38.858Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:33.349Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-cafam0&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:33.349Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:31.726Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-j8wchb&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:31.726Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:30.693Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-5spgdt&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:30.693Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:29.276Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-5857li&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:29.276Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:27.834Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-9s5ozv&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:27.834Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:25.824Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-237si9&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:25.824Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:20:24.665Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-d9dwe1&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:20:24.665Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:15:42.380Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;&quot;,&quot;following&quot;:false,&quot;bio&quot;:&quot;HIHIHI1&quot;,&quot;username&quot;:&quot;hehe12345&quot;},&quot;description&quot;:&quot;123&quot;,&quot;title&quot;:&quot;123&quot;,&quot;body&quot;:&quot;123&quot;,&quot;favoritesCount&quot;:1,&quot;slug&quot;:&quot;123-xmrdk4&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:15:42.380Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-27T13:15:38.018Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;&quot;,&quot;following&quot;:false,&quot;bio&quot;:&quot;HIHIHI1&quot;,&quot;username&quot;:&quot;hehe12345&quot;},&quot;description&quot;:&quot;123&quot;,&quot;title&quot;:&quot;123&quot;,&quot;body&quot;:&quot;123&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;123-vn3o2p&quot;,&quot;updatedAt&quot;:&quot;2021-04-27T13:15:38.018Z&quot;,&quot;favorited&quot;:false}]}
+1 &lt; Connection: Keep-Alive
+1 &lt; Set-Cookie: __cfduid=d9fab0593485e2382d5eccb4c4c2376ba1619603003; Max-Age=1622195003000; Expires=Mon, 21 Aug 53426 12:46:46 GMT; Domain=productionready.io
+{&quot;articlesCount&quot;:500,&quot;articles&quot;:[{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:43:24.077Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-x2vv23&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:43:24.077Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:42:05.096Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;jure&quot;},&quot;description&quot;:&quot;Test Description&quot;,&quot;title&quot;:&quot;Test Title&quot;,&quot;body&quot;:&quot;Test Article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-title-mw1e2h&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:42:05.096Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:02.508Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-jjgkka&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:02.508Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:01.211Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-d4bb8b&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:01.211Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:01.107Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-niijof&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:01.107Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:00.600Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-tiqo5p&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:00.600Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:41:00.446Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-rn58f5&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:41:00.446Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:40:59.736Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-a4s568&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:40:59.736Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:40:58.271Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-1l4d87&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:40:58.271Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-04-28T09:40:04.773Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;ravigajul&quot;},&quot;description&quot;:&quot;this is test article&quot;,&quot;title&quot;:&quot;test article&quot;,&quot;body&quot;:&quot;he there test article&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;test-article-ur8ffd&quot;,&quot;updatedAt&quot;:&quot;2021-04-28T09:40:04.773Z&quot;,&quot;favorited&quot;:false}]}
 </div>   
 
   
@@ -2213,7 +2246,7 @@
         <span>And</span>&nbsp;<span>match response.articles == &#39;#[10]&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">8</div>
   </div>
 
    
@@ -2241,7 +2274,7 @@
         <span>And</span>&nbsp;<span>match response.articlesCount == 500</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    

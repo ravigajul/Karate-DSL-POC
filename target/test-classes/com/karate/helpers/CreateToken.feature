@@ -1,7 +1,8 @@
 Feature: Feature to create a token as a helper
 
-@login
+  @login
   Scenario: Create Token inline
+    * print 'Hi there'
     Given url 'https://conduit.productionready.io'
     And path '/api/users/login'
     And request read('classpath:com/test/resources/Login_Request.json')
@@ -9,5 +10,3 @@ Feature: Feature to create a token as a helper
     Then status 200
     * def authToken = response.user.token
     * print authToken
-
-   
