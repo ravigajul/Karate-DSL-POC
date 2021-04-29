@@ -4,6 +4,6 @@ Feature: Feature to pass javakeystore and password for ssl issues
 
   @tag1
   Scenario: SSL certificate feature
-  * configure ssl = { trustAll: true, keyStore: '#(keyStoreLocation)', keyStorePassword: 'somePass' }
+  * configure ssl = { trustAll: true, keyStore: '#(keyStoreLocation/file.jks)', keyStorePassword: 'somepassword' }
     
     

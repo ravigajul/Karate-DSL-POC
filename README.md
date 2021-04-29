@@ -79,3 +79,5 @@ This is a karate poc for API testing
 17. Disable SSL verification
 	Karate.configure('ssl', true) for SSL disabling
 
+18. Configure keystore for SSL verification	
+	* configure ssl = { trustAll: true, keyStore: '#(keyStoreLocation)', keyStorePassword: 'somePass' }
