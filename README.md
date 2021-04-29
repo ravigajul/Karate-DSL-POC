@@ -47,3 +47,35 @@ This is a karate poc for API testing
 	    }
 	}
 	""""
+	13. Getting data from Java Class file
+	* def datagenerator = Java.type('classpath:com/karate/helpers/DataGenerator')
+	This will throw 
+	org.graalvm.polyglot.PolyglotException: TypeError: Access to host class classpath:com/karate/helpers/DataGenerator is not allowed or does not exist.
+	- <js>.:program(Unnamed:1)
+	Remove the classpath and it will work
+	* def datagenerator = Java.type('com/karate/helpers/DataGenerator')
+	
+	
+	https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting/5.5.3
+	
+14 . Before Scenario
+	Background : Background keyword works for before each scenario
+	Using callonce to execute only once
+15. After Scenario
+	• Configure afterScenario = call read('classpath:com/test/resources/test.feature')
+	• Configure after
+16. When parallel test builds successfully but doesn't run anything
+	a. https://github.com/intuit/karate/issues/823
+	<!-- <configuration>
+		<argLine>-Dfile.encoding=UTF-8</argLine>
+		<includes>
+			<include>com/karate/features/RunnerTest.java</include>
+		</includes>
+		<systemProperties>
+			<karate.options>--tags ~@ignore</karate.options>
+		</systemProperties>
+	</configuration> -->
+	
+17. Disable SSL verification
+	Karate.configure('ssl', true) for SSL disabling
+
