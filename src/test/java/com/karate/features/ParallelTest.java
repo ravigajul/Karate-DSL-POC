@@ -16,7 +16,10 @@ import org.junit.Test;
     @Test
     public void testParallel() {
     	System.setProperty("karate.env", "qa");
-        Results results = Runner.builder().outputCucumberJson(true).path("classpath:com/karate/features").parallel(5);
+    	//Results results = Runner.path("classpath:com/karate/features").parallel(5);
+    	/*/the above line is throwing INFO: Unexpected error
+    	net.masterthought.cucumber.ValidationException: None report file was added! Hence using the below*/
+       Results results = Runner.builder().outputCucumberJson(true).path("classpath:com/karate/features").tags("~@ignore").parallel(10);
         generateReport(results.getReportDir());
         assertTrue(results.getErrorMessages(), results.getFailCount() == 0);
     }

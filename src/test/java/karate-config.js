@@ -9,8 +9,13 @@ function fn() {
     baseurl: 'https://conduit.productionready.io'
   };
  if (env == 'qa') {
+	 
 	 karate.configure('ssl', true);
-	 karate.configure('readTimeout', 10000);
+	 
+	//SSL keystory and passowrd
+	//karate.configure('ssl', { trustAll: true, keyStore: config.keyStoreLocation, keyStorePassword: 'somePass' });
+	
+	karate.configure('readTimeout', 10000);
     config.useremail= 'rgajul@test.com';
     config.userpassword= 'karate123';
     	
@@ -25,6 +30,8 @@ function fn() {
     
     //reusing 
     config.isValidTime = read('classpath:com/karate/helpers/time-validator.js');
+    
+    
      
   }  else if (env == 'dev') {
 	  config.useremail= 'ravi.gajul@test.com'
