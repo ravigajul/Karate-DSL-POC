@@ -30,13 +30,10 @@ This is a karate poc for API testing
 	def responseToken = callonce read('classpath:com/karate/helpers/CreateToken.feature') {'email': 'ravi.gajul@test.com','password': 'Ant3m3an!'}
 	
 9. Calling feature in config file
-	
-	  //passing feature file and config object to callSingle method which returns an object of variables declared in feature file.        
-	    var accessToken=karate.callSingle('classpath:com/karate/helpers/CreateToken.feature',config).authToken
-	    
-	  //passing global headers that can be used by all urls
+	//passing feature file and config object to callSingle method which returns an object of variables declared in feature file.        
+	    var accessToken=karate.callSingle('classpath:com/karate/helpers/CreateToken.feature',config).authToken	
+	    //passing global headers that can be used by all urls
 	            karate.configure('headers',{Authorization: 'Token ' + accessToken})  
-	
 10. MultiLine Expressions 
 	 Can be used between thriple double quotes like below 
 	"""
@@ -54,7 +51,6 @@ This is a karate poc for API testing
 	- <js>.:program(Unnamed:1)
 	Remove the classpath and it will work
 	* def datagenerator = Java.type('com/karate/helpers/DataGenerator')
-	
 12 . Before Scenario
 	Background : Background keyword works for before each scenario
 	Using callonce to execute only once
@@ -78,3 +74,28 @@ This is a karate poc for API testing
 
 16. Configure keystore for SSL verification	
 	* configure ssl = { trustAll: true, keyStore: '#(keyStoreLocation)', keyStorePassword: 'somePass' }
+	
+17. conditional logic in karate
+    # in the below step article is an object that we are using to retrive slug in AddLikes.feature. 
+    #It wont work if we directly pass the slug value ins callSingle accepts object as parameter
+   * def article = response.articles[0]
+   * if (favouritesCount == 0) karate.callSingle('classpath:com/karate/helpers/AddLikes.feature', article)
+   Another Way
+   * def result = favoritesCount == 0 ? karate.callSingle('classpath:com/karate/helpers/AddLikes.feature',   rticle).likescount:favoritesCount 
+19. Retry Logic
+• * def retry = {count:5, interval: 10000}
+• #the below line should be before method call.
+• And retry until response.articles[0].favoritesCount == 5
+20. Sleep
+a. * def sleep = function(pause){java.lang.Thread.sleep(pause)}
+b. * eval sleep(5000)
+21. Type Conversion
+a. Foo+'' will convert integer(foo) to String
+b.Foo*1 will convert String(foo) to Integer
+c.def json = {"bar": "#(parseInt(boo))"} will parse boo into integer using java script function.
+d.def json = {"bar": "#(~~parseInt(boo))"} will parse boo into int using java script function.
+22. Docker
+a. Build image from Dockerfile
+i. Docker build -t <<name of the container--karatetest>> .
+b. Run the created container karatetest
+Docker run -it karatetest
