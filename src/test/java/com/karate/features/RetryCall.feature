@@ -4,9 +4,9 @@ Feature: Feature to demonstrate retry Logic
 	* url baseurl
   @retrylogic
   Scenario: Retry logic
-  	* def retry = {count:2, interval: 10000}
+  	* configure retry = {count:4, interval: 1000}
     Given path 'api','articles'
     And params {limit: 10, offset: 0}
-    And retry until response.articles[0].favoritesCount == 2
+    And retry until response.articles[0].favoritesCount == 10
     When method GET
     Then status 200
