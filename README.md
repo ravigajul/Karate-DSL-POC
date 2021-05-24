@@ -87,15 +87,15 @@ This is a karate poc for API testing
  	* configure retry = {count:5, interval: 10000} #the below line should be before method call.
  	And retry until response.articles[0].favoritesCount == 5
 # 20. Sleep
-* a. * def sleep = function(pause){java.lang.Thread.sleep(pause)}
-* b. * eval sleep(5000)
+ 	* def sleep = function(pause){java.lang.Thread.sleep(pause)}
+	* eval sleep(5000)
 # 21. Type Conversion
-* a. Foo+'' will convert integer(foo) to String
-* b.Foo*1 will convert String(foo) to Integer
-* c.def json = {"bar": "#(parseInt(boo))"} will parse boo into integer using java script function.
-*vd.def json = {"bar": "#(~~parseInt(boo))"} will parse boo into int using java script function.
+	* Foo+'' will convert integer(foo) to String
+	* b.Foo*1 will convert String(foo) to Integer
+	* c.def json = {"bar": "#(parseInt(boo))"} will parse boo into integer using java script function.
+	* vd.def json = {"bar": "#(~~parseInt(boo))"} will parse boo into int using java script function.
 # 22. Docker
-a. Build image from Dockerfile
-i. Docker build -t <<name of the container--karatetest>> .
-b. Run the created container karatetest
-Docker run -it karatetest
+* a. Build image from Dockerfile
+* i. Docker build -t <<name of the container--karatetest>> .
+* b. Run the created container karatetest
+* Docker run -it karatetest
