@@ -76,12 +76,12 @@ This is a karate poc for API testing
 	* configure ssl = { trustAll: true, keyStore: '#(keyStoreLocation)', keyStorePassword: 'somePass' }
 	
 # 17. conditional logic in karate
-    	#in the below step article is an object that we are using to retrive slug in AddLikes.feature. 
-    	#It wont work if we directly pass the slug value ins callSingle accepts object as parameter
-   	* def article = response.articles[0]
-   	* if (favouritesCount == 0) karate.callSingle('classpath:com/karate/helpers/AddLikes.feature', article)
+    #in the below step article is an object that we are using to retrive slug in AddLikes.feature. 
+    #It wont work if we directly pass the slug value ins callSingle accepts object as parameter
+    * def article = response.articles[0]
+    * if (favouritesCount == 0) karate.callSingle('classpath:com/karate/helpers/AddLikes.feature', article)
     Another Way
-   * def result = favoritesCount == 0 ? karate.callSingle('classpath:com/karate/helpers/AddLikes.feature',   rticle).likescount:favoritesCount 
+    * def result = favoritesCount == 0 ? karate.callSingle('classpath:com/karate/helpers/AddLikes.feature',   rticle).likescount:favoritesCount 
   
 # 19. Retry Logic
  	* configure retry = {count:5, interval: 10000} #the below line should be before method call.
