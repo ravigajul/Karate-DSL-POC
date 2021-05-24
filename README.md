@@ -96,6 +96,6 @@ This is a karate poc for API testing
 	* vd.def json = {"bar": "#(~~parseInt(boo))"} will parse boo into int using java script function.
 # 22. Docker
 ## a. Build image from Dockerfile
-* Docker build -t <name of the container--karatetest> .
+* Docker build -t "name of the container--karatetest" .
 ## b. Run the created container karatetest
 * Docker run -it karatetest
