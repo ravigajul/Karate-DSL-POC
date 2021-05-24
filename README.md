@@ -84,7 +84,7 @@ This is a karate poc for API testing
    * def result = favoritesCount == 0 ? karate.callSingle('classpath:com/karate/helpers/AddLikes.feature',   rticle).likescount:favoritesCount 
    """
 # 19. Retry Logic
-• * def retry = {count:5, interval: 10000}
+• * configure retry = {count:5, interval: 10000}
 • #the below line should be before method call.
 • And retry until response.articles[0].favoritesCount == 5
 # 20. Sleep
