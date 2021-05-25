@@ -5,7 +5,7 @@ Feature: Feature to demonstrate retrieval of current date time stamp and add it 
   @timestamp
   Scenario: Retrieve and put current date and time stamp
   	* def requestbody = { "TIME_STAMP": ""}
-  	* def currentdatetimestamp = call read('classpath:com/karate/helpers/timestamp-generator.js')
+  	* def currentdatetimestamp = call read('classpath:com/javascript/utils/timestamp-generator.js')
   	* print currentdatetimestamp
   	* requestbody['TIME_STAMP'] = currentdatetimestamp
   	* print requestbody

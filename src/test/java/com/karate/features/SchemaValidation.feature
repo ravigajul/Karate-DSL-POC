@@ -12,7 +12,7 @@ Feature: Feature to demonstrate the schema validation
 @schemavalidation
  # mvn test "-Dkarate.options=--tags @schemavalidation"
   Scenario: To demonstrate schema validation by externalization.
-  	* def isValidTime = read('classpath:com/karate/helpers/time-validator.js')
+  	* def isValidTime = read('classpath:com/javascript/utils/time-validator.js')
     Given path '/api/articles/'
     And header Authorization = 'Token ' + authtoken
     And request {"article":{"tagList":[],"title":"test article","description":"this is test article","body":"he there test article"}}
@@ -26,7 +26,7 @@ Feature: Feature to demonstrate the schema validation
   @schemavalidation
  # mvn test "-Dkarate.options=--tags @schemavalidation"
   Scenario: To demonstrate schema validation without externalization.
-  	* def isValidTime = read('classpath:com/karate/helpers/time-validator.js')
+  	* def isValidTime = read('classpath:com/javascript/utils/time-validator.js')
     Given path '/api/articles/'
     And header Authorization = 'Token ' + authtoken
     And request {"article":{"tagList":[],"title":"test article","description":"this is test article","body":"he there test article"}}
