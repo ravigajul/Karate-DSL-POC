@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.karate</groupId>
@@ -46,12 +47,8 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
-		<!-- <dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>1.2.5</version>
-			<scope>test</scope>
-		</dependency> -->
+		<!-- <dependency> <groupId>info.cukes</groupId> <artifactId>cucumber-junit</artifactId> 
+			<version>1.2.5</version> <scope>test</scope> </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/faker/faker -->
 		<dependency>
@@ -71,17 +68,17 @@
 		</testResources>
 		<plugins>
 			<plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <archive>
-            <manifest>
-              <addClasspath>true</addClasspath>
-              <mainClass>com/karate/features/ParallelTest.java</mainClass>
-            </manifest>
-          </archive>
-        </configuration>
-      </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>com/karate/features/ParallelTest.java</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -98,6 +95,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven.surefire.version}</version>
 				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
 					<argLine>-Dfile.encoding=UTF-8</argLine>
 					<includes>
 						<include>com/karate/features/*.java</include>
