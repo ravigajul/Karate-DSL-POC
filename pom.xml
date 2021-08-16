@@ -95,7 +95,6 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven.surefire.version}</version>
 				<configuration>
-					<testFailureIgnore>true</testFailureIgnore>
 					<argLine>-Dfile.encoding=UTF-8</argLine>
 					<includes>
 						<include>com/karate/features/*.java</include>
