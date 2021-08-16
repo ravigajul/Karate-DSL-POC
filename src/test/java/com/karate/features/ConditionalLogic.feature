@@ -1,3 +1,4 @@
+@ignore
 Feature: Feature to demonstrate how if condition can be used
   I want to use this template for my feature file
 Background: Pre-condition

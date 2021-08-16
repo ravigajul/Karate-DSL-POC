@@ -8,8 +8,8 @@ Feature: Feature to demonstrate Post Request scenarios
     Then status 200
     * def authtoken = response.user.token
     * print authtoken
-@postrequest
- # mvn test "-Dkarate.options=--tags @postrequest"
+
+  @postrequest
   Scenario: Post article with authtoken context passing
     Given path '/api/articles/'
     And header Authorization = 'Token ' + authtoken

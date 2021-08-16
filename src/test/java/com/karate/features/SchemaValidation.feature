@@ -1,3 +1,4 @@
+@ignore
 Feature: Feature to demonstrate the schema validation
 
   Background: 
