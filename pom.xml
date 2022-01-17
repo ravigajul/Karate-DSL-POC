@@ -56,13 +56,19 @@
 			<artifactId>javafaker</artifactId>
 			<version>1.0.2</version>
 		</dependency>
+		<dependency>
+    <groupId>com.intuit.karate</groupId>
+    <artifactId>karate-gatling</artifactId>
+    <version>${karate.version}</version>
+    <scope>test</scope>
+</dependency>  
 	</dependencies>
 	<build>
 		<testResources>
 			<testResource>
 				<directory>src/test/java</directory>
 				<excludes>
-					<exclude>**/*.java</exclude>
+					<exclude>**/ParallelTest.java</exclude>
 				</excludes>
 			</testResource>
 		</testResources>

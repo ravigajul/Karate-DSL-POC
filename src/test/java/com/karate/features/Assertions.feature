@@ -4,7 +4,7 @@ Feature: sample karate test script
   Background: 
     * url baseurl
 
-  @smoke
+  @smoke2222
   Scenario: A simple get call
     Given path '/api/tags'
     When method GET

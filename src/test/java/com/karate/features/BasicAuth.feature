@@ -1,4 +1,4 @@
-@BasicAuth
+@BasicAuth1234
 Feature: Feature to demonstrate the Basic Auth
   I want to use this template for my feature file
 
@@ -7,7 +7,7 @@ Feature: Feature to demonstrate the Basic Auth
     * url 'https://postman-echo.com'
     * header Authorization = call read('classpath:com/javascript/utils/basic-auth.js') { username: 'postman', password: 'password' }
 
-  @BasicAuth1234
+  @BasicAuth12345678
   Scenario: Scenario to generate basic auth token
     Given path '/basic-auth'
     When method GET

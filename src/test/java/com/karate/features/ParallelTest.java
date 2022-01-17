@@ -24,7 +24,7 @@ public class ParallelTest {
 		 * net.masterthought.cucumber.ValidationException: None report file was
 		 * added! Hence using the below
 		 */
-		Results results = Runner.builder().outputCucumberJson(true).path("classpath:com/karate/features").tags("@BasicAuth")
+		Results results = Runner.builder().outputCucumberJson(true).path("classpath:com/performance/data").tags("@BasicAuth1234")
 				.parallel(10);
 		generateReport(results.getReportDir());
 		assertTrue(results.getErrorMessages(), results.getFailCount() == 0);
