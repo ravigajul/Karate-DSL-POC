@@ -4,7 +4,7 @@ Feature: Feature to demonstrate Create and Delete Article
     Given url baseurl
    
    @CreateDeleteArticles
- # mvn test "-Dkarate.options=--tags @CreateDeleteArticles"
+ # mvn clean test-compile gatling:test
   Scenario: Post article with authtoken context passing
     Given path '/api/articles/'
     And request {"article":{"tagList":[],"title":"ArticleDelete","description":"this is test article for deletion","body":"he there test article"}}

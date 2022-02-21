@@ -16,7 +16,7 @@ class PerfTest extends Simulation {
 
   setUp(
     create.inject(
-  atOnceUsers(1)).protocols(protocol)
+  atOnceUsers(5)).protocols(protocol)
   )
 
 }
