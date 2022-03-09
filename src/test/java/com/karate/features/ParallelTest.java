@@ -2,6 +2,8 @@ package com.karate.features;
 
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
+import com.intuit.karate.junit4.Karate;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,7 +26,7 @@ public class ParallelTest {
 		 * net.masterthought.cucumber.ValidationException: None report file was
 		 * added! Hence using the below
 		 */
-		Results results = Runner.builder().outputCucumberJson(true).path("classpath:com/karate/features").tags("@CSVDemo")
+		Results results = Runner.builder().outputCucumberJson(true).path("classpath:com/karate/features").tags("@DummyBefore")
 				.parallel(10);
 		generateReport(results.getReportDir());
 		assertTrue(results.getErrorMessages(), results.getFailCount() == 0);

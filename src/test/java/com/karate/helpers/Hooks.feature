@@ -5,7 +5,7 @@ Feature: Feature to demonstrate before and after hooks
 	* def dummy = call read('classpath:com/karate/features/DummyBefore.feature')
 	
 	#Before feature like once before first scenario of a feature
-	* def dummy = callsingle read('classpath:com/karate/features/DummyBefore.feature')
+	* def dummy = callonce read('classpath:com/karate/features/DummyBefore.feature')
 	
 	#After Hook this run after every feature
 	* configure afterFeature = function(){karate.call('classpath:com/karate/features/DummyAfter.feature')}
@@ -22,7 +22,7 @@ Feature: Feature to demonstrate before and after hooks
  		karate.log('This is coming from java script function after feature')
  	}
  	"""
-  
+  @Hooks
   Scenario: hooks
     * print 'This is scenario 1'
 

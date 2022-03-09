@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.karate</groupId>
 	<artifactId>karatepoc</artifactId>
@@ -27,12 +25,12 @@
 			<artifactId>mssql-jdbc</artifactId>
 			<version>9.2.1.jre11</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.junit.vintage</groupId>
 			<artifactId>junit-vintage-engine</artifactId>
 			<version>5.7.1</version>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
 		<dependency>
 			<groupId>net.masterthought</groupId>
@@ -40,10 +38,11 @@
 			<version>5.3.1</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 		<dependency>
-			<groupId>com.intuit.karate</groupId>
-			<artifactId>karate-gatling</artifactId>
-			<version>${karate.version}</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.8.2</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
@@ -57,11 +56,11 @@
 			<version>1.0.2</version>
 		</dependency>
 		<dependency>
-    <groupId>com.intuit.karate</groupId>
-    <artifactId>karate-gatling</artifactId>
-    <version>${karate.version}</version>
-    <scope>test</scope>
-</dependency>  
+			<groupId>com.intuit.karate</groupId>
+			<artifactId>karate-gatling</artifactId>
+			<version>${karate.version}</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<testResources>
@@ -76,6 +75,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.2</version>
 				<configuration>
 					<archive>
 						<manifest>
