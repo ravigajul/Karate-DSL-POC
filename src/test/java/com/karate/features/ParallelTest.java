@@ -13,16 +13,21 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
+import org.junit.After;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
 
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import static io.restassured.RestAssured.given;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
 
 public class ParallelTest {
-
+	
 	@Test
 	public void testParallel() {
 		System.setProperty("karate.env", "qa");
@@ -37,9 +42,10 @@ public class ParallelTest {
 				.tags("@DummyBefore").parallel(10);
 		generateReport(results.getReportDir());
 		assertTrue(results.getErrorMessages(), results.getFailCount() == 0);
-		printJson(System.getProperty("user.dir") + "\\target\\karate-reports\\"
-				+ "com.karate.features.DummyBefore.json");
-	}
+		/*
+		 * printJson(System.getProperty("user.dir") + "\\target\\karate-reports\\" +
+		 * "com.karate.features.DummyBefore.json");
+		 */	}
 
 	public static void generateReport(String karateOutputPath) {
 		Collection<File> jsonFiles = FileUtils.listFiles(new File(karateOutputPath), new String[] { "json" }, true);
@@ -49,8 +55,10 @@ public class ParallelTest {
 		ReportBuilder reportBuilder = new ReportBuilder(jsonPaths, config);
 		reportBuilder.generateReports();
 	}
-
-	public static void printJson(String jsonPath) {
+	
+	public  void printJson() {
+		String jsonPath=System.getProperty("user.dir") + "\\target\\karate-reports\\" +
+				  "com.karate.features.DummyBefore.json";
 		JSONParser jsonParser = new JSONParser();
         
         try (FileReader reader = new FileReader(jsonPath))
@@ -72,5 +80,26 @@ public class ParallelTest {
  
 	}
 	
+	@After
+	public void postToXRay()
+	{
+		  String requestBody = "{\n" +
+		            "  \"title\": \"foo\",\n" +
+		            "  \"body\": \"bar\",\n" +
+		            "  \"userId\": \"1\" \n}";
+		RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
+		Response response = given()
+                .header("Content-type", "application/json")
+                .and()
+                .body(requestBody)
+                .when()
+                .post("/posts")
+                .then()
+                .extract().response();
+		System.out.println(response.asPrettyString());
+        Assertions.assertEquals(201, response.statusCode());
+        System.out.println("Successfully posted");
+		 
+	}
 
 }
