@@ -99,3 +99,38 @@ This is a karate poc for API testing
 * Docker build -t "name of the container--karatetest" .
 ## b. Run the created container karatetest
 * Docker run -it karatetest
+
+# Run Scala Test
+mvn clean test-compile gatling:test
+
+# simulating user think time using karate pause
+* karate.pause(5000)
+
+# Karate user simulation through injection
+https://gatling.io/docs/gatling/reference/current/core/injection/
+
+# Feeder
+https://gatling.io/docs/gatling/reference/current/core/session/feeder/
+
+```
+val csvfeeder =  csv('csvFeeder.csv')
+val create = scenario("create and delete article").feed(csvFeeder).exec(karateFeature("classpath:com/performance/data/FeederDemo.feature"))
+```
+# Strategies
+```
+// default behavior: use an Iterator on the underlying sequence
+csv("foo").queue()
+// randomly pick an entry in the sequence
+csv("foo").random()
+// shuffle entries, then behave like queue
+csv("foo").shuffle()
+// go back to the top of the sequence once the end is reached
+csv("foo").circular()
+```
+
+# Gain access to gatling session
+
+```
+__gatling.Title //title is the header in csv file
+__gatling.Description //Description is the header in csv file.
+```

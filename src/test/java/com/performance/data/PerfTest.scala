@@ -8,15 +8,22 @@ class PerfTest extends Simulation {
 
   val protocol = karateProtocol()
 
- // protocol.nameResolver = (req, ctx) => req.getHeader("karate-name")
-  //protocol.runner.karateEnv("perf")
+//csv feeder with circular strategy
+  val csvFeeder = csv("csvData.csv").circular()
 
-  val create = scenario("create and delete article").exec(karateFeature("classpath:com/performance/data/CreateDeleteArticles.feature"))
-
+  val create = scenario("create and delete article").feed(csvFeeder).exec(karateFeature("classpath:com/performance/data/FeederDemo.feature"))
 
   setUp(
     create.inject(
-  atOnceUsers(5)).protocols(protocol)
+    nothingFor(4), // 1
+    atOnceUsers(1), // 2
+    rampUsers(4).during(5), // 3
+    // constantUsersPerSec(2).during(10), // 4
+    // constantUsersPerSec(1).during(15).randomized, // 5
+    // rampUsersPerSec(2).to(5).during(5), // 6
+    // rampUsersPerSec(5).to(7).during(1.minutes).randomized,// 7
+    //stressPeakUsers(1000).during(20) // 8
+    ).protocols(protocol)
   )
 
 }
