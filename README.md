@@ -108,6 +108,20 @@ mvn clean test-compile gatling:test
 
 # Karate user simulation through injection
 https://gatling.io/docs/gatling/reference/current/core/injection/
+```
+setUp(
+  scn.inject(
+    nothingFor(4), // 1
+    atOnceUsers(10), // 2
+    rampUsers(10).during(5), // 3
+    constantUsersPerSec(20).during(15), // 4
+    constantUsersPerSec(20).during(15).randomized, // 5
+    rampUsersPerSec(10).to(20).during(10.minutes), // 6
+    rampUsersPerSec(10).to(20).during(10.minutes).randomized, // 7
+    stressPeakUsers(1000).during(20) // 8
+  ).protocols(httpProtocol)
+)
+```
 
 # Feeder
 https://gatling.io/docs/gatling/reference/current/core/session/feeder/
