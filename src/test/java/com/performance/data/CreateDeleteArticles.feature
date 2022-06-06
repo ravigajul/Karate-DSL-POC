@@ -9,6 +9,7 @@ Feature: Feature to demonstrate Create and Delete Article
     * def articleRequestBody = read('classpath:com/karate/data/newArticleData.json')
     Given path '/api/articles/'
     And request articleRequestBody
+    And header karate-name = 'Create Article'
     When method post
     Then status 200
     * print response

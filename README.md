@@ -148,3 +148,33 @@ csv("foo").circular()
 __gatling.Title //title is the header in csv file
 __gatling.Description //Description is the header in csv file.
 ```
+
+# Name Resolver
+ This is to display a user friendly name in the report instead of end point
+ Add the below step in performance.scala file
+ ```
+  protocol.nameResolver = (req, ctx) => req.getHeader("karate-name")
+  ```
+And access it before sending the request in feature file
+```
+And header karate-name = 'Create Article'
+```
+
+# Dispatcher Configuration.
+Is to increase the pool size to some number so that the expected load is hit and no unexpected results are seen. 
+Create a gatling-akka.config file at same level as karate-config and add below lines for achieving a pool of size 100. for more info see below
+https://github.com/karatelabs/karate/tree/master/karate-gatling#increasing-thread-pool-size
+```
+akka {
+  actor {
+    default-dispatcher {
+      type = Dispatcher
+      executor = "thread-pool-executor"
+      thread-pool-executor {
+        fixed-pool-size = 100
+      }
+      throughput = 1
+    }
+  }
+}
+```

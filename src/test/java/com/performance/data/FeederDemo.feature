@@ -11,6 +11,7 @@ Feature: Feature to demonstrate feeder Functionality
     * set articleRequestBody.article.description = __gatling.Description
     Given path '/api/articles/'
     And request articleRequestBody
+    And header karate-name = 'Post Article' 
     When method post
     Then status 200
     * print response
