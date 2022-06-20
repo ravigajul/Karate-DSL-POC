@@ -178,3 +178,10 @@ akka {
   }
 }
 ```
+
+## File Seperator
+file.separator" -> Character that separates components of a file path. This is "/" on UNIX and "\" on Windows.
+```java
+System.getProperty("user.dir")+File.separator+"Other"
+```
+https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html
