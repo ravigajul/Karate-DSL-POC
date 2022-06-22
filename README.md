@@ -2,54 +2,54 @@
 
 This is a karate poc for API testing
 
-# 1. For setting path and param parameters
+## 1. For setting path and param parameters
 
     1  Scenario: Passing param to get call
     2  Given path 'articles'
     3  And param limit = 10   # note exactly one space surrounding '=' sign
 
-# 2. To pass multiple params in json format
+## 2. To pass multiple params in json format
 
     1  And params { limit: 10, offset: 0 }
 
-# 3. Assertions
+## 3. Assertions
 
  And match response.tags contains ['Gandhi', 'dragons']
  And match response.tags !contains 'cars'
  And match response.tags == '#array'
 
-# 4. Run a specific testmethod in the runner file through maven
+## 4. Run a specific testmethod in the runner file through maven
 
     1  mvn clean test -Dtest=UsersTest#testAssertions
     2   //where  UserTest is the UsersTest.java runner and testAssertions is the test method in the usersTest.java file
 
-# 5. Run methods with specific tags
+## 5. Run methods with specific tags
 
  mvn clean test "-Dkarate.options=--tags @smoke"
 
-# 6. Run method with specific tags and passing environment value
+## 6. Run method with specific tags and passing environment value
 
  mvn test "-Dkarate.options=--tags @configparams" -Dkarate.env=qa
 
-# 7. Calling other feature file
+## 7. Calling other feature file
 
  def responseToken = call read('classpath:com/karate/helpers/CreateToken.feature')
  #responseToken is an object of all the variables defined in createtoken feature
  Hence to retrieve it is responseToken.<<variablename>> defined in CreateToken
  Callonce to call it only once
 
-# 8. Calling other features with parameters
+## 8. Calling other features with parameters
 
  def responseToken = callonce read('classpath:com/karate/helpers/CreateToken.feature') {'email': 'ravi.gajul@test.com','password': 'Ant3m3an!'}
 
-# 9. Calling feature in config file
+## 9. Calling feature in config file
 
  //passing feature file and config object to callSingle method which returns an object of variables declared in feature file.
      var accessToken=karate.callSingle('classpath:com/karate/helpers/CreateToken.feature',config).authToken
      //passing global headers that can be used by all urls
              karate.configure('headers',{Authorization: 'Token ' + accessToken})  
 
-# 10. MultiLine Expressions
+## 10. MultiLine Expressions
 
   Can be used between thriple double quotes like below
  """
@@ -61,7 +61,7 @@ This is a karate poc for API testing
  }
  """"
 
-# 11. Getting data from Java Class file
+## 11. Getting data from Java Class file
 
 * def datagenerator = Java.type('classpath:com/karate/helpers/DataGenerator')
  This will throw
@@ -72,17 +72,17 @@ This is a karate poc for API testing
 
 * def datagenerator = Java.type('com/karate/helpers/DataGenerator')
 
-# 12 . Before Scenario
+## 12 . Before Scenario
 
  Background : Background keyword works for before each scenario
  Using callonce to execute only once
 
-# 13. After Scenario
+## 13. After Scenario
 
  • Configure afterScenario = call read('classpath:com/test/resources/test.feature')
  • Configure after
 
-# 14. When parallel test builds successfully but doesn't run anything
+## 14. When parallel test builds successfully but doesn't run anything
 
  a. <https://github.com/intuit/karate/issues/823>
  <!-- <configuration>
@@ -95,15 +95,15 @@ This is a karate poc for API testing
   </systemProperties>
  </configuration> -->
 
-# 15. Disable SSL verification
+## 15. Disable SSL verification
 
  Karate.configure('ssl', true) for SSL disabling
 
-# 16. Configure keystore for SSL verification
+## 16. Configure keystore for SSL verification
 
 * configure ssl = { trustAll: true, keyStore: '#(keyStoreLocation)', keyStorePassword: 'somePass' }
 
-# 17. conditional logic in karate
+## 17. conditional logic in karate
 
     #in the below step article is an object that we are using to retrive slug in AddLikes.feature. 
     #It wont work if we directly pass the slug value ins callSingle accepts object as parameter
@@ -112,17 +112,17 @@ This is a karate poc for API testing
     Another Way
     * def result = favoritesCount == 0 ? karate.callSingle('classpath:com/karate/helpers/AddLikes.feature',   rticle).likescount:favoritesCount 
   
-# 19. Retry Logic
+## 19. Retry Logic
 
 * configure retry = {count:5, interval: 10000} #the below line should be before method call.
   And retry until response.articles[0].favoritesCount == 5
 
-# 20. Sleep
+## 20. Sleep
 
 * def sleep = function(pause){java.lang.Thread.sleep(pause)}
 * eval sleep(5000)
 
-# 21. Type Conversion
+## 21. Type Conversion
 
 * Foo+'' will convert integer(foo) to String
 
@@ -130,7 +130,7 @@ This is a karate poc for API testing
 * c.def json = {"bar": "#(parseInt(boo))"} will parse boo into integer using java script function.
 * vd.def json = {"bar": "#(~~parseInt(boo))"} will parse boo into int using java script function.
 
-# 22. Docker
+## 22. Docker
 
 ## a. Build image from Dockerfile
 
@@ -140,15 +140,15 @@ This is a karate poc for API testing
 
 * Docker run -it karatetest
 
-# Run Scala Test
+## Run Scala Test
 
 mvn clean test-compile gatling:test
 
-# simulating user think time using karate pause
+## simulating user think time using karate pause
 
 * karate.pause(5000)
 
-# Karate user simulation through injection
+## Karate user simulation through injection
 
 <https://gatling.io/docs/gatling/reference/current/core/injection/>
 
@@ -167,7 +167,7 @@ setUp(
 )
 ```
 
-# Feeder
+## Feeder
 
 <https://gatling.io/docs/gatling/reference/current/core/session/feeder/>
 
@@ -211,7 +211,7 @@ And access it before sending the request in feature file
 And header karate-name = 'Create Article'
 ```
 
-# Dispatcher Configuration
+## Dispatcher Configuration
 
 Is to increase the pool size to some number so that the expected load is hit and no unexpected results are seen.
 Create a gatling-akka.config file at same level as karate-config and add below lines for achieving a pool of size 100. for more info see below
