@@ -1,7 +1,15 @@
 # Karate-DSL-POC
 
 This is a karate poc for API testing
-
+## Maven Archetype
+```maven
+mvn archetype:generate \
+-DarchetypeGroupId=com.intuit.karate \
+-DarchetypeArtifactId=karate-archetype \
+-DarchetypeVersion=1.2.0 \
+-DgroupId=com.mycompany \
+-DartifactId=myproject
+```
 ## 1. For setting path and param parameters
 
     1  Scenario: Passing param to get call
