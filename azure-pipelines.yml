@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  name: "Default"
-  vmImage: DESKTOP-SAMG2C9
+  name: 'Default'
+  vmImage: 'DESKTOP-SAMG2C9'
 
 steps:
 - task: Maven@3
@@ -20,5 +20,4 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: "clean test "-Dkarate.options=--tags @CSVDemo"
-'
+    goals: 'clean test "-Dkarate.options=--tags @CSVDemo'
