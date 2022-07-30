@@ -13,7 +13,7 @@ Feature: Feature to demonstrate how to read data from excel from examples sectio
   
   @CSVDemo
   Examples:
-  | FirstName | LastName | Email                 |
+  #| FirstName | LastName | Email                 |
  # | 'Ravi'    | 'Gajul'  | 'Ravi.Gajul@test.com' |
   |read('classpath:com/karate/data/testdata.csv')|
  
