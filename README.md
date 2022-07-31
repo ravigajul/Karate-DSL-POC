@@ -249,3 +249,17 @@ System.getProperty("user.dir")+File.separator+"Other"
 ```
 
 <https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html>
+
+## Fuzzy Matching
+https://github.com/karatelabs/karate#fuzzy-matching
+
+## Schema Validation
+https://github.com/karatelabs/karate#schema-validation
+
+## 'Self' Validation Expressions
+https://github.com/karatelabs/karate#self-validation-expressions
+```
+And Match response.[0].empid == '#? _ ==1'
+# here _ is called self variabe
+```
+    
