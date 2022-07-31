@@ -257,9 +257,9 @@ https://github.com/karatelabs/karate#fuzzy-matching
 https://github.com/karatelabs/karate#schema-validation
 
 ## 'Self' Validation Expressions
+https://github.com/karatelabs/karate#self-validation-expressions
 ```
 And Match response.[0].empid == '#? _ ==1'
-# here _ is called self variabe 
-https://github.com/karatelabs/karate#self-validation-expressions
+# here _ is called self variabe
 ```
     
