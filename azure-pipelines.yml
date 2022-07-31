@@ -22,25 +22,24 @@ steps:
       # sonar.exclusions=**/*.bin
       sonar.projectKey=ravigajul22_LearningDevops
       sonar.projectName=LearningDevops
-
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
+    goals: 'clean test "-Dkarate.options=--tags @CSVDemo'
     publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
     sonarQubeRunAnalysis: true
     sqMavenPluginVersionChoice: 'latest'
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean test "-Dkarate.options=--tags @CSVDemo'
-
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(agent.builddirectory)'
     Contents: '**\target\**'
     TargetFolder: '$(build.artifactstagingdirectory)'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
