@@ -255,3 +255,11 @@ https://github.com/karatelabs/karate#fuzzy-matching
 
 ## Schema Validation
 https://github.com/karatelabs/karate#schema-validation
+
+## 'Self' Validation Expressions
+```
+And Match response.[0].empid == '#? _ ==1'
+# here _ is called self variabe 
+https://github.com/karatelabs/karate#self-validation-expressions
+```
+    
