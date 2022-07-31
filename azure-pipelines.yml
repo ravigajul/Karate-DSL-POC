@@ -11,6 +11,18 @@ pool:
   vmImage: 'DESKTOP-SAMG2C9'
 
 steps:
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'sonarcloud'
+    organization: 'ravigajul22'
+    scannerMode: 'Other'
+    extraProperties: |
+      # Additional properties that will be passed to the scanner,
+      # Put one key=value per line, example:
+      # sonar.exclusions=**/*.bin
+      sonar.projectKey=ravigajul22_LearningDevops
+      sonar.projectName=LearningDevops
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -21,6 +33,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean test "-Dkarate.options=--tags @CSVDemo'
+- task: SonarCloudAnalyze@1
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(agent.builddirectory)'
@@ -31,3 +44,6 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
