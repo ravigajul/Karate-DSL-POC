@@ -23,7 +23,7 @@ steps:
     goals: 'clean test "-Dkarate.options=--tags @CSVDemo'
 - task: CopyFiles@2
   inputs:
-    Contents: '**/target/'
+    Contents: '**/*.overview-features.html'
     TargetFolder: '$(build.artifactstagingdirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
