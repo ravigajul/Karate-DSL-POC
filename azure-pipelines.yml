@@ -35,7 +35,6 @@ steps:
     sqMavenPluginVersionChoice: 'latest'
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean test "-Dkarate.options=--tags @CSVDemo'
-- task: SonarCloudAnalyze@1
 
 - task: CopyFiles@2
   inputs:
