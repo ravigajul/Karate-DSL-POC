@@ -10,6 +10,7 @@ Feature: Feature to demonstrate how to read data from excel from examples sectio
   * print <FirstName>
   * print <LastName>
   * print <Email>
+  * print __row
   
   @CSVDemo
   Examples:

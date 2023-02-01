@@ -295,3 +295,19 @@ function() {
 ```javascript
 mvn test "-Dkarate.env=prod" "-Dkarate.options=--tags @readexternalconfig"
 ```
+## Reading data from CSV
+```javascript
+@CSVDemo
+  Scenario Outline: Scenario to demonstrate reading data from csv
+  * print <FirstName>
+  * print <LastName>
+  * print <Email>
+  * print __row 
+  //This line prints each row of csv as json object
+  
+  @CSVDemo
+  Examples:
+  #| FirstName | LastName | Email                 |
+ # | 'Ravi'    | 'Gajul'  | 'Ravi.Gajul@test.com' |
+  |read('classpath:com/karate/data/testdata.csv')|
+  ```
