@@ -30,7 +30,7 @@ public class ParallelTest {
 	
 	@Test
 	public void testParallel() {
-		System.setProperty("karate.env", "qa");
+		//System.setProperty("karate.env", "qa");
 		// Results results =
 		// Runner.path("classpath:com/karate/features").parallel(5);
 		/*

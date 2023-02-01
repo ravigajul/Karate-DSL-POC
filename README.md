@@ -291,3 +291,7 @@ function() {
 }
 ```
     
+## To run the karate through maven goal passing env and tag
+```javascript
+mvn test "-Dkarate.env=prod" "-Dkarate.options=--tags @readexternalconfig"
+```
