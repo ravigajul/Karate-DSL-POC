@@ -304,10 +304,13 @@ mvn test "-Dkarate.env=prod" "-Dkarate.options=--tags @readexternalconfig"
   * print <Email>
   * print __row 
   //This line prints each row of csv as json object
-  
   @CSVDemo
   Examples:
   #| FirstName | LastName | Email                 |
  # | 'Ravi'    | 'Gajul'  | 'Ravi.Gajul@test.com' |
   |read('classpath:com/karate/data/testdata.csv')|
   ```
+## Print Rows from csv
+```javascript
+* print __row
+```
