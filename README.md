@@ -30,7 +30,7 @@ mvn archetype:generate \
 
     1  mvn clean test -Dtest=UsersTest#testAssertions
     2   //where  UserTest is the UsersTest.java runner and testAssertions is the test method in the usersTest.java file
-    ```mvn
+    ```java
     mvn clean test -Dtest=UsersTest#testAssertions
     mvn test -Dkarateoptions="--tags@test" -Dkarate.config.dir=src/test/java -DTest=DemoParallelTest -Dkarate.env=dev
     ```
