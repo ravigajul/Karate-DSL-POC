@@ -31,7 +31,7 @@ mvn archetype:generate \
     2   //where  UserTest is the UsersTest.java runner and test assertions is the test method in the usersTest.java file  
     ```maven
     mvn clean test -Dtest=UsersTest#testAssertions
-    mvn test -Dkarateoptions="--tags @test" -Dkarate.config.dir=src/test/java -Dtest=DemoParallelTest -Dkarate.env=dev
+    mvn test -Dkarate.options="--tags @test" -Dkarate.config.dir=src/test/java -Dtest=DemoParallelTest -Dkarate.env=dev
     ```
 ## 5. Run methods with specific tags
 
