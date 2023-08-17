@@ -26,13 +26,12 @@ mvn archetype:generate \
  And match response.tags !contains 'cars'
  And match response.tags == '#array'
 
-## 4. Run a specific testmethod in the runner file through maven
-
-    1  mvn clean test -Dtest=UsersTest#testAssertions
-    2   //where  UserTest is the UsersTest.java runner and testAssertions is the test method in the usersTest.java file
+## 4. Run a specific test method in the runner file through Maven
+    1  mvn clean test -Dtest=UsersTest#testAssertions  
+    2   //where  UserTest is the UsersTest.java runner and test assertions is the test method in the usersTest.java file  
     ```maven
     mvn clean test -Dtest=UsersTest#testAssertions
-    mvn test -Dkarateoptions="--tags@test" -Dkarate.config.dir=src/test/java -DTest=DemoParallelTest -Dkarate.env=dev
+    mvn test -Dkarateoptions="--tags @test" -Dkarate.config.dir=src/test/java -Dtest=DemoParallelTest -Dkarate.env=dev
     ```
 ## 5. Run methods with specific tags
 
@@ -42,9 +41,9 @@ mvn archetype:generate \
 
  mvn test "-Dkarate.options=--tags @configparams" -Dkarate.env=qa
 
-## 7. Calling other feature file
+## 7. Calling another feature file
 
- def responseToken = call read('classpath:com/karate/helpers/CreateToken.feature')
+ def responsetoken = call read('classpath:com/karate/helpers/CreateToken.feature')
  #responseToken is an object of all the variables defined in createtoken feature
  Hence to retrieve it is responseToken.<<variablename>> defined in CreateToken
  Callonce to call it only once
