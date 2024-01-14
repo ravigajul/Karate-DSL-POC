@@ -356,8 +356,6 @@ mvn test "-Dkarate.env=prod" "-Dkarate.options=--tags @readexternalconfig"
     * print __row
     * def filename = <Execute> == 'Y' ? 'ForCSVRead.feature' : 'Dummy.feature'
    * def result = call read(filename){"endPointUrl" : <endPointUrl>}
-    #'/api/users?page=2'
-    #* def filename = <Execute> == 'Y' ? karate.call('ReadYml.feature') : 'test2.feature'
     Examples:
       | read('classpath:com/karate/data/testdata.csv') |
 ```
