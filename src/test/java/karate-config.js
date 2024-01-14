@@ -30,8 +30,7 @@ function fn() {
 			Authorization : 'Token ' + accessToken
 		});
 
-		// reading yaml file for configuration data
-		config.yamlobj = read('classpath:com/test/resources/Test.yaml');
+		
 
 		// reusing
 		config.isValidTime = read('classpath:com/javascript/utils/time-validator.js');
@@ -39,6 +38,8 @@ function fn() {
 	} else if (env == 'dev') {
 		config.useremail = 'ravi.gajul@test.com'
 		config.userpassword = 'Ant3m3an!'
+		// reading yaml file for configuration data
+		config.yamlobj = read('classpath:com/test/resources/Test.yaml');
 	} else if (env == 'prod'){
 		//read from external json file
 		var externalConfig = read('classpath:config/config.json');

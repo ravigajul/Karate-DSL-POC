@@ -39,7 +39,7 @@ public class ParallelTest {
 		 * Hence using the below
 		 */
 		Results results = Runner.builder().outputCucumberJson(true).path("classpath:com/karate/features")
-				.tags("@CSVDemo").parallel(20);
+				.tags("@CSVDemo22").parallel(20);
 		generateReport(results.getReportDir());
 		assertTrue(results.getErrorMessages(), results.getFailCount() == 0);
 		/*
