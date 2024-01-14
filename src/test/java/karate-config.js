@@ -11,9 +11,7 @@ function fn() {
 		baseurl : 'https://conduit.productionready.io'
 			
 	};
-	if (env == 'qa') {
-
-		
+	if (env == 'qa') {	
 
 		// SSL keystory and passowrd
 		// karate.configure('ssl', { trustAll: true, keyStore:
@@ -42,7 +40,11 @@ function fn() {
 	} else if (env == 'dev') {
 		config.useremail = 'ravi.gajul@test.com'
 		config.userpassword = 'Ant3m3an!'
+	} else if (env == 'prod'){
+		//read from external json file
+		var externalConfig = read('classpath:config/config.json');
+		//merge external config with base config
+		config = karate.merge(config, externalConfig);
 	}
-
 	return config;
 }
