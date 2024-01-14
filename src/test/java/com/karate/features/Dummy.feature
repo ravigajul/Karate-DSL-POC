@@ -1,6 +1,6 @@
 Feature: This is a dummy feature
 
 Background: background
-@Dummy
+@ignore
 Scenario: DummyBefore
 * print 'This is a  dummy feature'

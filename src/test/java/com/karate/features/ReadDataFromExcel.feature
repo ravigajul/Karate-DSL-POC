@@ -27,10 +27,6 @@ Feature: Feature to demonstrate how to read data from excel from examples sectio
     * print __row
     * def filename = <Execute> == 'Y' ? 'ForCSVRead.feature' : 'Dummy.feature'
    * def result = call read(filename){"endPointUrl" : <endPointUrl>}
-    #'/api/users?page=2'
-    #* def filename = <Execute> == 'Y' ? karate.call('ReadYml.feature') : 'test2.feature'
     Examples:
-      #| FirstName | LastName | Email                 |
-      # | 'Ravi'    | 'Gajul'  | 'Ravi.Gajul@test.com' |
       | read('classpath:com/karate/data/testdata.csv') |
 
