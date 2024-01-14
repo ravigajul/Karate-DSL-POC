@@ -30,7 +30,7 @@ public class ParallelTest {
 	
 	@Test
 	public void testParallel() {
-		//System.setProperty("karate.env", "qa"); this line should be commentd if env from cmd is to be picked
+		System.setProperty("karate.env", "dev"); //this line should be commentd if env from cmd is to be picked
 		// Results results =
 		// Runner.path("classpath:com/karate/features").parallel(5);
 		/*
