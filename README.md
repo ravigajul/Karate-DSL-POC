@@ -344,3 +344,20 @@ mvn test "-Dkarate.env=prod" "-Dkarate.options=--tags @readexternalconfig"
 ```javascript
 * print __row
 ```
+
+## Conditional Execution
+
+```javascript
+@CSVDemo22
+  Scenario Outline: Scenario to demonstrate reading data from csv
+    * print <FirstName>
+    * print <LastName>
+    * print <Email>
+    * print __row
+    * def filename = <Execute> == 'Y' ? 'ForCSVRead.feature' : 'Dummy.feature'
+   * def result = call read(filename){"endPointUrl" : <endPointUrl>}
+    #'/api/users?page=2'
+    #* def filename = <Execute> == 'Y' ? karate.call('ReadYml.feature') : 'test2.feature'
+    Examples:
+      | read('classpath:com/karate/data/testdata.csv') |
+```
