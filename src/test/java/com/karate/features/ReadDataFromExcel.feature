@@ -1,7 +1,7 @@
 @CSVDemo
 Feature: Feature to demonstrate how to read data from excel from examples section
 
-    Background : test background
+  Background:  test background
     * configure afterScenario = function(){karate.call('classpath:com/karate/features/DummyAfter.feature')}
 
   # mvn test "-Dkarate.options=--tags @CSVDemo" -Dtest=ParallelTest
@@ -26,7 +26,7 @@ Feature: Feature to demonstrate how to read data from excel from examples sectio
     * print <Email>
     * print __row
     * def filename = <Execute> == 'Y' ? 'ForCSVRead.feature' : 'Dummy.feature'
-   * def result = call read(filename){"endPointUrl" : <endPointUrl>}
+    * def result = call read(filename){"endPointUrl" : <endPointUrl>}
     Examples:
       | read('classpath:com/karate/data/testdata.csv') |
 

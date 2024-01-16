@@ -359,3 +359,18 @@ mvn test "-Dkarate.env=prod" "-Dkarate.options=--tags @readexternalconfig"
     Examples:
       | read('classpath:com/karate/data/testdata.csv') |
 ```
+## Using Json-Path filters for fetching rows based on a filter
+```javascript
+Background:
+        * def data = read('classpath:com/karate/data/testdata.csv')
+        # * def filtered = get data[?(@.Execute=="'Y'")]
+        * def selected = "'Y'"
+        * def fun = function(x){ return x.Execute == selected }
+        * def filtered = karate.filter(data, fun)       
+
+    @csvfilter
+    Scenario Outline: Scenario name
+        Given print __row
+        Examples:
+            | filtered |
+```
