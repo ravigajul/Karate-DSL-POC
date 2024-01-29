@@ -80,7 +80,7 @@ public class ParallelTest {
  
 	}
 	
-	@After
+	//@After
 	public void postToXRay()
 	{
 		  String requestBody = "{\n" +
