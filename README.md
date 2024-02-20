@@ -411,3 +411,27 @@ Feature:  Form Dynamic url combining values read from json file plus value passe
     Then status 403
     * print  response
 ```
+
+## Binding runtime data to external json file
+```cucumber
+Background: 
+    * def result = 
+    """{
+        "UserName": "Ravi",
+        "Password": "testing123"
+      }
+    """
+# mvn test '-Dkarate.options=--tags @dynamicjson' -Dtest=ParallelTest
+  @BasicAuth12345678
+  Scenario: Scenario to generate basic auth token
+    * print result
+    * def data = read('classpath:com/karate/data/dynamicdata.json')
+    * print data
+```
+The external dynamicdata.json is here which will be binding with the result data in background. This binding will work even when the json file is externally stored not just within feature file
+```json
+{
+    "id": #(result.UserName),
+    "pwd": #(result.Password)
+}
+```
