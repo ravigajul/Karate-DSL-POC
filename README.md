@@ -435,3 +435,15 @@ The external dynamicdata.json is here which will be binding with the result data
     "pwd": #(result.Password)
 }
 ```
+
+## Multiline if condition 
+```javascript
+ * eval
+    """
+    if(a == 10) {
+        karate.log('Value matches')
+    } else {
+        karate.log('Value doesnt match')
+    }
+    """
+  ```
