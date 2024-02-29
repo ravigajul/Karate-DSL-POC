@@ -20,30 +20,30 @@ Feature: This is to demonstrate json path filters to execute data for a given fi
         * def testData =
             """
             [
-            {
-            "ID": "1",
-            "Execute": "Y",
-            "FirstName": "Ravi",
-            "LastName": "Gajul",
-            "Email": "Ravi.Gajul@test.com",
-            "endPointUrl": "/api/users?page=2"
-            },
-            {
-            "ID": "2",
-            "Execute": "N",
-            "FirstName": "Rajesh",
-            "LastName": "Sandupatla",
-            "Email": "Rajesh.Sand@test.com",
-            "endPointUrl": "/api/users/2"
-            },
-            {
-            "ID": "3",
-            "Execute": "Y",
-            "FirstName": "Ravi",
-            "LastName": "Gajul",
-            "Email": "Ravi.Gajul@test.com",
-            "endPointUrl": ""
-            }
+                {
+                    "ID": "1",
+                    "Execute": "Y",
+                    "FirstName": "Ravi",
+                    "LastName": "Gajul",
+                    "Email": "Ravi.Gajul@test.com",
+                    "endPointUrl": "/api/users?page=2"
+                },
+                {
+                    "ID": "2",
+                    "Execute": "N",
+                    "FirstName": "Rajesh",
+                    "LastName": "Sandupatla",
+                    "Email": "Rajesh.Sand@test.com",
+                    "endPointUrl": "/api/users/2"
+                },
+                {
+                    "ID": "3",
+                    "Execute": "Y",
+                    "FirstName": "Ravi",
+                    "LastName": "Gajul",
+                    "Email": "Ravi.Gajul@test.com",
+                    "endPointUrl": ""
+                }
             ]
             """
         * def filteredData = karate.jsonPath(testData, "$.[?(@.Execute == 'Y' && @.endPointUrl != '')]")
