@@ -472,3 +472,41 @@ The external dynamicdata.json is here which will be binding with the result data
 * def temp = karate.jsonPath(cat, "$.kittens[?(@.name=='" + bob.name + "')]")[0]
 * match temp == bob
 ```
+
+## Filter data using jsonpath filters & karate.jsonPath
+```gherkin
+#mvn test '-Dkarate.options=--tags @rowswithnonemptyendpointurlcolumn' -Dtest=ParallelTest
+    @rowswithnonemptyendpointurlcolumn
+    Scenario: Scenario to fetch the rows with non empty endpoint values
+        * def testData =
+            """
+            [
+            {
+            "ID": "1",
+            "Execute": "Y",
+            "FirstName": "Ravi",
+            "LastName": "Gajul",
+            "Email": "Ravi.Gajul@test.com",
+            "endPointUrl": "/api/users?page=2"
+            },
+            {
+            "ID": "2",
+            "Execute": "N",
+            "FirstName": "Rajesh",
+            "LastName": "Sandupatla",
+            "Email": "Rajesh.Sand@test.com",
+            "endPointUrl": "/api/users/2"
+            },
+            {
+            "ID": "3",
+            "Execute": "Y",
+            "FirstName": "Ravi",
+            "LastName": "Gajul",
+            "Email": "Ravi.Gajul@test.com",
+            "endPointUrl": ""
+            }
+            ]
+            """
+        * def filteredData = karate.jsonPath(testData, "$.[?(@.Execute == 'Y' && @.endPointUrl != '')]")
+        * print filteredDat
+```
