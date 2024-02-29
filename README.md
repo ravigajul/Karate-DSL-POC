@@ -473,7 +473,7 @@ The external dynamicdata.json is here which will be binding with the result data
 * match temp == bob
 ```
 
-## Filter data using jsonpath filters & karate.jsonPath
+## Filter data using jsonpath Path expression & karate.jsonPath
 ```gherkin
 #mvn test '-Dkarate.options=--tags @rowswithnonemptyendpointurlcolumn' -Dtest=ParallelTest
     @rowswithnonemptyendpointurlcolumn
@@ -508,5 +508,5 @@ The external dynamicdata.json is here which will be binding with the result data
             ]
             """
         * def filteredData = karate.jsonPath(testData, "$.[?(@.Execute == 'Y' && @.endPointUrl != '')]")
-        * print filteredDat
+        * print filteredData
 ```
