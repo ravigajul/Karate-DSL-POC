@@ -1,4 +1,4 @@
-Feature: Contains eval, filter, calling other feature
+Feature: Contains eval, json filter expression, calling other feature, __row, 
 
     Background:
         * def data = read('classpath:com/karate/data/testdata.csv')
