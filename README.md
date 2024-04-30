@@ -473,6 +473,14 @@ The external dynamicdata.json is here which will be binding with the result data
 * match temp == bob
 ```
 
+## When working with SOAP Calls
+
+Use below 
+```cucumber
+WHEN SOAP Action //instead of
+WHEN METHOD POST
+```
+
 ## Filter data using jsonpath Path expression & karate.jsonPath
 ```gherkin
 #mvn test '-Dkarate.options=--tags @rowswithnonemptyendpointurlcolumn' -Dtest=ParallelTest
