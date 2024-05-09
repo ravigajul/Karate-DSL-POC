@@ -149,10 +149,12 @@
 						<artifactId>maven-surefire-plugin</artifactId>
 						<version>${maven.surefire.version}</version>
 						<configuration>
-							<argLine>-Dfile.encoding=UTF-8 ${argLine}</argLine>
 							<includes>
-								<include>com/karate/features/*.java</include>
+								<include>com/karate/features/ParallelTest.java</include>
+								<include>com/karate/helpers/DataGenerator.java</include>
 							</includes>
+							<!--  needed for jacoco to integrate properly  -->
+							<argLine>-Dfile.encoding=UTF-8 ${argLine}</argLine>
 						</configuration>
 					</plugin>
 					<plugin>
