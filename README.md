@@ -137,6 +137,14 @@ Karate.configure('ssl', true) for SSL disabling
   Another Way
   * def result = favoritesCount == 0 ? karate.callSingle('classpath:com/karate/helpers/AddLikes.feature',   rticle).likescount:favoritesCount
 ```
+### Manipulate request body for a given condition
+```
+* eval
+    """
+    if ('<ColumFromExcel>' == 'Y')
+    requestBody.<Path> = 'Test'
+    """
+```
 
 ## 19. Retry Logic
 
