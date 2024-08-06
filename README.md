@@ -145,7 +145,10 @@ Karate.configure('ssl', true) for SSL disabling
     requestBody.<Path> = 'Test'
     """
 ```
-
+### Set request body to have an array
+```
+requestBody.<jsonPath> = [<array>] //array in csv = "'6001','6002'"
+```
 ## 19. Retry Logic
 
 - configure retry = {count:5, interval: 10000} #the below line should be before method call.
