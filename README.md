@@ -136,6 +136,8 @@ Karate.configure('ssl', true) for SSL disabling
   * if (favouritesCount == 0) karate.callSingle('classpath:com/karate/helpers/AddLikes.feature', article)
   Another Way
   * def result = favoritesCount == 0 ? karate.callSingle('classpath:com/karate/helpers/AddLikes.feature',   rticle).likescount:favoritesCount
+  # Conditional Match
+ * if ('<somecolumn>' !== '' && (x !== y)) karate.fail('<Error Message>')
 ```
 ### Manipulate request body for a given condition
 ```
