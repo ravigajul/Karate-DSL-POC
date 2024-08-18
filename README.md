@@ -139,6 +139,13 @@ Karate.configure('ssl', true) for SSL disabling
   # Conditional Match
  * if ('<somecolumn>' !== '' && (x !== y)) karate.fail('<Error Message>')
 ```
+
+## Conditional feature call passing an argument
+When you use karate.call() put the second argument inside the round brackets. This is pure JS and "Karate-style" embedded expressions will not work.
+https://github.com/karatelabs/karate#call-vs-read
+```javascript
+* if (role=="SME"||role=="BA") karate.call('classpath:rough/utility.feature@checkDisabled', {element: elem})
+```
 ### Manipulate request body for a given condition
 ```
 * eval
