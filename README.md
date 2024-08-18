@@ -167,6 +167,7 @@ requestBody.<jsonPath> = [<array>] //array in csv = "'6001','6002'"
 
 - def sleep = function(pause){java.lang.Thread.sleep(pause)}
 - eval sleep(5000)
+- * eval karate.pause(5000)
 
 ## 21. Type Conversion
 
