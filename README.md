@@ -539,7 +539,19 @@ WHEN METHOD POST
         * def filteredData = karate.jsonPath(testData, "$.[?(@.Execute == 'Y' && @.endPointUrl != '')]")
         * print filteredData
 ```
+## Remove json key
+This will work: remove is a Karate keyword so it won't work when mixed with JS.
+```javascript
+* def json = { a: 1, b: 2 }
+* def key = 'b'
+* if (true) karate.remove('json', key)
+* match json == { a: 1 }
+```
+But the JS engine in 1.0 onwards will support the JS delete keyword. So you can do things like
 
+```javascript
+*  if('<Scenario>' == 'Missing Applicant Info')  delete requestBody['applicantInfo'];
+```
 ## UI Automation with Karate
 
 ```javascript
