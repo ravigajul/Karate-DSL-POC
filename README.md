@@ -139,7 +139,11 @@ Karate.configure('ssl', true) for SSL disabling
   # Conditional Match
  * if ('<somecolumn>' !== '' && (x !== y)) karate.fail('<Error Message>')
 ```
-
+## Conditional Match or Conditional Assertion
+```javascript
+    * def allDeclineReasons = $.decisionResponse.allDeclineReasons
+    * if (allDeclineReasons) karate.match(allDeclineReasons[0].aaReasonCode, '<aaReasonCode>')
+```
 ## Conditional feature call passing an argument
 When you use karate.call() put the second argument inside the round brackets. This is pure JS and "Karate-style" embedded expressions will not work.
 https://github.com/karatelabs/karate#call-vs-read
