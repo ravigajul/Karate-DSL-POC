@@ -627,7 +627,60 @@ Scenario:
     modifiedJson2: json2Clone
     };
     }
-
-
     """
+```
+
+## Compare jsons and return the differences alternate function
+```javascript
+function compareJSON(obj1, obj2) {
+    const differences = {};
+
+    function findDifferences(obj1, obj2, path = '') {
+        for (const key in obj1) {
+            if (obj1.hasOwnProperty(key)) {
+                const newPath = path ? `${path}.${key}` : key;
+
+                if (!obj2.hasOwnProperty(key)) {
+                    differences[newPath] = { type: 'removed', value: obj1[key] };
+                } else if (typeof obj1[key] === 'object' && typeof obj2[key] === 'object') {
+                    findDifferences(obj1[key], obj2[key], newPath);
+                } else if (obj1[key] !== obj2[key]) {
+                    differences[newPath] = { type: 'changed', oldValue: obj1[key], newValue: obj2[key] };
+                }
+            }
+        }
+
+        for (const key in obj2) {
+            if (obj2.hasOwnProperty(key) && !obj1.hasOwnProperty(key)) {
+                const newPath = path ? `${path}.${key}` : key;
+                differences[newPath] = { type: 'added', value: obj2[key] };
+            }
+        }
+    }
+
+    findDifferences(obj1, obj2);
+    return differences;
+}
+
+// Example usage:
+const json1 = {
+    name: "John",
+    age: 30,
+    address: {
+        city: "New York",
+        zip: "10001"
+    }
+};
+
+const json2 = {
+    name: "John",
+    age: 31,
+    address: {
+        city: "Los Angeles",
+        zip: "90001"
+    },
+    email: "john@example.com"
+};
+
+console.log(compareJSON(json1, json2));
 ```
