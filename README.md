@@ -573,3 +573,42 @@ Scenario:
     Then waitForUrl('formy-project.herokuapp.com/thanks')
     Then match text('div.alert.alert-success').trim() == 'The form was successfully submitted!'
   ```
+## Compare two json files and return the differences
+```javascript
+function compareJSONs(json1, json2, ignoreFields) {
+    function removeIgnoredFields(obj, ignoreFields) {
+        ignoreFields.forEach(field => {
+            const pathParts = field.replace(/\$\./, '').replace(/\[(\d+)\]/g, '.$1').split('.');
+            let current = obj;
+            for (let i = 0; i < pathParts.length - 1; i++) {
+                if (current[pathParts[i]] !== undefined) {
+                    current = current[pathParts[i]];
+                } else {
+                    return;
+                }
+            }
+            delete current[pathParts[pathParts.length - 1]];
+        });
+    }
+
+    function findDifferences(obj1, obj2, path = '') {
+        let differences = [];
+
+        if (typeof obj1 === 'object' && typeof obj2 === 'object' && obj1 !== null && obj2 !== null) {
+            const keys = new Set([...Object.keys(obj1), ...Object.keys(obj2)]);
+            keys.forEach(key => {
+                const newPath = path ? `${path}.${key}` : key;
+                differences = differences.concat(findDifferences(obj1[key], obj2[key], newPath));
+            });
+        } else if (obj1 !== obj2) {
+            differences.push(path);
+        }
+
+        return differences;
+    }
+
+    removeIgnoredFields(json1, ignoreFields);
+    removeIgnoredFields(json2, ignoreFields);
+    return findDifferences(json1, json2);
+}
+```
