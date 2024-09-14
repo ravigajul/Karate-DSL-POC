@@ -575,40 +575,59 @@ Scenario:
   ```
 ## Compare two json files and return the differences
 ```javascript
-function compareJSONs(json1, json2, ignoreFields) {
+* def compareJSONs =
+      """
+      function compareJSONs(json1, json2, ignoreFields) {
     function removeIgnoredFields(obj, ignoreFields) {
-        ignoreFields.forEach(field => {
-            const pathParts = field.replace(/\$\./, '').replace(/\[(\d+)\]/g, '.$1').split('.');
-            let current = obj;
-            for (let i = 0; i < pathParts.length - 1; i++) {
-                if (current[pathParts[i]] !== undefined) {
-                    current = current[pathParts[i]];
-                } else {
-                    return;
-                }
-            }
-            delete current[pathParts[pathParts.length - 1]];
-        });
+    ignoreFields.forEach(field => {
+    const pathParts = field.replace(/\$\./, '').replace(/\[(\d+)\]/g, '.$1').split('.');
+    let current = obj;
+    for (let i = 0; i < pathParts.length - 1; i++) {
+    if (current[pathParts[i]] !== undefined) {
+    current = current[pathParts[i]];
+    } else {
+    return;
+    }
+    }
+    delete current[pathParts[pathParts.length - 1]];
+    });
     }
 
     function findDifferences(obj1, obj2, path = '') {
-        let differences = [];
+    let differences = [];
 
-        if (typeof obj1 === 'object' && typeof obj2 === 'object' && obj1 !== null && obj2 !== null) {
-            const keys = new Set([...Object.keys(obj1), ...Object.keys(obj2)]);
-            keys.forEach(key => {
-                const newPath = path ? `${path}.${key}` : key;
-                differences = differences.concat(findDifferences(obj1[key], obj2[key], newPath));
-            });
-        } else if (obj1 !== obj2) {
-            differences.push(path);
-        }
-
-        return differences;
+    if (typeof obj1 === 'object' && typeof obj2 === 'object' && obj1 !== null && obj2 !== null) {
+    const keys = new Set([...Object.keys(obj1), ...Object.keys(obj2)]);
+    keys.forEach(key => {
+    const newPath = path ? `${path}.${key}` : key;
+    differences = differences.concat(findDifferences(obj1[key], obj2[key], newPath));
+    });
+    } else if (obj1 !== obj2) {
+    differences.push(path);
     }
 
-    removeIgnoredFields(json1, ignoreFields);
-    removeIgnoredFields(json2, ignoreFields);
-    return findDifferences(json1, json2);
-}
+    return differences;
+    }
+
+    // Clone the JSONs to avoid modifying the original objects
+    const json1Clone = JSON.parse(JSON.stringify(json1));
+    const json2Clone = JSON.parse(JSON.stringify(json2));
+
+    // Remove ignored fields
+    removeIgnoredFields(json1Clone, ignoreFields);
+    removeIgnoredFields(json2Clone, ignoreFields);
+
+    // Find differences
+    const differences = findDifferences(json1Clone, json2Clone);
+
+    return {
+    result: differences.length === 0,
+    unmatchedAttributes: differences,
+    modifiedJson1: json1Clone,
+    modifiedJson2: json2Clone
+    };
+    }
+
+
+    """
 ```
