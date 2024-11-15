@@ -684,3 +684,68 @@ const json2 = {
 
 console.log(compareJSON(json1, json2));
 ```
+
+## Convert xml to json and compare 
+
+```java
+import org.json.JSONObject;
+import org.json.XML;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+
+import java.io.ByteArrayInputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
+
+public class ResponseValidator {
+
+    public static JSONObject validateResponse(String rawResponse, String equifaxResponseStr) {
+        JSONObject mismatches = new JSONObject();
+        try {
+            // Parse the XML string to a Document
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            ByteArrayInputStream input = new ByteArrayInputStream(rawResponse.getBytes(StandardCharsets.UTF_8));
+            Document xmlDocument = builder.parse(input);
+
+            // Convert XML Document to JSON
+            JSONObject xmlJson = XML.toJSONObject(rawResponse);
+
+            // Debugging: Print the XML JSON structure
+            System.out.println("XML JSON: " + xmlJson.toString(2));
+
+            // Convert equifaxResponseStr to JSONObject
+            JSONObject equifaxResponse = new JSONObject(equifaxResponseStr);
+
+            // Validate each key-value pair in equifaxResponse
+            validateJson(xmlJson, equifaxResponse, mismatches);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mismatches;
+    }
+
+    private static void validateJson(JSONObject xmlJson, JSONObject equifaxResponse, JSONObject mismatches) {
+        Iterator<String> keys = equifaxResponse.keys();
+        while (keys.hasNext()) {
+            String key = keys.next();
+            Object equifaxValue = equifaxResponse.get(key);
+
+            if (!xmlJson.has(key)) {
+                mismatches.put(key, "Key not found in XML");
+            } else {
+                Object xmlValue = xmlJson.get(key);
+                if (!equifaxValue.equals(xmlValue)) {
+                    JSONObject mismatchDetail = new JSONObject();
+                    mismatchDetail.put("expected", xmlValue);
+                    mismatchDetail.put("actual", equifaxValue);
+                    mismatches.put(key, mismatchDetail);
+                }
+            }
+        }
+    }
+}
+```
