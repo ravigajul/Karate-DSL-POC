@@ -702,7 +702,7 @@ import java.util.Iterator;
 
 public class ResponseValidator {
 
-    public static JSONObject validateResponse(String rawResponse, String equifaxResponseStr) {
+    public static JSONObject validateResponse(String rawResponse, String sampleResponseStr) {
         JSONObject mismatches = new JSONObject();
         try {
             // Parse the XML string to a Document
@@ -717,8 +717,8 @@ public class ResponseValidator {
             // Debugging: Print the XML JSON structure
             System.out.println("XML JSON: " + xmlJson.toString(2));
 
-            // Convert equifaxResponseStr to JSONObject
-            JSONObject equifaxResponse = new JSONObject(equifaxResponseStr);
+            // Convert sampleResponseStr to JSONObject
+            JSONObject equifaxResponse = new JSONObject(sampleResponseStr);
 
             // Validate each key-value pair in equifaxResponse
             validateJson(xmlJson, equifaxResponse, mismatches);
