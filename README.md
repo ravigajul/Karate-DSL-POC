@@ -718,21 +718,86 @@ public class ResponseValidator {
             System.out.println("XML JSON: " + xmlJson.toString(2));
 
             // Convert sampleResponseStr to JSONObject
-            JSONObject equifaxResponse = new JSONObject(sampleResponseStr);
+            JSONObject Response = new JSONObject(sampleResponseStr);
 
-            // Validate each key-value pair in equifaxResponse
-            validateJson(xmlJson, equifaxResponse, mismatches);
+            // Validate each key-value pair in Response
+            validateJson(xmlJson, Response, mismatches);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return mismatches;
     }
 
-    private static void validateJson(JSONObject xmlJson, JSONObject equifaxResponse, JSONObject mismatches) {
-        Iterator<String> keys = equifaxResponse.keys();
+    private static void validateJson(JSONObject xmlJson, JSONObject Response, JSONObject mismatches) {
+        Iterator<String> keys = Response.keys();
         while (keys.hasNext()) {
             String key = keys.next();
-            Object equifaxValue = equifaxResponse.get(key);
+            Object equifaxValue = Response.get(key);
+
+            if (!xmlJson.has(key)) {
+                mismatches.put(key, "Key not found in XML");
+            } else {
+                Object xmlValue = xmlJson.get(key);
+                if (!equifaxValue.equals(xmlValue)) {
+                    JSONObject mismatchDetail = new JSONObject();
+                    mismatchDetail.put("expected", xmlValue);
+                    mismatchDetail.put("actual", equifaxValue);
+                    mismatches.put(key, mismatchDetail);
+                }
+            }
+        }
+    }
+}
+```
+## Response Validator
+```java
+package com.test.karate.test.automation.features;
+
+import org.json.JSONObject;
+import org.json.XML;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+
+import java.io.ByteArrayInputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
+
+public class ResponseValidator {
+
+    public static JSONObject validateResponse(String rawResponse, String ResponseStr) {
+        JSONObject mismatches = new JSONObject();
+        try {
+            // Parse the XML string to a Document
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            ByteArrayInputStream input = new ByteArrayInputStream(rawResponse.getBytes(StandardCharsets.UTF_8));
+            Document xmlDocument = builder.parse(input);
+
+            // Convert XML Document to JSON
+            JSONObject xmlJson = XML.toJSONObject(rawResponse);
+
+            // Debugging: Print the XML JSON structure
+            System.out.println("XML JSON: " + xmlJson.toString(2));
+
+            // Convert ResponseStr to JSONObject
+            JSONObject Response = new JSONObject(ResponseStr);
+
+            // Validate each key-value pair in Response
+            validateJson(xmlJson, Response, mismatches);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mismatches;
+    }
+
+    private static void validateJson(JSONObject xmlJson, JSONObject Response, JSONObject mismatches) {
+        Iterator<String> keys = Response.keys();
+        while (keys.hasNext()) {
+            String key = keys.next();
+            Object equifaxValue = Response.get(key);
 
             if (!xmlJson.has(key)) {
                 mismatches.put(key, "Key not found in XML");
