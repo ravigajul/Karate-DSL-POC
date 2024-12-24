@@ -814,3 +814,18 @@ public class ResponseValidator {
     }
 }
 ```
+
+Jsch
+```java
+JSch jsch = new JSch();
+Session session = jsch.getSession(username, hostname, port);
+
+// Add this before connecting
+java.util.Properties config = new java.util.Properties();
+config.put("StrictHostKeyChecking", "no");
+// Enable legacy key exchange algorithms
+config.put("kex", "diffie-hellman-group1-sha1,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1,diffie-hellman-group-exchange-sha256");
+session.setConfig(config);
+
+session.connect();
+```
