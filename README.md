@@ -834,3 +834,204 @@ session.setConfig(config);
 
 session.connect();
 ```
+
+## Karate - Custom-HTML-Report
+```java
+package com.jeniusbank.karate.decisionengine.automation.features;
+
+import com.intuit.karate.Results;
+import com.intuit.karate.Runner;
+import org.junit.jupiter.api.Test;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class CustomTestRunner {
+
+    @Test
+    public void testParallel() {
+        String karateOutputPath = "target/custom-karate-reports";
+        System.setProperty("karate.env", System.getProperty("karate.env"));
+
+        Results results = Runner.builder()
+                .outputCucumberJson(true)
+                .path("classpath:com.test.automation")
+                .reportDir(karateOutputPath)
+                .tags("@socuremigration22")
+                .parallel(1);
+
+        generateCustomReport(results, karateOutputPath);
+        System.out.println(results.getErrorMessages());
+    }
+
+    public static void generateCustomReport(Results results, String outputPath) {
+        try {
+            String reportContent = generateHtmlContent(results, outputPath);
+            String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+            String reportPath = outputPath + "/custom-report-" + timestamp + ".html";
+            Files.createDirectories(Paths.get(outputPath));
+            Files.write(Paths.get(reportPath), reportContent.getBytes());
+            System.out.println("Custom report generated at: " + reportPath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private static String generateHtmlContent(Results results, String outputPath) {
+        StringBuilder html = new StringBuilder();
+        html.append("<!DOCTYPE html>\n")
+                .append("<html>\n<head>\n")
+                .append("<title>Karate Test Execution Report</title>\n")
+                .append("<style>\n")
+                .append("body {\n")
+                .append("    font-family: 'Segoe UI', Arial, sans-serif;\n")
+                .append("    margin: 0;\n")
+                .append("    padding: 20px;\n")
+                .append("    background-color: #f5f5f5;\n")
+                .append("    color: #333;\n")
+                .append("}\n")
+                .append(".container {\n")
+                .append("    max-width: 1200px;\n")
+                .append("    margin: 0 auto;\n")
+                .append("    background-color: white;\n")
+                .append("    padding: 20px;\n")
+                .append("    border-radius: 8px;\n")
+                .append("    box-shadow: 0 2px 4px rgba(0,0,0,0.1);\n")
+                .append("}\n")
+                .append("h1, h2 {\n")
+                .append("    color: #2c3e50;\n")
+                .append("    margin-bottom: 20px;\n")
+                .append("    padding-bottom: 10px;\n")
+                .append("    border-bottom: 2px solid #eee;\n")
+                .append("}\n")
+                .append(".summary {\n")
+                .append("    background-color: #f8f9fa;\n")
+                .append("    padding: 20px;\n")
+                .append("    border-radius: 6px;\n")
+                .append("    margin-bottom: 30px;\n")
+                .append("    border: 1px solid #e9ecef;\n")
+                .append("}\n")
+                .append(".summary p {\n")
+                .append("    margin: 10px 0;\n")
+                .append("    font-size: 14px;\n")
+                .append("    line-height: 1.6;\n")
+                .append("}\n")
+                .append("table {\n")
+                .append("    width: 100%;\n")
+                .append("    border-collapse: collapse;\n")
+                .append("    margin: 25px 0;\n")
+                .append("    font-size: 14px;\n")
+                .append("    box-shadow: 0 1px 3px rgba(0,0,0,0.1);\n")
+                .append("}\n")
+                .append("th, td {\n")
+                .append("    padding: 12px 15px;\n")
+                .append("    border: 1px solid #ddd;\n")
+                .append("    text-align: left;\n")
+                .append("}\n")
+                .append("th {\n")
+                .append("    background-color: #4CAF50;\n")
+                .append("    color: white;\n")
+                .append("    font-weight: 500;\n")
+                .append("}\n")
+                .append("tr:nth-child(even) {\n")
+                .append("    background-color: #f8f9fa;\n")
+                .append("}\n")
+                .append("tr:hover {\n")
+                .append("    background-color: #f2f2f2;\n")
+                .append("}\n")
+                .append(".pass {\n")
+                .append("    color: #28a745;\n")
+                .append("    font-weight: bold;\n")
+                .append("}\n")
+                .append(".fail {\n")
+                .append("    color: #dc3545;\n")
+                .append("    font-weight: bold;\n")
+                .append("}\n")
+                .append(".details {\n")
+                .append("    background-color: #fff;\n")
+                .append("    padding: 20px;\n")
+                .append("    border-radius: 6px;\n")
+                .append("    border: 1px solid #e9ecef;\n")
+                .append("}\n")
+                .append("pre {\n")
+                .append("    background-color: #f8f9fa;\n")
+                .append("    padding: 15px;\n")
+                .append("    border-radius: 4px;\n")
+                .append("    overflow: auto;\n")
+                .append("    font-size: 13px;\n")
+                .append("    border: 1px solid #e9ecef;\n")
+                .append("    max-height: 400px;\n")
+                .append("}\n")
+                .append("</style>\n")
+                .append("</head>\n<body>\n")
+                .append("<div class='container'>\n");
+
+        // Add header
+        html.append("<h1>Karate Test Execution Report</h1>\n");
+
+        // Add summary section
+        long currentTime = System.currentTimeMillis();
+
+        html.append("<div class='summary'>\n")
+                .append("<h2>Test Summary</h2>\n")
+                .append("<p><strong>Execution Time:</strong> ").append(formatTimestamp(currentTime)).append("</p>\n")
+                .append("<p><strong>Failed Tests:</strong> ").append(results.getFailCount()).append("</p>\n")
+                .append("</div>\n");
+
+        // Add table for passed and failed scenarios
+        html.append("<h2>Test Scenarios</h2>\n")
+                .append("<table>\n")
+                .append("<tr>\n")
+                .append("<th>Scenario</th>\n")
+                .append("<th>Status</th>\n")
+                .append("<th>Error Message</th>\n")
+                .append("</tr>\n");
+
+        results.getScenarioResults().forEach(scenarioResult -> {
+            html.append("<tr>\n")
+                    .append("<td>").append(scenarioResult.getScenario().getName()).append("</td>\n")
+                    .append("<td class='").append(scenarioResult.isFailed() ? "fail" : "pass").append("'>")
+                    .append(scenarioResult.isFailed() ? "Failed" : "Passed").append("</td>\n")
+                    .append("<td>").append(scenarioResult.isFailed() ? scenarioResult.getErrorMessage() : "").append("</td>\n")
+                    .append("</tr>\n");
+        });
+
+        html.append("</table>\n");
+
+        // Add error messages at the end
+        if (!results.getErrorMessages().isEmpty()) {
+            html.append("<div class='details'>\n")
+                    .append("<h2>Error Messages</h2>\n")
+                    .append("<pre>").append(results.getErrorMessages()).append("</pre>\n")
+                    .append("</div>\n");
+        }
+
+        // Read and parse the Cucumber JSON report
+        File jsonReportDir = new File(outputPath);
+        if (jsonReportDir.exists()) {
+            File[] jsonFiles = jsonReportDir.listFiles((dir, name) -> name.endsWith(".json"));
+            if (jsonFiles != null && jsonFiles.length > 0) {
+                try {
+                    String jsonContent = new String(Files.readAllBytes(jsonFiles[0].toPath()));
+                    html.append("<div class='details'>\n")
+                            .append("<h2>Test Details</h2>\n")
+                            .append("<pre>").append(jsonContent).append("</pre>\n")
+                            .append("</div>\n");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        html.append("</div>\n")  // Close container
+                .append("</body>\n</html>");
+
+        return html.toString();
+    }
+    private static String formatTimestamp(long timestamp) {
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(timestamp));
+    }
+}
+```
