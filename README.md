@@ -837,7 +837,7 @@ session.connect();
 
 ## Karate - Custom-HTML-Report
 ```java
-package com.jeniusbank.karate.decisionengine.automation.features;
+package com.test.karate.automation.features;
 
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
