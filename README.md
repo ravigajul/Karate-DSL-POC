@@ -860,7 +860,7 @@ public class CustomTestRunner {
                 .outputCucumberJson(true)
                 .path("classpath:com.test.automation")
                 .reportDir(karateOutputPath)
-                .tags("@socuremigration22")
+                .tags("@test")
                 .parallel(1);
 
         generateCustomReport(results, karateOutputPath);
