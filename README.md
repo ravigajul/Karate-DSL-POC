@@ -838,11 +838,9 @@ session.connect();
 ## Karate - Custom-HTML-Report
 ```java
 package com.test.karate.automation.features;
-
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
 import org.junit.jupiter.api.Test;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -858,9 +856,9 @@ public class CustomTestRunner {
 
         Results results = Runner.builder()
                 .outputCucumberJson(true)
-                .path("classpath:com.test.automation")
+                .path("classpath:com/test/karate/automation")
                 .reportDir(karateOutputPath)
-                .tags("@test")
+                .tags("@debuggingreport")
                 .parallel(1);
 
         generateCustomReport(results, karateOutputPath);
@@ -879,157 +877,242 @@ public class CustomTestRunner {
             e.printStackTrace();
         }
     }
+
     private static String generateHtmlContent(Results results, String outputPath) {
         StringBuilder html = new StringBuilder();
         html.append("<!DOCTYPE html>\n")
                 .append("<html>\n<head>\n")
                 .append("<title>Karate Test Execution Report</title>\n")
+                .append("<meta name='viewport' content='width=device-width, initial-scale=1'>\n")
+                .append("<link href='https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600&display=swap' rel='stylesheet'>\n")
                 .append("<style>\n")
+                .append(":root {\n")
+                .append("  --primary-color: #0062ff;\n")
+                .append("  --primary-gradient: #2979ff;\n")
+                .append("  --success-color: #00c853;\n")
+                .append("  --danger-color: #ff3d00;\n")
+                .append("  --background-light: #f5f7fa;\n")
+                .append("  --surface-color: #ffffff;\n")
+                .append("  --text-primary: #1d1d1f;\n")
+                .append("  --text-secondary: #424245;\n")
+                .append("  --dark-surface: #1a1a1a;\n")
+                .append("  --dark-elevated: #2c2c2e;\n")
+                .append("  --dark-text: #f5f5f7;\n")
+                .append("  --border-radius: 12px;\n")
+                .append("  --transition: all 0.3s ease;\n")
+                .append("}\n")
+                .append("* { \n")
+                .append("  box-sizing: border-box;\n")
+                .append("  -webkit-font-smoothing: antialiased;\n")
+                .append("}\n")
                 .append("body {\n")
-                .append("    font-family: 'Segoe UI', Arial, sans-serif;\n")
-                .append("    margin: 0;\n")
-                .append("    padding: 20px;\n")
-                .append("    background-color: #f5f5f5;\n")
-                .append("    color: #333;\n")
+                .append("  font-family: 'Google Sans', 'Segoe UI', system-ui, -apple-system;\n")
+                .append("  line-height: 1.6;\n")
+                .append("  background-color: var(--background-light);\n")
+                .append("  color: var(--text-primary);\n")
+                .append("  margin: 0;\n")
+                .append("  padding: 32px;\n")
                 .append("}\n")
                 .append(".container {\n")
-                .append("    max-width: 1200px;\n")
-                .append("    margin: 0 auto;\n")
-                .append("    background-color: white;\n")
-                .append("    padding: 20px;\n")
-                .append("    border-radius: 8px;\n")
-                .append("    box-shadow: 0 2px 4px rgba(0,0,0,0.1);\n")
+                .append("  max-width: 1280px;\n")
+                .append("  margin: 0 auto;\n")
+                .append("  background-color: var(--surface-color);\n")
+                .append("  box-shadow: 0 8px 24px rgba(0,0,0,0.08);\n")
+                .append("  border-radius: var(--border-radius);\n")
+                .append("  overflow: hidden;\n")
                 .append("}\n")
-                .append("h1, h2 {\n")
-                .append("    color: #2c3e50;\n")
-                .append("    margin-bottom: 20px;\n")
-                .append("    padding-bottom: 10px;\n")
-                .append("    border-bottom: 2px solid #eee;\n")
+                .append("h1 {\n")
+                .append("  background: linear-gradient(135deg, var(--primary-color), var(--primary-gradient));\n")
+                .append("  color: white;\n")
+                .append("  padding: 32px;\n")
+                .append("  margin: 0;\n")
+                .append("  text-align: center;\n")
+                .append("  font-weight: 500;\n")
+                .append("  letter-spacing: -0.5px;\n")
                 .append("}\n")
                 .append(".summary {\n")
-                .append("    background-color: #f8f9fa;\n")
-                .append("    padding: 20px;\n")
-                .append("    border-radius: 6px;\n")
-                .append("    margin-bottom: 30px;\n")
-                .append("    border: 1px solid #e9ecef;\n")
+                .append("  display: grid;\n")
+                .append("  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n")
+                .append("  gap: 24px;\n")
+                .append("  padding: 32px;\n")
                 .append("}\n")
-                .append(".summary p {\n")
-                .append("    margin: 10px 0;\n")
-                .append("    font-size: 14px;\n")
-                .append("    line-height: 1.6;\n")
+                .append(".summary-card {\n")
+                .append("  background: var(--surface-color);\n")
+                .append("  border-radius: var(--border-radius);\n")
+                .append("  padding: 24px;\n")
+                .append("  box-shadow: 0 4px 12px rgba(0,0,0,0.05);\n")
+                .append("  transition: var(--transition);\n")
+                .append("  border: 1px solid rgba(0,0,0,0.08);\n")
+                .append("}\n")
+                .append(".summary-card:hover {\n")
+                .append("  transform: translateY(-4px);\n")
+                .append("  box-shadow: 0 8px 16px rgba(0,0,0,0.1);\n")
+                .append("}\n")
+                .append(".summary-value {\n")
+                .append("  font-size: 2.75rem;\n")
+                .append("  font-weight: 600;\n")
+                .append("  margin: 16px 0;\n")
+                .append("  line-height: 1.2;\n")
+                .append("}\n")
+                .append("h3 {\n")
+                .append("  color: var(--text-secondary);\n")
+                .append("  font-weight: 500;\n")
+                .append("  margin: 0;\n")
+                .append("  font-size: 1rem;\n")
+                .append("}\n")
+                .append(".progress-container {\n")
+                .append("  width: 100%;\n")
+                .append("  background-color: rgba(0,0,0,0.05);\n")
+                .append("  border-radius: 12px;\n")
+                .append("  height: 8px;\n")
+                .append("  margin-top: 20px;\n")
+                .append("  overflow: hidden;\n")
+                .append("}\n")
+                .append(".progress-bar {\n")
+                .append("  height: 100%;\n")
+                .append("  border-radius: 12px;\n")
+                .append("  background: linear-gradient(to right, var(--success-color), var(--primary-gradient));\n")
+                .append("  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);\n")
                 .append("}\n")
                 .append("table {\n")
-                .append("    width: 100%;\n")
-                .append("    border-collapse: collapse;\n")
-                .append("    margin: 25px 0;\n")
-                .append("    font-size: 14px;\n")
-                .append("    box-shadow: 0 1px 3px rgba(0,0,0,0.1);\n")
+                .append("  width: 100%;\n")
+                .append("  border-collapse: separate;\n")
+                .append("  border-spacing: 0;\n")
+                .append("  margin: 0 0 32px;\n")
+                .append("  padding: 0 32px;\n")
                 .append("}\n")
                 .append("th, td {\n")
-                .append("    padding: 12px 15px;\n")
-                .append("    border: 1px solid #ddd;\n")
-                .append("    text-align: left;\n")
+                .append("  border: none;\n")
+                .append("  padding: 16px;\n")
+                .append("  text-align: left;\n")
+                .append("  word-wrap: break-word;\n")
+                .append("  max-width: 300px;\n")
                 .append("}\n")
                 .append("th {\n")
-                .append("    background-color: #4CAF50;\n")
-                .append("    color: white;\n")
-                .append("    font-weight: 500;\n")
+                .append("  background-color: var(--background-light);\n")
+                .append("  color: var(--text-primary);\n")
+                .append("  font-weight: 500;\n")
+                .append("  white-space: nowrap;\n")
+                .append("  position: sticky;\n")
+                .append("  top: 0;\n")
                 .append("}\n")
-                .append("tr:nth-child(even) {\n")
-                .append("    background-color: #f8f9fa;\n")
+                .append("th:first-child {\n")
+                .append("  border-top-left-radius: 8px;\n")
+                .append("  border-bottom-left-radius: 8px;\n")
+                .append("}\n")
+                .append("th:last-child {\n")
+                .append("  border-top-right-radius: 8px;\n")
+                .append("  border-bottom-right-radius: 8px;\n")
+                .append("}\n")
+                .append("tr {\n")
+                .append("  transition: var(--transition);\n")
                 .append("}\n")
                 .append("tr:hover {\n")
-                .append("    background-color: #f2f2f2;\n")
+                .append("  background-color: rgba(0,0,0,0.02);\n")
                 .append("}\n")
-                .append(".pass {\n")
-                .append("    color: #28a745;\n")
-                .append("    font-weight: bold;\n")
+                .append("td {\n")
+                .append("  border-bottom: 1px solid rgba(0,0,0,0.05);\n")
                 .append("}\n")
-                .append(".fail {\n")
-                .append("    color: #dc3545;\n")
-                .append("    font-weight: bold;\n")
+                .append(".status-passed {\n")
+                .append("  color: #00841f;\n")
+                .append("  background: rgba(0, 200, 83, 0.12);\n")
+                .append("  padding: 4px 12px;\n")
+                .append("  border-radius: 16px;\n")
+                .append("  display: inline-block;\n")
+                .append("  font-weight: 500;\n")
                 .append("}\n")
-                .append(".details {\n")
-                .append("    background-color: #fff;\n")
-                .append("    padding: 20px;\n")
-                .append("    border-radius: 6px;\n")
-                .append("    border: 1px solid #e9ecef;\n")
+                .append(".status-failed {\n")
+                .append("  color: #c41d00;\n")
+                .append("  background: rgba(255, 61, 0, 0.12);\n")
+                .append("  padding: 4px 12px;\n")
+                .append("  border-radius: 16px;\n")
+                .append("  display: inline-block;\n")
+                .append("  font-weight: 500;\n")
                 .append("}\n")
-                .append("pre {\n")
-                .append("    background-color: #f8f9fa;\n")
-                .append("    padding: 15px;\n")
-                .append("    border-radius: 4px;\n")
-                .append("    overflow: auto;\n")
-                .append("    font-size: 13px;\n")
-                .append("    border: 1px solid #e9ecef;\n")
-                .append("    max-height: 400px;\n")
+                .append("@media (max-width: 768px) {\n")
+                .append("  body { padding: 16px; }\n")
+                .append("  .summary {\n")
+                .append("    grid-template-columns: 1fr;\n")
+                .append("    padding: 16px;\n")
+                .append("  }\n")
+                .append("  table { padding: 0 16px; }\n")
+                .append("  .summary-value { font-size: 2.25rem; }\n")
+                .append("}\n")
+                .append("@media (prefers-color-scheme: dark) {\n")
+                .append("  :root {\n")
+                .append("    --background-light: var(--dark-surface);\n")
+                .append("    --text-primary: var(--dark-text);\n")
+                .append("    --surface-color: var(--dark-elevated);\n")
+                .append("  }\n")
+                .append("  td { border-bottom-color: rgba(255,255,255,0.1); }\n")
+                .append("  tr:hover { background-color: rgba(255,255,255,0.03); }\n")
                 .append("}\n")
                 .append("</style>\n")
                 .append("</head>\n<body>\n")
                 .append("<div class='container'>\n");
 
-        // Add header
-        html.append("<h1>Karate Test Execution Report</h1>\n");
+        // Calculate metrics
+        long totalTests = results.getScenarioResults().count();
+        long failedTests = results.getFailCount();
+        long passedTests = totalTests - failedTests;
+        double passPercentage = (passedTests * 100.0) / totalTests;
 
-        // Add summary section
-        long currentTime = System.currentTimeMillis();
-
-        html.append("<div class='summary'>\n")
-                .append("<h2>Test Summary</h2>\n")
-                .append("<p><strong>Execution Time:</strong> ").append(formatTimestamp(currentTime)).append("</p>\n")
-                .append("<p><strong>Failed Tests:</strong> ").append(results.getFailCount()).append("</p>\n")
+        // Summary section
+        html.append("<h1>Karate Test Execution Report</h1>\n")
+                .append("<div class='summary'>\n")
+                .append("<div class='summary-card'>\n")
+                .append("<h3>Total Tests</h3>\n")
+                .append("<div class='summary-value'>").append(totalTests).append("</div>\n")
+                .append("</div>\n")
+                .append("<div class='summary-card'>\n")
+                .append("<h3>Passed Tests</h3>\n")
+                .append("<div class='summary-value' style='color: var(--success-color);'>").append(passedTests).append("</div>\n")
+                .append("</div>\n")
+                .append("<div class='summary-card'>\n")
+                .append("<h3>Failed Tests</h3>\n")
+                .append("<div class='summary-value' style='color: var(--danger-color);'>").append(failedTests).append("</div>\n")
+                .append("</div>\n")
+                .append("<div class='summary-card'>\n")
+                .append("<h3>Pass Percentage</h3>\n")
+                .append("<div class='summary-value'>").append(String.format("%.2f%%", passPercentage)).append("</div>\n")
+                .append("<div class='progress-container'>\n")
+                .append(String.format("<div class='progress-bar' style='width: %.2f%%'></div>\n", passPercentage))
+                .append("</div>\n")
+                .append("</div>\n")
                 .append("</div>\n");
 
-        // Add table for passed and failed scenarios
-        html.append("<h2>Test Scenarios</h2>\n")
-                .append("<table>\n")
+        // Results Table
+        html.append("<table>\n")
                 .append("<tr>\n")
+                .append("<th>Feature</th>\n")
                 .append("<th>Scenario</th>\n")
                 .append("<th>Status</th>\n")
                 .append("<th>Error Message</th>\n")
                 .append("</tr>\n");
 
         results.getScenarioResults().forEach(scenarioResult -> {
+            String feature = scenarioResult.getScenario().getFeature().getName();
+            String scenario = scenarioResult.getScenario().getName();
+            String status = scenarioResult.isFailed() ? "Failed" : "Passed";
+            String statusClass = scenarioResult.isFailed() ? "status-failed" : "status-passed";
+            String errorMessage = scenarioResult.isFailed() ? scenarioResult.getErrorMessage() : "";
+
             html.append("<tr>\n")
-                    .append("<td>").append(scenarioResult.getScenario().getName()).append("</td>\n")
-                    .append("<td class='").append(scenarioResult.isFailed() ? "fail" : "pass").append("'>")
-                    .append(scenarioResult.isFailed() ? "Failed" : "Passed").append("</td>\n")
-                    .append("<td>").append(scenarioResult.isFailed() ? scenarioResult.getErrorMessage() : "").append("</td>\n")
+                    .append("<td>").append(feature).append("</td>\n")
+                    .append("<td>").append(scenario).append("</td>\n")
+                    .append("<td><span class='").append(statusClass).append("'>")
+                    .append(status).append("</span></td>\n")
+                    .append("<td>").append(errorMessage).append("</td>\n")
                     .append("</tr>\n");
         });
 
-        html.append("</table>\n");
-
-        // Add error messages at the end
-        if (!results.getErrorMessages().isEmpty()) {
-            html.append("<div class='details'>\n")
-                    .append("<h2>Error Messages</h2>\n")
-                    .append("<pre>").append(results.getErrorMessages()).append("</pre>\n")
-                    .append("</div>\n");
-        }
-
-        // Read and parse the Cucumber JSON report
-        File jsonReportDir = new File(outputPath);
-        if (jsonReportDir.exists()) {
-            File[] jsonFiles = jsonReportDir.listFiles((dir, name) -> name.endsWith(".json"));
-            if (jsonFiles != null && jsonFiles.length > 0) {
-                try {
-                    String jsonContent = new String(Files.readAllBytes(jsonFiles[0].toPath()));
-                    html.append("<div class='details'>\n")
-                            .append("<h2>Test Details</h2>\n")
-                            .append("<pre>").append(jsonContent).append("</pre>\n")
-                            .append("</div>\n");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        html.append("</div>\n")  // Close container
+        html.append("</table>\n")
+                .append("</div>\n")
                 .append("</body>\n</html>");
 
         return html.toString();
     }
+
     private static String formatTimestamp(long timestamp) {
         return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(timestamp));
     }
