@@ -164,9 +164,13 @@ requestBody.<jsonPath> = [<array>] //array in csv = "'6001','6002'"
 ```
 ## 19. Retry Logic
 
-- configure retry = {count:5, interval: 10000} #the below line should be before method call.
-  And retry until response.articles[0].favoritesCount == 5
-
+```javascript
+* configure retry = { count: 10, interval: 5000 }
+Given url demoBaseUrl
+And path 'greeting'
+And retry until responseStatus == 200 && response.id > 3
+When method get
+```
 ## 20. Sleep
 
 - def sleep = function(pause){java.lang.Thread.sleep(pause)}
