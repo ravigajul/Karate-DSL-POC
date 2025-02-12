@@ -555,6 +555,14 @@ This will work: remove is a Karate keyword so it won't work when mixed with JS.
 * if (true) karate.remove('json', key)
 * match json == { a: 1 }
 ```
+
+## Delete keyword to remove a json key
+```javascript
+* def json = { a: 1, b: 2 }
+* def key = 'b'
+* if (true) delete json[key]
+* match json == { a: 1 }
+```
 But the JS engine in 1.0 onwards will support the JS delete keyword. So you can do things like
 
 ```javascript
