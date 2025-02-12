@@ -183,7 +183,8 @@ When method get
 
 - b.Foo\*1 will convert String(foo) to Integer
 - c.def json = {"bar": "#(parseInt(boo))"} will parse boo into integer using java script function.
-- vd.def json = {"bar": "#(~~parseInt(boo))"} will parse boo into int using java script function.
+- d.def json = {"bar": "#(~~parseInt(boo))"} will parse boo into int using java script function.
+- e.Foo\*0.1 will convert String(foo) to double
 
 ## 22. Docker
 
