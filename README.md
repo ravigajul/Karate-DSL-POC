@@ -185,6 +185,7 @@ When method get
 - c.def json = {"bar": "#(parseInt(boo))"} will parse boo into integer using java script function.
 - d.def json = {"bar": "#(~~parseInt(boo))"} will parse boo into int using java script function.
 - e.Foo\*0.1 will convert String(foo) to double
+- * def availableBalance = new java.math.BigDecimal(acctBalance).setScale(2, java.math.RoundingMode.HALF_UP).doubleValue() will keep 101.12 as double and not string for ex
 
 ## 22. Docker
 
