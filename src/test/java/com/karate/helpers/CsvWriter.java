@@ -102,4 +102,35 @@ public class CsvWriter {
             e.printStackTrace();
         }
     }
+    
+    public static void clearStatusColumn(String csvPath) {
+        try {
+            // Convert classpath resource to actual file path for reading
+            String actualPath = csvPath.replace("classpath:", "src/test/resources/");
+            List<String> lines = Files.readAllLines(Paths.get(actualPath));
+            
+            if (!lines.isEmpty()) {
+                // Keep the header (first line) as is
+                for (int i = 1; i < lines.size(); i++) {
+                    String line = lines.get(i);
+                    
+                    // Remove status column if it exists (assuming status is the last column)
+                    if (line.endsWith(",pass") || line.endsWith(",fail")) {
+                        String[] parts = line.split(",");
+                        if (parts.length > 1) {
+                            // Remove the last column (status)
+                            String[] newParts = new String[parts.length - 1];
+                            System.arraycopy(parts, 0, newParts, 0, parts.length - 1);
+                            lines.set(i, String.join(",", newParts));
+                        }
+                    }
+                }
+                
+                // Write back to file
+                Files.write(Paths.get(actualPath), lines);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
