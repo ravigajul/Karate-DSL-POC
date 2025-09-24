@@ -105,7 +105,8 @@ public class CsvWriter {
                 // Add column to header
                 lines.set(0, lines.get(0) + "," + columnName);
                 
-                // Add empty column to all existing data rows
+                // Add empty column to all existing data rows EXCEPT the target row
+                // The target row will be handled separately below to set the actual status value
                 for (int i = 1; i < lines.size(); i++) {
                     if (i != rowNumber) {
                         lines.set(i, lines.get(i) + ",");
@@ -113,7 +114,7 @@ public class CsvWriter {
                 }
             }
             
-            // Update the specific row with status
+            // Update ONLY the specific target row with the status value
             String line = lines.get(rowNumber);
             String[] parts = line.split(",");
             
@@ -133,7 +134,7 @@ public class CsvWriter {
                 lines.set(rowNumber, String.join(",", parts));
             }
             
-            // Write back to file
+            // Write all lines back to file (preserves all other rows unchanged)
             Files.write(Paths.get(actualPath), lines);
             
         } catch (IOException e) {
@@ -141,10 +142,6 @@ public class CsvWriter {
         }
     }
     
-    // Overloaded method for backward compatibility
-    public static void updateCSVWithStatus(String csvPath, int rowNumber, String status) {
-        updateCSVWithStatus(csvPath, rowNumber, status, "ExecutionStatus");
-    }
     
     public static void clearStatusColumn(String csvPath, String columnName) {
         try {
@@ -192,8 +189,4 @@ public class CsvWriter {
         }
     }
     
-    // Overloaded method for backward compatibility
-    public static void clearStatusColumn(String csvPath) {
-        clearStatusColumn(csvPath, "ExecutionStatus");
-    }
 }
