@@ -99,28 +99,25 @@ public class CsvWriter {
                 }
             }
             
-            // If column doesn't exist, add it to header and all rows
+            // If column doesn't exist, add it to header and extend all rows
             if (columnIndex == -1) {
                 columnIndex = headers.length;
                 // Add column to header
                 lines.set(0, lines.get(0) + "," + columnName);
                 
-                // Add empty column to all existing data rows EXCEPT the target row
-                // The target row will be handled separately below to set the actual status value
+                // Add empty column to all existing data rows
                 for (int i = 1; i < lines.size(); i++) {
-                    if (i != rowNumber) {
-                        lines.set(i, lines.get(i) + ",");
-                    }
+                    lines.set(i, lines.get(i) + ",");
                 }
             }
             
             // Update ONLY the specific target row with the status value
             String line = lines.get(rowNumber);
-            String[] parts = line.split(",");
+            String[] parts = line.split(",", -1); // Use -1 to preserve trailing empty strings
             
-            // Ensure the row has enough columns
+            // Ensure the target row has enough columns
             if (parts.length <= columnIndex) {
-                // Extend the row with empty values
+                // Extend the row with empty values up to the column we need
                 String[] newParts = new String[columnIndex + 1];
                 System.arraycopy(parts, 0, newParts, 0, parts.length);
                 for (int i = parts.length; i < columnIndex; i++) {
@@ -129,7 +126,7 @@ public class CsvWriter {
                 newParts[columnIndex] = status;
                 lines.set(rowNumber, String.join(",", newParts));
             } else {
-                // Update existing column
+                // Update existing column in the target row
                 parts[columnIndex] = status;
                 lines.set(rowNumber, String.join(",", parts));
             }
