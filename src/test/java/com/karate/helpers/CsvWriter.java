@@ -77,60 +77,123 @@ public class CsvWriter {
         }
     }
     
-    public static void updateCSVWithStatus(String csvPath, int rowNumber, String status) {
+    public static void updateCSVWithStatus(String csvPath, int rowNumber, String status, String columnName) {
         try {
             // Convert classpath resource to actual file path for reading
             String actualPath = csvPath.replace("classpath:", "src/test/resources/");
             List<String> lines = Files.readAllLines(Paths.get(actualPath));
             
-            if (rowNumber < lines.size()) {
-                String line = lines.get(rowNumber);
-                // If the line doesn't end with a status, append it
-                if (!line.endsWith(",pass") && !line.endsWith(",fail")) {
-                    lines.set(rowNumber, line + "," + status);
-                } else {
-                    // Update existing status
-                    String[] parts = line.split(",");
-                    parts[parts.length - 1] = status;
-                    lines.set(rowNumber, String.join(",", parts));
-                }
-                
-                // Write back to file
-                Files.write(Paths.get(actualPath), lines);
+            if (lines.isEmpty() || rowNumber >= lines.size() || rowNumber < 1) {
+                return; // Invalid row number or empty file
             }
+            
+            // Get header line to find column index
+            String[] headers = lines.get(0).split(",");
+            int columnIndex = -1;
+            
+            // Find the column index for the given column name
+            for (int i = 0; i < headers.length; i++) {
+                if (headers[i].trim().equalsIgnoreCase(columnName.trim())) {
+                    columnIndex = i;
+                    break;
+                }
+            }
+            
+            // If column doesn't exist, add it to header and all rows
+            if (columnIndex == -1) {
+                columnIndex = headers.length;
+                // Add column to header
+                lines.set(0, lines.get(0) + "," + columnName);
+                
+                // Add empty column to all existing data rows
+                for (int i = 1; i < lines.size(); i++) {
+                    if (i != rowNumber) {
+                        lines.set(i, lines.get(i) + ",");
+                    }
+                }
+            }
+            
+            // Update the specific row with status
+            String line = lines.get(rowNumber);
+            String[] parts = line.split(",");
+            
+            // Ensure the row has enough columns
+            if (parts.length <= columnIndex) {
+                // Extend the row with empty values
+                String[] newParts = new String[columnIndex + 1];
+                System.arraycopy(parts, 0, newParts, 0, parts.length);
+                for (int i = parts.length; i < columnIndex; i++) {
+                    newParts[i] = "";
+                }
+                newParts[columnIndex] = status;
+                lines.set(rowNumber, String.join(",", newParts));
+            } else {
+                // Update existing column
+                parts[columnIndex] = status;
+                lines.set(rowNumber, String.join(",", parts));
+            }
+            
+            // Write back to file
+            Files.write(Paths.get(actualPath), lines);
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
     
-    public static void clearStatusColumn(String csvPath) {
+    // Overloaded method for backward compatibility
+    public static void updateCSVWithStatus(String csvPath, int rowNumber, String status) {
+        updateCSVWithStatus(csvPath, rowNumber, status, "ExecutionStatus");
+    }
+    
+    public static void clearStatusColumn(String csvPath, String columnName) {
         try {
             // Convert classpath resource to actual file path for reading
             String actualPath = csvPath.replace("classpath:", "src/test/resources/");
             List<String> lines = Files.readAllLines(Paths.get(actualPath));
             
-            if (!lines.isEmpty()) {
-                // Keep the header (first line) as is
-                for (int i = 1; i < lines.size(); i++) {
-                    String line = lines.get(i);
-                    
-                    // Remove status column if it exists (assuming status is the last column)
-                    if (line.endsWith(",pass") || line.endsWith(",fail")) {
-                        String[] parts = line.split(",");
-                        if (parts.length > 1) {
-                            // Remove the last column (status)
-                            String[] newParts = new String[parts.length - 1];
-                            System.arraycopy(parts, 0, newParts, 0, parts.length - 1);
-                            lines.set(i, String.join(",", newParts));
-                        }
-                    }
-                }
-                
-                // Write back to file
-                Files.write(Paths.get(actualPath), lines);
+            if (lines.isEmpty()) {
+                return;
             }
+            
+            // Get header line to find column index
+            String[] headers = lines.get(0).split(",");
+            int columnIndex = -1;
+            
+            // Find the column index for the given column name
+            for (int i = 0; i < headers.length; i++) {
+                if (headers[i].trim().equalsIgnoreCase(columnName.trim())) {
+                    columnIndex = i;
+                    break;
+                }
+            }
+            
+            // If column doesn't exist, nothing to clear
+            if (columnIndex == -1) {
+                return;
+            }
+            
+            // Clear values in the specified column for all data rows (skip header)
+            for (int i = 1; i < lines.size(); i++) {
+                String line = lines.get(i);
+                String[] parts = line.split(",");
+                
+                if (parts.length > columnIndex) {
+                    parts[columnIndex] = ""; // Clear the value
+                    lines.set(i, String.join(",", parts));
+                }
+            }
+            
+            // Write back to file
+            Files.write(Paths.get(actualPath), lines);
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+    // Overloaded method for backward compatibility
+    public static void clearStatusColumn(String csvPath) {
+        clearStatusColumn(csvPath, "ExecutionStatus");
     }
 }
