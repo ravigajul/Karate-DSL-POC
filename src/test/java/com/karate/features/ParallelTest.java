@@ -37,8 +37,8 @@ public class ParallelTest {
 		 * net.masterthought.cucumber.ValidationException: None report file was added!
 		 * Hence using the below
 		 */
-		Results results = Runner.builder().outputCucumberJson(true).path("classpath:com/karate/features/WriteToSameFile.feature")
-				.tags("@same-file").parallel(1);
+		Results results = Runner.builder().outputCucumberJson(true).path("classpath:com/karate/features/ReadDataFromExcel.feature")
+				.tags("@CSVDemo-debug").parallel(1);
 		generateReport(results.getReportDir());
 		assertTrue(results.getErrorMessages(), results.getFailCount() == 0);
 		/*

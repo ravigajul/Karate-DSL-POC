@@ -164,23 +164,19 @@ public class CsvWriter {
                     // Start or end of quoted value
                     inQuotes = !inQuotes;
                 }
-<<<<<<< HEAD
             } else if (c == ',' && !inQuotes) {
-                // End of current value
+                // End of value
                 values.add(currentValue.toString().trim());
-                currentValue.setLength(0);
+                currentValue = new StringBuilder();
             } else {
                 currentValue.append(c);
-=======
-                
-                // Write data row
-                String dataRow = String.join(",", id, execute, firstName, lastName, email, 
-                                            endPointUrl, queryPath, responseStatus, responseTime, testResult);
-                writer.append(dataRow).append("\n");
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+        
+        // Add the last value
+        values.add(currentValue.toString().trim());
+        
+        return values.toArray(new String[0]);
     }
     
     public static void updateCSVWithStatus(String csvPath, int rowNumber, String status, String columnName) {
@@ -234,14 +230,14 @@ public class CsvWriter {
                 // Update the specific column with the status
                 parts[columnIndex] = status;
                 lines.set(rowNumber, String.join(",", parts));
->>>>>>> 2ba59ae (clean up)
             }
+            
+            // Write back to file
+            Files.write(Paths.get(actualPath), lines, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        
-        // Add the last value
-        values.add(currentValue.toString().trim());
-        
-        return values.toArray(new String[0]);
     }
     
     /**

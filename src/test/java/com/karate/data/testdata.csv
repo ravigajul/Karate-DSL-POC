@@ -1,4 +1,4 @@
-ID,Execute,FirstName,LastName,Email,endPointUrl
-1,Y,Ravi,Gajul,Ravi.Gajul@test.com,/api/users?page=2
-3,Y,Ravi,Gajul,Ravi.Gajul@test.com,
-4,N,Ravi,Gajul,Ravi.Gajul@test.com,/api/users?page=3
+ID,Execute,FirstName,LastName,Email,endPointUrl,Status
+1,Y,Ravi,Gajul,Ravi.Gajul@test.com,/api/users?page=2,Passed
+3,Y,Ravi,Gajul,Ravi.Gajul@test.com,,Passed
+4,N,Ravi,Gajul,Ravi.Gajul@test.com,/api/users?page=3,Skipped
