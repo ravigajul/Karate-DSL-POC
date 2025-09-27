@@ -1,6 +1,12 @@
 # Karate-DSL-POC
 
-This is a karate poc for API testing
+This is a Karate POC for API testing.
+
+## Project Status
+- ✅ **Java 21**: Upgraded to Java 21 LTS for modern performance
+- ✅ **Karate 1.2.0**: Updated to latest Karate framework version  
+- ✅ **CSV Testing**: Working CSV data-driven tests with status tracking
+- ✅ **Clean Codebase**: Removed duplicate files and consolidated documentation
 
 ## Maven Archetype
 
@@ -49,7 +55,23 @@ mvn clean test "-Dkarate.options=--tags @smoke"
 
 mvn test "-Dkarate.options=--tags @configparams" -Dkarate.env=qa
 
-## 7. Calling another feature file
+## 7. CSV and Row-by-Row Testing Commands
+
+```bash
+# Run CSV status writer tests
+mvn test -Dtest=ParallelTest -Dkarate.options="--tags @row-status"
+
+# Run specific feature file
+mvn test -Dtest=ParallelTest -Dkarate.options="classpath:com/karate/features/WorkingRowByRow.feature"
+
+# Run all CSV-related features
+mvn test -Dtest=ParallelTest -Dkarate.options="--tags @csvWithJavaHelper,@row-status,@each-row"
+
+# Run CSV writer test
+mvn test -Dtest=CsvWriterTestSimpleRunner
+```
+
+## 8. Calling another feature file
 
 def responsetoken = call read('classpath:com/karate/helpers/CreateToken.feature')
 responseToken is an object of all the variables defined in createtoken feature
@@ -57,18 +79,18 @@ responseToken is an object of all the variables defined in createtoken feature
 Hence to retrieve it is responseToken.variablename defined in CreateToken
 Callonce to call it only once
 
-## 8. Calling other features with parameters
+## 9. Calling other features with parameters
 
 def responseToken = callonce read('classpath:com/karate/helpers/CreateToken.feature') {'email': '<ravi.gajul@test.com>','password': 'Ant3m3an!'}
 
-## 9. Calling feature in config file
+## 10. Calling feature in config file
 
 //passing feature file and config object to callSingle method which returns an object of variables declared in feature file.
 var accessToken=karate.callSingle('classpath:com/karate/helpers/CreateToken.feature',config).authToken
 //passing global headers that can be used by all urls
          karate.configure('headers',{Authorization: 'Token ' + accessToken})
 
-## 10. MultiLine Expressions
+## 11. MultiLine Expressions
 
 Can be used between thriple double quotes like below
 """

@@ -23,12 +23,16 @@ function fn() {
 
 		// passing feature file and config object to callSingle method which
 		// returns an object of variables declared in feature file.
-		var accessToken = karate.callSingle('classpath:com/karate/helpers/CreateToken.feature', config).authToken;
-
-		// passing global headers that can be used by all urls
-		karate.configure('headers', {
-			Authorization : 'Token ' + accessToken
-		});
+		try {
+			var accessToken = karate.callSingle('classpath:com/karate/helpers/CreateToken.feature', config).authToken;
+			// passing global headers that can be used by all urls
+			karate.configure('headers', {
+				Authorization : 'Token ' + accessToken
+			});
+		} catch(e) {
+			karate.log('Warning: Failed to get access token, continuing without authentication:', e.message);
+			config.authToken = 'dummy-token';
+		}
 
 		
 

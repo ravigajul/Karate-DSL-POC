@@ -164,12 +164,77 @@ public class CsvWriter {
                     // Start or end of quoted value
                     inQuotes = !inQuotes;
                 }
+<<<<<<< HEAD
             } else if (c == ',' && !inQuotes) {
                 // End of current value
                 values.add(currentValue.toString().trim());
                 currentValue.setLength(0);
             } else {
                 currentValue.append(c);
+=======
+                
+                // Write data row
+                String dataRow = String.join(",", id, execute, firstName, lastName, email, 
+                                            endPointUrl, queryPath, responseStatus, responseTime, testResult);
+                writer.append(dataRow).append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void updateCSVWithStatus(String csvPath, int rowNumber, String status, String columnName) {
+        try {
+            // Convert classpath resource to actual file path for reading
+            String actualPath = csvPath.replace("classpath:", "src/test/resources/");
+            List<String> lines = Files.readAllLines(Paths.get(actualPath));
+            
+            if (lines.isEmpty() || rowNumber >= lines.size() || rowNumber < 1) {
+                return; // Invalid row number or empty file
+            }
+            
+            // Get header line to find column index
+            String[] headers = lines.get(0).split(",", -1);
+            int columnIndex = -1;
+            
+            // Find the column index for the given column name
+            for (int i = 0; i < headers.length; i++) {
+                if (headers[i].trim().equalsIgnoreCase(columnName.trim())) {
+                    columnIndex = i;
+                    break;
+                }
+            }
+            
+            // If column doesn't exist, add it to header and extend all rows
+            if (columnIndex == -1) {
+                columnIndex = headers.length;
+                // Add column to header
+                lines.set(0, lines.get(0) + "," + columnName);
+                
+                // Add empty column to all existing data rows
+                for (int i = 1; i < lines.size(); i++) {
+                    lines.set(i, lines.get(i) + ",");
+                }
+            }
+            
+            // Now update the specific target row with the status value
+            String targetLine = lines.get(rowNumber);
+            String[] parts = targetLine.split(",", -1); // Use -1 to preserve trailing empty strings
+            
+            // Ensure we have enough columns in the target row
+            if (parts.length <= columnIndex) {
+                // This shouldn't happen if we added the column correctly above, but just in case
+                String[] newParts = new String[columnIndex + 1];
+                System.arraycopy(parts, 0, newParts, 0, parts.length);
+                for (int i = parts.length; i <= columnIndex; i++) {
+                    newParts[i] = (i == columnIndex) ? status : "";
+                }
+                lines.set(rowNumber, String.join(",", newParts));
+            } else {
+                // Update the specific column with the status
+                parts[columnIndex] = status;
+                lines.set(rowNumber, String.join(",", parts));
+>>>>>>> 2ba59ae (clean up)
             }
         }
         

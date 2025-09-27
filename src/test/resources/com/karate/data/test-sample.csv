@@ -1,0 +1,5 @@
+id,firstname,lastname,testStatus,executionResult
+1,John,Doe,pass,completed
+2,Jane,Smith,pass,pending
+3,Bob,Johnson,fail,completed
+4,Alice,Williams,,

@@ -1,0 +1,4 @@
+ID,Execute,FirstName,LastName,Email,endPointUrl,querypath
+1,Y,Ravi,Gajul,Ravi.Gajul@test.com,/api/users?page=2,articleData.article.title
+3,Y,Ravi,Gajul,Ravi.Gajul@test.com,,articleData.article.title
+4,N,Ravi,Gajul,Ravi.Gajul@test.com,/api/users?page=3,articleData.article.title

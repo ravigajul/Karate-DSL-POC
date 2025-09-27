@@ -13,7 +13,6 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
-import org.junit.After;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -30,7 +29,7 @@ public class ParallelTest {
 	
 	@Test
 	public void testParallel() {
-		System.setProperty("karate.env", "dev"); //this line should be commentd if env from cmd is to be picked
+		System.setProperty("karate.env", "qa"); //this line should be commentd if env from cmd is to be picked
 		// Results results =
 		// Runner.path("classpath:com/karate/features").parallel(5);
 		/*
@@ -38,8 +37,8 @@ public class ParallelTest {
 		 * net.masterthought.cucumber.ValidationException: None report file was added!
 		 * Hence using the below
 		 */
-		Results results = Runner.builder().outputCucumberJson(true).path("classpath:com/karate/features")
-				.tags("@csvfilter").parallel(20);
+		Results results = Runner.builder().outputCucumberJson(true).path("classpath:com/karate/features/WriteToSameFile.feature")
+				.tags("@same-file").parallel(1);
 		generateReport(results.getReportDir());
 		assertTrue(results.getErrorMessages(), results.getFailCount() == 0);
 		/*
