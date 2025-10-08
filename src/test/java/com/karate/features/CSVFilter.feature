@@ -1,16 +1,20 @@
 Feature: This is to demonstrate json path filters to execute data for a given filter condition
     # mvn test '-Dkarate.options=--tags @csvfilter' -Dtest=ParallelTest -DExecute="'Y'"
     Background:
+        * def csvWriter = Java.type('com.karate.helpers.CsvWriter')
         * def data = read('classpath:com/karate/data/testdata.csv')
     # * def filtered = get data[?(@.Execute == "'Y'" && @.FirstName = "Ravi")]
     # * def filtered = "'Y'"
-    # * def selected = karate.properties['Execute']
-    # * def fun = function(x){ return x.Execute == selected }
-    # * def filtered = karate.filter(data, fun)
+    * def selected = karate.properties['Execute']
+    * def fun = function(x){ return x.Execute == selected }
+    * def filtered = karate.filter(data, fun)
 
     @csvfilter
     Scenario Outline: Scenario name
-        * print __row
+    * print 'Processing row:', __num + 1, 'with data:', __row
+    * def status = '<Execute>' == 'Y' ? 'Passed' : 'Skipped'
+    * csvWriter.updateCSVWithStatus('src/test/java/com/karate/data/testdata.csv', __num + 1, status, 'Status')
+    * print 'Updated row', __num + 1, 'with status:', status
         Examples:
             | read('classpath:com/karate/data/testdata.csv') |
 

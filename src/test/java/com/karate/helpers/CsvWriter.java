@@ -2,6 +2,7 @@ package com.karate.helpers;
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * A utility class for updating CSV files
@@ -36,7 +37,7 @@ public class CsvWriter {
         
         // Parse header row to find column index
         String headerRow = lines.get(0);
-        String[] headers = parseCSVLine(headerRow);
+        String[] headers = parseCSVLineAsArray(headerRow);
         int columnIndex = findColumnIndex(headers, columnName);
         
         if (columnIndex == -1) {
@@ -46,7 +47,7 @@ public class CsvWriter {
         // Update specific row
         int actualRowIndex = rowNumber; // rowNumber is 1-based, but we need 0-based index for lines array
         String line = lines.get(actualRowIndex);
-        String[] values = parseCSVLine(line);
+        String[] values = parseCSVLineAsArray(line);
         
         if (columnIndex < values.length) {
             values[columnIndex] = escapeCSVValue(newValue);
@@ -89,7 +90,7 @@ public class CsvWriter {
         List<String[]> data = new ArrayList<>();
         for (String line : lines) {
             if (!line.trim().isEmpty()) {
-                data.add(parseCSVLine(line));
+                data.add(parseCSVLineAsArray(line));
             }
         }
         
@@ -110,7 +111,7 @@ public class CsvWriter {
             return new String[0];
         }
         
-        return parseCSVLine(lines.get(0));
+        return parseCSVLineAsArray(lines.get(0));
     }
     
     /**
@@ -145,95 +146,101 @@ public class CsvWriter {
     /**
      * Parses a CSV line handling quotes and commas properly
      * @param line CSV line to parse
-     * @return Array of values
+     * @return List of values
      */
-    private static String[] parseCSVLine(String line) {
-        List<String> values = new ArrayList<>();
-        StringBuilder currentValue = new StringBuilder();
+    private static List<String> parseCSVLine(String line) {
+        List<String> fields = new ArrayList<>();
         boolean inQuotes = false;
+        StringBuilder currentField = new StringBuilder();
         
         for (int i = 0; i < line.length(); i++) {
             char c = line.charAt(i);
             
             if (c == '"') {
-                if (inQuotes && i + 1 < line.length() && line.charAt(i + 1) == '"') {
-                    // Escaped quote (double quotes within quoted string)
-                    currentValue.append('"');
-                    i++; // Skip next quote
+                // Check if this is the start of a quoted field
+                if (!inQuotes && currentField.length() == 0) {
+                    inQuotes = true;
+                    // Don't add the opening quote to the field value
+                } else if (inQuotes) {
+                    // Check for escaped quote (double quotes)
+                    if (i + 1 < line.length() && line.charAt(i + 1) == '"') {
+                        currentField.append('"');
+                        i++; // Skip the next quote
+                    } else {
+                        // End of quoted field
+                        inQuotes = false;
+                        // Don't add the closing quote to the field value
+                    }
                 } else {
-                    // Start or end of quoted value
-                    inQuotes = !inQuotes;
+                    // Quote in the middle of unquoted field (shouldn't happen in well-formed CSV)
+                    currentField.append(c);
                 }
             } else if (c == ',' && !inQuotes) {
-                // End of value
-                values.add(currentValue.toString().trim());
-                currentValue = new StringBuilder();
+                // End of field
+                fields.add(currentField.toString());
+                currentField = new StringBuilder();
             } else {
-                currentValue.append(c);
+                currentField.append(c);
             }
         }
         
-        // Add the last value
-        values.add(currentValue.toString().trim());
-        
-        return values.toArray(new String[0]);
+        // Add the last field
+        fields.add(currentField.toString());
+        return fields;
     }
     
-    public static void updateCSVWithStatus(String csvPath, int rowNumber, String status, String columnName) {
+    /**
+     * Helper method to convert List to Array for backward compatibility
+     */
+    private static String[] parseCSVLineAsArray(String line) {
+        List<String> fields = parseCSVLine(line);
+        return fields.toArray(new String[0]);
+    }    public static void updateCSVWithStatus(String filePath, int rowIndex, String statusValue, String statusColumnName) {
         try {
-            // Convert classpath resource to actual file path for reading
-            String actualPath = csvPath.replace("classpath:", "src/test/resources/");
-            List<String> lines = Files.readAllLines(Paths.get(actualPath));
+            List<String> lines = Files.readAllLines(Paths.get(filePath));
+            if (lines.isEmpty()) return;
             
-            if (lines.isEmpty() || rowNumber >= lines.size() || rowNumber < 1) {
-                return; // Invalid row number or empty file
-            }
+            // Parse header to find status column index
+            List<String> headers = parseCSVLine(lines.get(0));
+            int statusColumnIndex = -1;
             
-            // Get header line to find column index
-            String[] headers = lines.get(0).split(",", -1);
-            int columnIndex = -1;
-            
-            // Find the column index for the given column name
-            for (int i = 0; i < headers.length; i++) {
-                if (headers[i].trim().equalsIgnoreCase(columnName.trim())) {
-                    columnIndex = i;
+            for (int i = 0; i < headers.size(); i++) {
+                if (headers.get(i).equals(statusColumnName)) {
+                    statusColumnIndex = i;
                     break;
                 }
             }
             
-            // If column doesn't exist, add it to header and extend all rows
-            if (columnIndex == -1) {
-                columnIndex = headers.length;
-                // Add column to header
-                lines.set(0, lines.get(0) + "," + columnName);
-                
-                // Add empty column to all existing data rows
-                for (int i = 1; i < lines.size(); i++) {
-                    lines.set(i, lines.get(i) + ",");
-                }
+            // If status column doesn't exist, add it
+            if (statusColumnIndex == -1) {
+                statusColumnIndex = headers.size();
+                headers.add(statusColumnName);
+                // Update header line
+                lines.set(0, String.join(",", headers.stream().map(CsvWriter::escapeCSVValue).collect(Collectors.toList())));
             }
             
-            // Now update the specific target row with the status value
-            String targetLine = lines.get(rowNumber);
-            String[] parts = targetLine.split(",", -1); // Use -1 to preserve trailing empty strings
-            
-            // Ensure we have enough columns in the target row
-            if (parts.length <= columnIndex) {
-                // This shouldn't happen if we added the column correctly above, but just in case
-                String[] newParts = new String[columnIndex + 1];
-                System.arraycopy(parts, 0, newParts, 0, parts.length);
-                for (int i = parts.length; i <= columnIndex; i++) {
-                    newParts[i] = (i == columnIndex) ? status : "";
+            // Update the specified row
+            if (rowIndex < lines.size()) {
+                List<String> rowData = parseCSVLine(lines.get(rowIndex));
+                
+                // Ensure row has enough columns
+                while (rowData.size() <= statusColumnIndex) {
+                    rowData.add("");
                 }
-                lines.set(rowNumber, String.join(",", newParts));
-            } else {
-                // Update the specific column with the status
-                parts[columnIndex] = status;
-                lines.set(rowNumber, String.join(",", parts));
+                
+                // Update status value
+                rowData.set(statusColumnIndex, statusValue);
+                
+                // Rebuild the line with proper CSV escaping
+                String updatedLine = rowData.stream()
+                    .map(CsvWriter::escapeCSVValue)
+                    .collect(Collectors.joining(","));
+                
+                lines.set(rowIndex, updatedLine);
             }
             
             // Write back to file
-            Files.write(Paths.get(actualPath), lines, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+            Files.write(Paths.get(filePath), lines);
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -252,7 +259,7 @@ public class CsvWriter {
         
         // If value contains comma, quote, or newline, wrap in quotes
         if (value.contains(",") || value.contains("\"") || value.contains("\n") || value.contains("\r")) {
-            // Escape existing quotes by doubling them
+            // Escape any existing quotes by doubling them
             String escaped = value.replace("\"", "\"\"");
             return "\"" + escaped + "\"";
         }
