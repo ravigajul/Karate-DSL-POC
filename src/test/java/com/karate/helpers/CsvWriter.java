@@ -186,7 +186,7 @@ public class CsvWriter {
         
         // Add the last field
         fields.add(currentField.toString());
-        return fields;
+        return fields; 
     }
     
     /**
