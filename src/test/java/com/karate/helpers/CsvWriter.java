@@ -195,13 +195,86 @@ public class CsvWriter {
     private static String[] parseCSVLineAsArray(String line) {
         List<String> fields = parseCSVLine(line);
         return fields.toArray(new String[0]);
-    }    public static void updateCSVWithStatus(String filePath, int rowIndex, String statusValue, String statusColumnName) {
+    }    /**
+     * Reads CSV file and returns list of records (properly handling multi-line fields)
+     */
+    private static List<List<String>> readCSVRecords(String filePath) throws IOException {
+        List<List<String>> records = new ArrayList<>();
+        String content = new String(Files.readAllBytes(Paths.get(filePath)));
+        
+        List<String> currentRecord = new ArrayList<>();
+        StringBuilder currentField = new StringBuilder();
+        boolean inQuotes = false;
+        
+        for (int i = 0; i < content.length(); i++) {
+            char c = content.charAt(i);
+            
+            if (c == '"') {
+                if (!inQuotes && currentField.length() == 0) {
+                    inQuotes = true;
+                } else if (inQuotes) {
+                    if (i + 1 < content.length() && content.charAt(i + 1) == '"') {
+                        currentField.append('"');
+                        i++;
+                    } else {
+                        inQuotes = false;
+                    }
+                } else {
+                    currentField.append(c);
+                }
+            } else if (c == ',' && !inQuotes) {
+                currentRecord.add(currentField.toString());
+                currentField = new StringBuilder();
+            } else if ((c == '\n' || c == '\r') && !inQuotes) {
+                if (currentField.length() > 0 || !currentRecord.isEmpty()) {
+                    currentRecord.add(currentField.toString());
+                    records.add(new ArrayList<>(currentRecord));
+                    currentRecord.clear();
+                    currentField = new StringBuilder();
+                }
+                // Skip \r\n sequences
+                if (c == '\r' && i + 1 < content.length() && content.charAt(i + 1) == '\n') {
+                    i++;
+                }
+            } else {
+                currentField.append(c);
+            }
+        }
+        
+        // Add last field and record if any
+        if (currentField.length() > 0 || !currentRecord.isEmpty()) {
+            currentRecord.add(currentField.toString());
+            records.add(currentRecord);
+        }
+        
+        return records;
+    }
+    
+    /**
+     * Writes CSV records to file
+     */
+    private static void writeCSVRecords(String filePath, List<List<String>> records) throws IOException {
+        StringBuilder content = new StringBuilder();
+        for (int i = 0; i < records.size(); i++) {
+            List<String> record = records.get(i);
+            String line = record.stream()
+                .map(CsvWriter::escapeCSVValue)
+                .collect(Collectors.joining(","));
+            content.append(line);
+            if (i < records.size() - 1) {
+                content.append("\n");
+            }
+        }
+        Files.write(Paths.get(filePath), content.toString().getBytes());
+    }
+    
+    public static void updateCSVWithStatus(String filePath, int rowIndex, String statusValue, String statusColumnName) {
         try {
-            List<String> lines = Files.readAllLines(Paths.get(filePath));
-            if (lines.isEmpty()) return;
+            List<List<String>> records = readCSVRecords(filePath);
+            if (records.isEmpty()) return;
             
             // Parse header to find status column index
-            List<String> headers = parseCSVLine(lines.get(0));
+            List<String> headers = records.get(0);
             int statusColumnIndex = -1;
             
             for (int i = 0; i < headers.size(); i++) {
@@ -215,13 +288,11 @@ public class CsvWriter {
             if (statusColumnIndex == -1) {
                 statusColumnIndex = headers.size();
                 headers.add(statusColumnName);
-                // Update header line
-                lines.set(0, String.join(",", headers.stream().map(CsvWriter::escapeCSVValue).collect(Collectors.toList())));
             }
             
             // Update the specified row
-            if (rowIndex < lines.size()) {
-                List<String> rowData = parseCSVLine(lines.get(rowIndex));
+            if (rowIndex < records.size()) {
+                List<String> rowData = records.get(rowIndex);
                 
                 // Ensure row has enough columns
                 while (rowData.size() <= statusColumnIndex) {
@@ -230,17 +301,10 @@ public class CsvWriter {
                 
                 // Update status value
                 rowData.set(statusColumnIndex, statusValue);
-                
-                // Rebuild the line with proper CSV escaping
-                String updatedLine = rowData.stream()
-                    .map(CsvWriter::escapeCSVValue)
-                    .collect(Collectors.joining(","));
-                
-                lines.set(rowIndex, updatedLine);
             }
             
             // Write back to file
-            Files.write(Paths.get(filePath), lines);
+            writeCSVRecords(filePath, records);
             
         } catch (IOException e) {
             e.printStackTrace();

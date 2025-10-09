@@ -1,8 +1,13 @@
-ID,Execute,FirstName,LastName,Email,endPointUrl,Status
-1,Y,Ravi,Gajul,Ravi.Gajul@test.com,"/api/users?,2",Passed
-2,Y,John,Doe,john@test.com,/api/users?page=3&sort=desc,Passed
-3,Y,Jane,Smith,jane@test.com,"/search?q=hello,world&filter[type]=user",Passed
-4,Y,Bob,Johnson,bob@test.com,/api/data{id}!important,Passed
-1,Y,Ravi,Gajul,Ravi.Gajul@test.com,"/api/users?,2",Passed
-3,Y,Ravi,Gajul,Ravi.Gajul@test.com,/api/users?page=3,Passed
-4,Y,Ravi,Gajul,Ravi.Gajul@test.com,/api/users?page=4,Passed
+ID,Execute,FirstName,LastName,Email,endPointUrl,Status,ErrorMessage
+1,N,Ravi,Gajul,Ravi.Gajul@test.com,"/api/users?,2",Skipped,
+2,N,John,Doe,john@test.com,/api/users?page=3&sort=desc,Skipped,
+3,N,Jane,Smith,jane@test.com,"/search?q=hello,world&filter[type]=user",Skipped,
+4,N,Bob,Johnson,bob@test.com,/api/data{id}!important,Skipped,
+5,Y,Test,User,test@test.com,/api/claim,Passed,"I could not found claim matching your request in the database (there could be none in the database or chatbot capability is still in development).
+However, I found multiple denied claims that you can choose from to narrow down on claim id, required to answer question.
+Please pick one by claim ID or provide more details:
+K'orig_cim_id*: 'PANTST50404221', 'cim_process_dt': '2025-95-15', 'tran_adjud_end_ts': *2025-04-83*Y]
+Note: Additional claims may exist that are not shown here. Please review the Member360 Claims page to see all available"
+1,N,Ravi,Gajul,Ravi.Gajul@test.com,"/api/users?,2",Skipped,
+3,N,Ravi,Gajul,Ravi.Gajul@test.com,/api/users?page=3,Skipped,
+4,Y,Ravi,Gajul,Ravi.Gajul@test.com,/api/users?page=4,Passed,
