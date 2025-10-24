@@ -534,6 +534,11 @@ WHEN SOAP Action //instead of
 WHEN METHOD POST
 ```
 
+## How to set json value at runtime
+```cucumber
+* eval if (karate.env && karate.env.endsWith('Cloud')) karate.set('headersjson', 'gateway', 'internal')
+```
+
 ## Filter data using jsonpath Path expression & karate.jsonPath
 ```gherkin
 #mvn test '-Dkarate.options=--tags @rowswithnonemptyendpointurlcolumn' -Dtest=ParallelTest
