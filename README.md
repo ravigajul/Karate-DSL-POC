@@ -104,7 +104,7 @@ Can be used between thriple double quotes like below
 
 ## 11. Getting data from Java Class file
 
-```javascript
+condi```javascript
 - def datagenerator = Java.type('classpath:com/karate/helpers/DataGenerator')
   This will throw
   org.graalvm.polyglot.PolyglotException: TypeError: Access to host class classpath:com/karate/helpers/DataGenerator is not allowed or does not exist.
@@ -150,7 +150,9 @@ Karate.configure('ssl', true) for SSL disabling
 - configure ssl = { trustAll: true, keyStore: '#(keyStoreLocation)', keyStorePassword: 'somePass' }
 
 ## 17. conditional logic in karate
-
+```javascript
+* eval if (karate.match(karate.env, /.*Cloud$/).pass) karate.set('headersjson', 'gateway', 'internal')
+```
 ```javascript
   #in the below step article is an object that we are using to retrive slug in AddLikes.feature.
   #It wont work if we directly pass the slug value ins callSingle accepts object as parameter
