@@ -151,7 +151,7 @@ Karate.configure('ssl', true) for SSL disabling
 
 ## 17. conditional logic in karate
 ```javascript
-* eval if (karate.match(karate.env, /.*Cloud$/).pass) karate.set('headersjson', 'gateway', 'internal')
+* if (karate.env && karate.env.toLowerCase().endsWith('cloud')) karate.set('headersjson', 'gateway', 'internal')
 ```
 ```javascript
   #in the below step article is an object that we are using to retrive slug in AddLikes.feature.
